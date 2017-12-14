@@ -27,6 +27,6 @@ Further specific problems to be determined through discussion with primary stake
 3. LHL teaching staff, specifically those who are interested in sharing their teaching material for the general public
 
 ## Team members
-Connie
-Vicky
-Chandra
+- Connie
+- Vicky
+- Chandra
