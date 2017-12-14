@@ -1,4 +1,4 @@
-User Stories
+###User Stories
 
 As a guest I want to see the course overviews
 Because I want to decide if I will take one or more courses.
