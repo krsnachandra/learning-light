@@ -12,7 +12,7 @@ Rails should be used for the back end, for ease of integration with Compass (whi
 
 ## Database
 
-- TODO: decide on database engine. Probably a good idea to use the same one as Compass, for integration/maintainability.
+Postgres should be used, mainly to ensure that data models are compatible with Compass.
 
 ## CSS framework
 
