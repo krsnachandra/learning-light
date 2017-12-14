@@ -1,4 +1,4 @@
-#Project title: Learning Light
+# Project title: Learning Light
 
 ## Introduction
 
