@@ -4,7 +4,7 @@ As a guest I want to see the course overviews
 Because I want to decide if I will take one or more courses.
 Given that I am on the homepage,
 When I click on a course,
-Then I will see the course description.
+Then I will see the course description including a summary of the curriculum, instructor bio, reviews, and social media sharing buttons.
 
 As a user I want to register or login because I want to take a course.
 Given I press register or log in on the homepage,
@@ -19,7 +19,7 @@ Then it will show me the next section of the current course I'm working on.
 As a user I want to be able to view my progress
 Because I want to see how much work I have done.
 Given that I'm logged in,
-When I click 'view progress'
+When I click 'view progress' [or 'dashboard'?]
 Then I will see what percentage of this course I have completed as well as any other courses I have begun or completed.
 
 As a user I want to ask questions about the material
@@ -38,4 +38,10 @@ As a user I want to get a badge when I complete a course
 Because I like pretty awards.
 Given that I have completed the course material,
 When I click the last 'next' button,
-Then I will see my new completion badge on the progress page.
+Then I will see my new completion badge on the progress/dashboard page.
+
+As a user I want to rate a course because I liked it.
+Given that I have completed a course,
+When I click 'rate this course'
+Then I can give it a rating out of 5 and write a review.
+
