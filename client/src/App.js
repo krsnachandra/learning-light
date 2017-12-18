@@ -3,11 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import logo from './logo.svg';
 import Profile from './Profile.jsx';
 import Home from './Home.jsx';
-
-function Progress() {
-  return <h1>Progress</h1>;
-}
-
+import Progress from './Progress.jsx';
 
 class App extends Component {
   render() {
