@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import logo from './logo.svg';
 import Profile from './Profile.jsx';
+import Home from './Home.jsx';
 
 function Progress() {
   return <h1>Progress</h1>;
 }
-function Home() {
-  return <Redirect to="/progress" />;
-}
+
 
 class App extends Component {
   render() {
