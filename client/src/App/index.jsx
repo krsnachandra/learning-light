@@ -7,7 +7,7 @@ import Course from './Course';
 import Navbar from './Navbar';
 import Login from './Login';
 import Register from './Register';
-import Footer from './Footer';
+// import Footer from './Footer';
 
 
 class App extends Component {
