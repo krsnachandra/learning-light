@@ -7,6 +7,7 @@ import Course from './Course';
 import Navbar from './Navbar';
 import Login from './Login';
 import Register from './Register';
+import Review from './Review';
 // import Footer from './Footer';
 
 
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/progress" exact component={Progress} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/review" component={Review} />            
             <Route path="/:coursename" component={Course} />
           </Switch>
         </div>
