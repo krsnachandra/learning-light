@@ -9,6 +9,7 @@ import Login from './Login';
 import Register from './Register';
 import Review from './Review';
 // import Footer from './Footer';
+import CourseCompleted from './CourseCompleted';
 
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/review" component={Review} />            
+            <Route path="/comp" component={CourseCompleted} />            
             <Route path="/:coursename" component={Course} />
           </Switch>
         </div>
