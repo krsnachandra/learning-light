@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 function Home() {
-    return <Redirect to="/progress" />;
+    return <div>
+      <img src="/htmlcss.png" alt="htmlcss"/>;
+    </div>
   }
 
   export default Home;
