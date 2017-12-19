@@ -5,15 +5,8 @@ import Home from './Home';
 import Progress from './Progress';
 import Course from './Course';
 import Navbar from './Navbar';
-
-function Login() {
-  return <h1>Login</h1>;
-}
-
-function Register() {
-  return <h1>Register</h1>;
-}
-
+import Login from './Login';
+import Register from './Register';
 
 class App extends Component {
 
