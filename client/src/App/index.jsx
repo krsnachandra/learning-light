@@ -26,7 +26,7 @@ class App extends Component {
             <Route path="/:coursename" component={Course} />
           </Switch>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>);
   }
 }
