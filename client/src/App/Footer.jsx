@@ -25,11 +25,9 @@ function Footer() {
               <span class="blue-text">PROGRAMS</span>
             </p>
             <ul>
-              <li><a title="Web Development Bootcamp" href="/web-bootcamp">Web Development Bootcamp</a></li>
-              <li><a title="iOS Development Bootcamp" href="/ios-bootcamp">iOS Development Bootcamp</a></li>
-              <li><a title="Intro to Web Development" href="/intro-to-web">Intro to Web Development</a></li>
-              <li><a title="Intro to iOS Development " href="/intro-to-ios">Intro to iOS Development </a></li>
-              <li><a title="Front-End Fundamentals with Javascript " href="/front-end-javascript">Front-End Fundamentals with Javascript </a></li>
+              <li>Bootcamps: <a title="Web Development Bootcamp" href="/web-bootcamp">Web Dev</a> and <a title="iOS Development Bootcamp" href="/ios-bootcamp">iOS Dev Bootcamp</a></li>
+              <li>Intro courses: <a title="Intro to Web Development" href="/intro-to-web">Web Dev</a> or <a title="Intro to iOS Development " href="/intro-to-ios">iOS</a></li>
+              <li><a title="Front-End Fundamentals with Javascript " href="/front-end-javascript">Front-End Fundamentals with JS</a></li>
             </ul>
           </div>
           <div class="footer-column">
@@ -37,11 +35,10 @@ function Footer() {
               <span class="blue-text">LOCATIONS</span>
             </p>
             <ul>
-              <li><a title="Vancouver" href="/vancouver">Vancouver</a></li>
+              <li><a title="Vancouver" href="/vancouver">Vancouver</a> &amp; <a title="Victoria" href="/victoria">Victoria</a></li>
               <li><a title="Toronto" href="/toronto">Toronto</a></li>
               <li><a title="Calgary" href="/calgary">Calgary</a></li>
               <li><a title="Montreal" href="/montreal">Montreal</a></li>
-              <li><a title="Victoria" href="/victoria">Victoria</a></li>
               <li><a title="Halifax" href="/halifax">Halifax</a></li>
               <li><a title="Other Locations" href="/other-locations">Other Locations</a></li>
              </ul>
@@ -51,13 +48,7 @@ function Footer() {
               <span class="blue-text">STUDENTS</span>
             </p>
             <ul>
-              <li><a title="Admissions" href="/admissions">Admissions</a></li>
               <li><a title="Student Experience" href="/students">Student Experience</a></li>
-              <li><a title="Career Services" href="/career-services">Career Services</a></li>
-              <li><a title="Student Outcomes" href="/studentoutcomes">Student Outcomes</a></li>
-              <li><a title="Web &amp; iOS Curriculum" href="/lighthouse-labs-curriculum">Web &amp; iOS Curriculum</a></li>
-              <li><a title="Student Projects" href="/projects">Student Projects</a></li>
-              <li><a target="blank" title="Free Online Courses" href="http://lighthouse-labs.thinkific.com/">Free Online Courses</a></li>
               <li><a title="Events" href="/events">Events</a></li>
               <li><a title="Blog" href="/blog">Blog</a></li>
               <li><a title="FAQ" href="/faq">FAQ</a></li>
@@ -69,21 +60,14 @@ function Footer() {
           </p>
           <ul>
             <li> <a title="Our Story" href="/about">Our Story</a></li>
-            <li> <a title="Careers at LHL" href="/careers-at-lhl">Careers at LHL</a></li>
             <li> <a title="Community" href="/community">Community</a></li>
             <li> <a title="Team" href="/team">Team</a></li>
-            <li> <a title="Press" href="/press">Press</a></li>
-            <li> <a title="Employers" href="/employers">Employers</a></li>
             <li> <a title="Contact" href="/contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <img id="larry" alt="Rubber Duck Debugging" src="/assets/Larry-christmas-0cbcf63162c517077f3a1948747641647de469162e4c8b3ed8bc9262b8b1f6d2.png" />
-          <div id="disappearing-larry" data-url="/assets/larry-disappear-bffa2ff7b6b8f4d18c8488ced1a7e5aa6206dedb62843837967ed0561d25b8cd.gif"></div>
-            <p class="made-with">
-            Made with &#9829;
-            </p>
-          </div>
+          <span class="blue-text">STUFF</span>
+        </div>
         </div>
         <div class="container">
           <hr />

@@ -804,6 +804,393 @@ body {
     }
 }
 
+header.lock-nav .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 55px;
+    margin: -55px 0 0
+}
+
+.nav {
+    z-index: 10;
+    width: 100%
+}
+
+.nav ul {
+    margin: 0;
+    padding: 6px 0;
+    list-style: none
+}
+
+.nav li {
+    display: inline-block;
+    font-family: 'proxima-nova';
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.71em
+}
+
+.nav a {
+    display: block;
+    text-decoration: none
+}
+
+.nav .container {
+    max-width: 1150px;
+    margin: 0 auto
+}
+
+.top-nav {
+    background-color: #f7f7f7;
+    display: none
+}
+
+@media screen and (min-width: 618px) {
+    .top-nav {
+        display: block
+    }
+}
+
+.top-nav .container {
+    max-width: 1150px;
+    margin: 0 auto
+}
+
+.top-nav ul {
+    text-align: right
+}
+
+.top-nav li {
+    font-size: 0.875em;
+    padding: 0px 15px;
+    -webkit-font-smoothing: antialiased
+}
+
+.top-nav a {
+    color: #436C89
+}
+
+.apply-btn {
+    background-color: #17a3dd;
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    height: 64px;
+    width: 70px;
+    box-shadow: none;
+    border: 0;
+    float: right;
+    color: #fff;
+    outline: 0;
+    text-transform: uppercase;
+    margin-right: 0%;
+    font-size: 1em;
+    padding: 0;
+    padding-top: 7px;
+    font-family: "proxima-nova";
+    font-style: normal;
+    font-weight: 800;
+    cursor: pointer
+}
+
+.apply-btn:hover {
+    background-color: #148fc1
+}
+
+.apply-btn:active {
+    background-color: #107098
+}
+
+@media screen and (min-width: 992px) {
+    .apply-btn {
+        width: 130px
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .apply-btn {
+        margin-right: 1%
+    }
+}
+
+.menu-btn {
+    display: inline-block;
+    background-color: #fff;
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.25);
+    height: 64px;
+    width: 70px;
+    box-shadow: none;
+    border: 1px solid #f7f7f7;
+    float: right;
+    color: #666666;
+    outline: 0;
+    text-transform: uppercase;
+    padding: 0;
+    padding-top: 7px
+}
+
+.menu-btn:hover {
+    background-color: #f0f0f0
+}
+
+.menu-btn:active {
+    background-color: #d9d9d9
+}
+
+@media screen and (min-width: 618px) {
+    .menu-btn {
+        width: 130px;
+        display: none
+    }
+}
+
+.main-nav {
+    border-bottom: 1px solid #E5E5E5;
+    background-color: #fff
+}
+
+.main-nav .container.open .nav-menu {
+    display: block
+}
+
+.main-nav .logo-container {
+    display: inline-block;
+    float: none;
+    width: 130px;
+    margin: 17px 16px 10px 11px
+}
+
+@media screen and (min-width: 618px) {
+    .main-nav .logo-container {
+        float: left;
+        margin: 13px 10px 9px 3%
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main-nav .logo-container {
+        margin: 9px 10px 9px 6%;
+        width: 150px
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .main-nav .logo-container {
+        margin: 9px 10px 9px 2%;
+        width: 150px
+    }
+}
+
+.main-nav .logo {
+    width: 104%;
+    border: 0;
+    outline: none
+}
+
+.main-nav ul {
+    text-align: left
+}
+
+.main-nav li {
+    font-size: 1em;
+    padding: 15px 0;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    border: 1px solid #f7f7f7
+}
+
+@media screen and (min-width: 618px) {
+    .main-nav li {
+        display: inline-block;
+        font-size: 0.8em;
+        padding: 0 2%;
+        width: auto;
+        width: initial;
+        border: none
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main-nav li {
+        font-size: 1em
+    }
+}
+
+@media screen and (min-width: 618px) {
+    .main-nav li+li {
+        border-left: 1px solid #e1e2e3
+    }
+}
+
+.main-nav a {
+    color: #676767;
+    text-transform: uppercase;
+    margin: -5px 0;
+    padding: 0 15px
+}
+
+@media screen and (min-width: 618px) {
+    .main-nav a {
+        padding: 0
+    }
+}
+
+.main-nav .nav-menu {
+    padding: 0;
+    position: relative;
+    background: white;
+    display: none;
+    border: 1px solid #f7f7f7
+}
+
+@media screen and (min-width: 618px) {
+    .main-nav .nav-menu {
+        display: block;
+        padding: 27px 23px 16px 23px;
+        border: none;
+        position: inherit;
+        margin: 0
+    }
+}
+
+.main-nav .nav-menu>li:focus {
+    outline: 0
+}
+
+.main-nav .nav-menu>li:nth-child(1):focus>a,
+.main-nav .nav-menu>li:nth-child(1):hover>a,
+.main-nav .nav-menu>li:nth-child(1).open>a {
+    color: #d25150
+}
+
+.main-nav .nav-menu>li:nth-child(2):focus>a,
+.main-nav .nav-menu>li:nth-child(2):hover>a,
+.main-nav .nav-menu>li:nth-child(2).open>a {
+    color: #17a3dd
+}
+
+.main-nav .nav-menu>li:nth-child(3):focus>a,
+.main-nav .nav-menu>li:nth-child(3):hover>a,
+.main-nav .nav-menu>li:nth-child(3).open>a {
+    color: #446b88
+}
+
+.main-nav .nav-menu>li:nth-child(4):focus>a,
+.main-nav .nav-menu>li:nth-child(4):hover>a,
+.main-nav .nav-menu>li:nth-child(4).open>a {
+    color: #263648
+}
+
+.main-nav .nav-menu>li.open>ul,
+.main-nav .nav-menu>li:focus>ul {
+    max-height: 400px;
+    bottom: -15px;
+    transition: all 500ms linear
+}
+
+@media screen and (min-width: 618px) {
+    .main-nav .nav-menu>li.open>ul,
+    .main-nav .nav-menu>li:focus>ul {
+        outline: 0;
+        display: block;
+        max-height: auto;
+        max-height: initial;
+        bottom: auto;
+        bottom: initial
+    }
+}
+
+.main-nav .nav-menu .children {
+    margin-top: 0px;
+    position: relative;
+    text-align: left;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+    bottom: -15px;
+    z-index: 1;
+    transition: max-height 1200ms ease, margin-top 1600ms ease
+}
+
+@media screen and (min-width: 618px) {
+    .main-nav .nav-menu .children {
+        width: 100vw;
+        display: none;
+        max-height: auto;
+        max-height: initial;
+        position: absolute;
+        text-align: center;
+        margin: 0;
+        left: 0;
+        margin-top: 20px;
+        padding: 20px
+    }
+}
+
+.main-nav .nav-menu .children a {
+    color: #fff;
+    text-transform: none;
+    font-size: 1em
+}
+
+@media screen and (min-width: 618px) {
+    .main-nav .nav-menu .children a {
+        font-size: 1.3em
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main-nav .nav-menu .children a {
+        font-size: 1em
+    }
+}
+
+.main-nav .nav-menu .children a:hover {
+    font-weight: 800
+}
+
+.main-nav .nav-menu .children li {
+    border: none
+}
+
+@media screen and (min-width: 618px) {
+        border-left: 1px solid #e1e2e3
+    }
+    .main-nav .nav-menu .children li+li {
+}
+
+.main-nav .nav-menu .menu-programs {
+    background-color: #d25150
+}
+
+.main-nav .nav-menu .menu-campuses {
+    background-color: #17a3dd
+}
+
+.main-nav .nav-menu .menu-students {
+    background-color: #446b88
+}
+
+.main-nav .nav-menu .menu-about-us {
+    background-color: #263648
+}
+
+.main-nav .nav-menu .menu-about-us {
+    background-color: #263648
+}
+
+.main-nav .nav-menu .menu-resources {
+    background-color: #4A4A4A
+}
+
 @media screen and (min-width: 618px) {
     .main-nav .nav-menu .mobile-resources {
         display: none
