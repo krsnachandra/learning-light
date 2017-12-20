@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
+// import CourseDescription from './CourseDescription';
+
 
 function Sidebar({coursename}) {
   return <div className="col-2">
