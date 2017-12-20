@@ -8,7 +8,7 @@ import Navbar from './Navbar';
 import Login from './Login';
 import Register from './Register';
 import Review from './Review';
-import Footer from './Footer';
+// import Footer from './Footer';
 import CourseCompleted from './CourseCompleted';
 
 
@@ -30,7 +30,7 @@ class App extends Component {
             <Route path="/:coursename" component={Course} />
           </Switch>
         </div>
-        {<Footer />}
+        {/* {<Footer />} */}
       </div>);
   }
 }
