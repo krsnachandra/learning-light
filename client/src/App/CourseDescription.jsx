@@ -10,11 +10,7 @@ export default function CourseDescription () {
     <div>
       Javascript Essentials Part II
     </div>
-    <div>
-      <a href="/cart/add_product/211944" class="btn btn-primary multi-product__cta">
-        Free
-      </a>
-    </div>
+    
     <h2>
       Course Details
     </h2>
@@ -42,12 +38,29 @@ export default function CourseDescription () {
     </div>
     <div>
       <h3>
-        Reviews (2)
+        Reviews (1)
       </h3>
       <h4>
-        Thee Beste Course That Ever Coursed
+        5 Stars! Thee Beste Course That Ever Coursed
       </h4>
         by Geoffrey Chaucer
+      </div>
+      <div>
+        <h1>Rate and Review</h1>
+        <form action="/review" method="post">
+              Rating<br/>
+                <select name="rate">
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              <br/>
+              <br/>
+              Review<br/><textarea type="text" name="review" cols="80" rows="6"></textarea><br />
+            <input type="submit" value="Submit" />
+          </form>
       </div>
     </div>);
   }
