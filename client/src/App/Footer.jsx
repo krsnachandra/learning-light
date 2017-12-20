@@ -25,8 +25,10 @@ function Footer() {
               <span class="blue-text">PROGRAMS</span>
             </p>
             <ul>
-              <li>Bootcamps: <a title="Web Development Bootcamp" href="/web-bootcamp">Web Dev</a> and <a title="iOS Development Bootcamp" href="/ios-bootcamp">iOS Dev Bootcamp</a></li>
-              <li>Intro courses: <a title="Intro to Web Development" href="/intro-to-web">Web Dev</a> or <a title="Intro to iOS Development " href="/intro-to-ios">iOS</a></li>
+              <li><a title="Web Development Bootcamp" href="/web-bootcamp">Web Dev Bootcamp</a></li>
+              <li><a title="iOS Development Bootcamp" href="/ios-bootcamp">iOS Dev Bootcamp</a></li>
+              <li><a title="Intro to Web Development" href="/intro-to-web">Intro to Web Dev</a></li>
+              <li><a title="Intro to iOS Development " href="/intro-to-ios">Intro to iOS Dev</a></li>
               <li><a title="Front-End Fundamentals with Javascript " href="/front-end-javascript">Front-End Fundamentals with JS</a></li>
             </ul>
           </div>
@@ -35,7 +37,8 @@ function Footer() {
               <span class="blue-text">LOCATIONS</span>
             </p>
             <ul>
-              <li><a title="Vancouver" href="/vancouver">Vancouver</a> &amp; <a title="Victoria" href="/victoria">Victoria</a></li>
+              <li><a title="Vancouver" href="/vancouver">Vancouver</a></li>
+              <li><a title="Victoria" href="/victoria">Victoria</a></li>
               <li><a title="Toronto" href="/toronto">Toronto</a></li>
               <li><a title="Calgary" href="/calgary">Calgary</a></li>
               <li><a title="Montreal" href="/montreal">Montreal</a></li>
@@ -66,7 +69,9 @@ function Footer() {
           </ul>
         </div>
         <div class="footer-column">
-          <span class="blue-text">STUFF</span>
+          <p>
+          <span class="blue-text">OTHER STUFF</span>
+        </p>
         </div>
         </div>
         <div class="container">
