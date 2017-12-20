@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
+import CourseDescription from './CourseDescription';
+
 
 function Sidebar({coursename}) {
   return <div className="col-2">
@@ -34,10 +36,10 @@ function ContentSection() {
     </div>
   </div>
 }
-
-function CourseDescription() {
-  return <h1>Course Description</h1>
-}
+//
+// function CourseDescription() {
+//   return <h1>Course Description</h1>
+// }
 
 function CourseContent({ content, coursename }) {
   return <div className="row">
