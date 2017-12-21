@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Reviews from './Reviews';
+import Review from './Review';
 
 export default function CourseSummary () {
   return (

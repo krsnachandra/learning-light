@@ -6,16 +6,16 @@ import { Switch, Route } from 'react-router-dom';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
-/* The following to be conditionally rendered based on Switch routes below */
+/* The following to be conditionally rendered in centre view based on Switch routes below */
 
-import Home from './Home';
+import Home from './Home'; // Home will render for visitor, otherwise Progress when logged in
+import Progress from './Progress';
+
+
 import Login from './Login';
 import Register from './Register';
 import Profile from './Profile';
 import CourseContainer from './CourseContainer';
-import CourseCompleted from './CourseCompleted';
-import Progress from './Progress';
-import Review from './Review';
 
 
 class App extends Component {
@@ -33,9 +33,7 @@ class App extends Component {
             <Route path="/progress" exact component={Progress} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/review" component={Review} />
-            <Route path="/comp" component={CourseCompleted} />
-            <Route path="/:coursename" component={CourseIndex} />
+            <Route path="/:coursename" component={CourseContainer} />
           </Switch>
         </div>
         <div className="container">

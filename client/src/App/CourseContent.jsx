@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
-import CourseSummary from './CourseSummary';
-import CourseCompleted from './CourseSidebar';
 
 
 function CourseContent({ content, coursename }) {

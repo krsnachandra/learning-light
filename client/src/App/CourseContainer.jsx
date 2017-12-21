@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 import CourseSidebar from './CourseSidebar';
 import CourseContent from './CourseContent';
+import CourseSummary from './CourseSummary';
+
 
 function ContentSection() {
   return <div className="col">
@@ -21,7 +23,7 @@ function ContentSection() {
 
 function CourseContent({ content, coursename }) {
   return <div className="row">
-    <Sidebar coursename={coursename}/>
+    <CourseSidebar />
     <Switch>
       <Route path='/:coursename' exact component={CourseSummary}/>
       <Route path='/:coursename/:section' exact component={ContentSection}/>
