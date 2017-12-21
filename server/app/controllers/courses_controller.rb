@@ -5,4 +5,9 @@ class CoursesController < ApplicationController
         render json: @courses.to_json(include: :instructor)
     end
 
+    def show
+        @courses = Course.find params[:id]
+        render json: @courses.to_json(include: {chapters: {include: :sections}})
+    end
+
 end
