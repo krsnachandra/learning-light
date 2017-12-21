@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
-import CourseDescription from './CourseDescription';
+import CourseSummary from './CourseSummary';
+import CourseCompleted from './CourseSidebar';
 
 
-function Sidebar({coursename}) {
-  return <div className="col-2">
-    <h5><Link to={`/${coursename}/intro`}>Introduction <span className='text-success'>{'\u2714'}</span></Link></h5>
-    <ul>
-      <li>Intro</li>
-      <li>Section 2</li>
-      <li>Section 3</li>
-      <li>Section 4</li>
-      <li>Section 5</li>
-    </ul>
-    <h5>Chapter 2</h5>
-    <h5>Chapter 3</h5>
-    <h5>Chapter 4</h5>
-    <h5>Chapter 5</h5>
-    <h5>Chapter 6</h5>
+function CourseContent({ content, coursename }) {
+  return <div className="row">
+    <Sidebar coursename={coursename}/>
+    <Switch>
+      <Route path='/:coursename' exact component={CourseDescription}/>
+      <Route path='/:coursename/:section' exact component={ContentSection}/>
+    </Switch>
   </div>
 }
 
@@ -36,20 +29,6 @@ function ContentSection() {
     </div>
   </div>
 }
-//
-// function CourseDescription() {
-//   return <h1>Course Description</h1>
-// }
-
-function CourseContent({ content, coursename }) {
-  return <div className="row">
-    <Sidebar coursename={coursename}/>
-    <Switch>
-      <Route path='/:coursename' exact component={CourseDescription}/>
-      <Route path='/:coursename/:section' exact component={ContentSection}/>
-    </Switch>
-  </div>
-}
 
 function CourseNotFound() {
   return <div>
@@ -58,7 +37,7 @@ function CourseNotFound() {
   </div>
 }
 
-class Course extends Component {
+class CourseIndex extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -80,4 +59,4 @@ class Course extends Component {
   }
 }
 
-export default Course;
+export default CourseContent;

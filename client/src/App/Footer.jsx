@@ -3,83 +3,50 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer class="footer">
-
-      <div class="pre-footer">
-        <div class="container">
-          <div class="footer-content">
-            <h4>Interested in workshops, <nobr>courses &amp; free content?</nobr></h4>
-
-            <form class="subscribe-form" action="/submit-subscriptions" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
-              <input required="required" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="E-mail Address" class="prompt" autocomplete="off" type="email" name="subscription[email]" id="subscription_email" />
-              <button type="submit" name="commit" data-disable-with="Please Wait" class="btn btn-text ghost-btn ghost-secondary">Subscribe</button>
+    <footer>
+      <div className="container">
+            <h4>Interested in more free content?</h4>
+            <form  action="/submit-subscriptions" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+              <input required="required" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="E-mail address"  autocomplete="off" type="email" name="subscription[email]" id="subscription_email" />
+              <button type="submit" name="commit" data-disable-with="Please wait">Subscribe</button>
             </form>
-          </div>
-        </div>
       </div>
 
-      <div class="bottom-footer">
-        <div class="container footer-list">
-          <div class="footer-column">
-            <p>
-              <span class="blue-text">PROGRAMS</span>
-            </p>
-            <ul>
-              <li><a title="Web Development Bootcamp" href="/web-bootcamp">Web Dev Bootcamp</a></li>
-              <li><a title="iOS Development Bootcamp" href="/ios-bootcamp">iOS Dev Bootcamp</a></li>
-              <li><a title="Intro to Web Development" href="/intro-to-web">Intro to Web Dev</a></li>
-              <li><a title="Intro to iOS Development " href="/intro-to-ios">Intro to iOS Dev</a></li>
-              <li><a title="Front-End Fundamentals with Javascript " href="/front-end-javascript">Front-End Fundamentals with JS</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <p>
-              <span class="blue-text">LOCATIONS</span>
-            </p>
-            <ul>
-              <li><a title="Vancouver" href="/vancouver">Vancouver</a></li>
-              <li><a title="Victoria" href="/victoria">Victoria</a></li>
-              <li><a title="Toronto" href="/toronto">Toronto</a></li>
-              <li><a title="Calgary" href="/calgary">Calgary</a></li>
-              <li><a title="Montreal" href="/montreal">Montreal</a></li>
-              <li><a title="Halifax" href="/halifax">Halifax</a></li>
-              <li><a title="Other Locations" href="/other-locations">Other Locations</a></li>
-             </ul>
-          </div>
-          <div class="footer-column">
-            <p>
-              <span class="blue-text">STUDENTS</span>
-            </p>
-            <ul>
-              <li><a title="Student Experience" href="/students">Student Experience</a></li>
-              <li><a title="Events" href="/events">Events</a></li>
-              <li><a title="Blog" href="/blog">Blog</a></li>
-              <li><a title="FAQ" href="/faq">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
+      <div className="container">
+        <div className="row">
+        <div className="col-sm">
           <p>
-            <span class="blue-text">ABOUT US</span>
+            COMMUNITY
           </p>
           <ul>
-            <li> <a title="Our Story" href="/about">Our Story</a></li>
-            <li> <a title="Community" href="/community">Community</a></li>
+            <li><a title="Events" href="/events">Events</a></li>
+            <li><a title="Blog" href="/blog">Blog</a></li>
+          </ul>
+        </div>
+        <div className="col-sm">
+          <p>
+            ABOUT US
+          </p>
+          <ul>
             <li> <a title="Team" href="/team">Team</a></li>
+          </ul>
+        </div>
+        <div className="col-sm">
+          <p>
+            SUPPORT
+          </p>
+          <ul>
             <li> <a title="Contact" href="/contact">Contact</a></li>
           </ul>
         </div>
-        <div class="footer-column">
+        </div>
+      </div>
+      <div className="container">
+        <hr />
           <p>
-          <span class="blue-text">OTHER STUFF</span>
-        </p>
-        </div>
-        </div>
-        <div class="container">
-          <hr />
-          <p class="footer-copyright">
             © 2017 Lighthouse Labs
           </p>
-          <div class="footer-socialmedia">
+          <div>
             <a href="https://twitter.com/lighthouse_labs" target="_blank">
               <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
                 <path fill="#FFFFFF" d="M15.1,0c2.1,0,4.1,0.4,5.9,1.2C22.9,2,24.5,3,25.8,4.4c1.4,1.4,2.4,3,3.2,4.8c0.8,1.8,1.2,3.8,1.2,5.9
@@ -95,7 +62,7 @@ function Footer() {
               </svg>
             </a>
             <a href="https://www.facebook.com/lighthouselabsvancouver" target="_blank">
-              <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2" >
+              <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
                 <path fill="#FFFFFF" d="M15.1,30.2c-2.1,0-4.1-0.4-5.9-1.2c-1.8-0.8-3.4-1.9-4.8-3.2c-1.4-1.4-2.4-3-3.2-4.8C0.4,19.2,0,17.2,0,15.1
           c0-2.1,0.4-4.1,1.2-5.9C2,7.4,3.1,5.8,4.4,4.4c1.4-1.4,3-2.5,4.8-3.2C11.1,0.4,13,0,15.1,0c2.1,0,4.1,0.4,5.9,1.2
           c1.8,0.8,3.4,1.9,4.8,3.2c1.4,1.4,2.4,3,3.2,4.8c0.8,1.8,1.2,3.8,1.2,5.9c0,2.1-0.4,4.1-1.2,5.9c-0.8,1.8-1.9,3.4-3.2,4.8
@@ -104,7 +71,7 @@ function Footer() {
               </svg>
             </a>
             <a href="https://www.linkedin.com/company/lighthouse-labs" target="_blank">
-              <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2" >
+              <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
                 <path fill="#FFFFFF" d="M15.1,30.2c-2.1,0-4.1-0.4-5.9-1.2c-1.8-0.8-3.4-1.9-4.8-3.2c-1.4-1.4-2.4-3-3.2-4.8C0.4,19.1,0,17.1,0,15
           C0,13,0.4,11,1.2,9.2C2,7.3,3.1,5.7,4.4,4.4c1.4-1.4,3-2.4,4.8-3.2C11.1,0.4,13,0,15.1,0c2.1,0,4.1,0.4,5.9,1.2
           c1.8,0.8,3.4,1.9,4.8,3.2c1.4,1.4,2.5,3,3.2,4.8c0.8,1.8,1.2,3.8,1.2,5.9c0,2.1-0.4,4.1-1.2,5.9c-0.8,1.8-1.9,3.4-3.2,4.8
@@ -116,7 +83,7 @@ function Footer() {
               </svg>
             </a>
             <a href="https://plus.google.com/+LighthouselabsCan/posts" target="_blank">
-              <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2" >
+              <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
                 <path fill="#FFFFFF" d="M15.1,30.2c-2.1,0-4.1-0.4-5.9-1.2c-1.8-0.8-3.4-1.9-4.8-3.2c-1.4-1.4-2.4-3-3.2-4.8C0.4,19.1,0,17.2,0,15.1
           C0,13,0.4,11,1.2,9.2C2,7.3,3.1,5.7,4.4,4.4c1.4-1.4,3-2.4,4.8-3.2C11.1,0.4,13,0,15.1,0c2.1,0,4.1,0.4,5.9,1.2
           c1.8,0.8,3.4,1.9,4.8,3.2c1.4,1.4,2.4,3,3.2,4.8c0.8,1.8,1.2,3.8,1.2,5.9c0,2.1-0.4,4.1-1.2,5.9c-0.8,1.8-1.9,3.4-3.2,4.8
@@ -133,7 +100,6 @@ function Footer() {
             </a>
           </div>
         </div>
-      </div>
     </footer>
   );
 }

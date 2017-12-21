@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Reviews from './Reviews';
 
-export default function CourseDescription () {
+export default function CourseSummary () {
   return (
     <div className="col-sm-8">
     <h2>
@@ -10,7 +11,7 @@ export default function CourseDescription () {
     <div>
       Javascript Essentials Part II
     </div>
-    
+
     <h2>
       Course Details
     </h2>
