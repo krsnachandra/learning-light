@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 
 export default function CourseSidebar({coursename}) {
-  return <div className="col-2">
+  return (
+  <div>
     <h5><Link to={`/${coursename}/intro`}>Introduction <span className='text-success'>{'\u2714'}</span></Link></h5>
     <ul>
       <li>Intro</li>
@@ -17,4 +18,5 @@ export default function CourseSidebar({coursename}) {
     <h5>Chapter 5</h5>
     <h5>Chapter 6</h5>
   </div>
+);
 }

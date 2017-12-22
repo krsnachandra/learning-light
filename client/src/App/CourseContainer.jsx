@@ -22,7 +22,7 @@ function MainCoursePanelDisplay({ content, coursename }) {
 
 function CourseNotFound() {
   return <div>
-    <h1>Course Not Found</h1>
+    <h1>Course not found</h1>
     <p>Hey, we didn't find that course. Did you mean:</p>
   </div>
 }
@@ -36,7 +36,11 @@ class CourseContainer extends Component {
     this.shuffle = this.shuffle.bind(this);
   }
   shuffle() {
-    this.setState({ step: (this.state.step + 1) % 4 });
+    this.setState(
+      { step:
+         (this.state.step + 1) % 4
+        }
+      );
   }
   render() {
     const { match: { params: { coursename } } } = this.props;
@@ -49,12 +53,14 @@ class CourseContainer extends Component {
             <CourseNotFound />;
     return (
       <div className="container">
-        <div>
+        <div className="row">
+        <div className="col-lg-3">
           <CourseSidebar />
         </div>
-        <div onClick={this.shuffle}>
+        <div className="col-lg-9" onClick={this.shuffle}>
           {section}
         </div>
+      </div>
       </div>
     );
   }

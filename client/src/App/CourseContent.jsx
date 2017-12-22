@@ -18,33 +18,4 @@ function CourseContent() {
   </div>
 }
 
-function CourseNotFound() {
-  return <div>
-    <h1>Course Not Found</h1>
-    <p>Hey, we didn't find that course. Did you mean:</p>
-  </div>
-}
-
-class CourseIndex extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      step: 0,
-    };
-    this.shuffle = this.shuffle.bind(this);
-  }
-  shuffle() {
-    this.setState({ step: (this.state.step + 1) % 2 });
-  }
-  render() {
-    const { match: { params: { coursename } } } = this.props;
-    const { step } = this.state;
-    const section = step === 0 ? <h1>Loading...</h1> :
-      step === 1 ? <CourseContent coursename={coursename} /> : <CourseNotFound />;
-    return (<div onClick={this.shuffle}>
-      {section}
-    </div>);
-  }
-}
-
 export default CourseContent;

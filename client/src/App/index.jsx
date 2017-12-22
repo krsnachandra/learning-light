@@ -26,17 +26,17 @@ class App extends Component {
       <div className="container-fluid">
         <Navbar />
       </div>
-        <div className="App container">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/profile" exact component={Profile} />
-            <Route path="/progress" exact component={Progress} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/:coursename" component={CourseContainer} />
-          </Switch>
-        </div>
-        <div className="container">
+      <div className="App container">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/profile" exact component={Profile} />
+          <Route path="/progress" exact component={Progress} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/:coursename" component={CourseContainer} />
+        </Switch>
+      </div>
+      <div className="container">
         <Footer />
       </div>
     </div>);
