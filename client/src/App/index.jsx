@@ -10,18 +10,67 @@ import Register from './Register';
 import Review from './Review';
 // import Footer from './Footer';
 import CourseCompleted from './CourseCompleted';
-import Smrt from './Smrt';
 import axios from 'axios';
 
+function AppPresenter(props){
+  return (
+    <div>
+      {/* <Smrt> */}
+        <Navbar />
+        <div className="App container">
+          <Switch>
+            {/* <Route path="/" exact component={()=><Home test={this.state.test}/>} /> */}
+            <Route exact path='/' render={() => (
+              <Home test={props.content} />
+            )}/>
 
-class App extends Component {
+            <Route path="/profile" exact component={Profile} />
+            <Route path="/progress" exact component={Progress} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/review" component={Review} />
+            <Route path="/comp" component={CourseCompleted} />
+            <Route path="/:coursename" component={Course} />
+          </Switch>
+        </div>
+        {/* {<Footer />} */}
+      {/* </Smrt> */}
+    </div>);
+}
+
+
+class AppContainer extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      test : 'Hello this is a great content',
+      test : 'Hello this is great content',
       content: ''
     }
+
+    axios.get('/courses/3/sections/3', {
+      // params: {
+      //   ID: 3
+      // }
+    })
+    .then( (response) => {
+            // console.log(response.data.content);
+
+      this.setState({
+        content: response.data.content
+      })
+      // console.log(response);
+      // console.log(response.data.content);
+      // console.log(response);
+      // const content = response.content;
+      // this.setState({section: content});
+console.log(this.state.content);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    // this.setState({section});
+
   }
 
   componentWillMount() {
@@ -31,6 +80,7 @@ class App extends Component {
       // }
     })
     .then(function (response) {
+      // console.log(response.data.content);
       this.setState({
         content: response.data.content
       })
@@ -49,30 +99,7 @@ class App extends Component {
 
 
   render() {
-    return (
-      <div>
-        {/* <Smrt> */}
-          <Navbar />
-          <div className="App container">
-            <Switch>
-              {/* <Route path="/" exact component={()=><Home test={this.state.test}/>} /> */}
-              <Route exact path='/' render={(props) => (
-                <Home test={this.state.test} />
-              )}/>
-
-              <Route path="/profile" exact component={Profile} />
-              <Route path="/progress" exact component={Progress} />
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
-              <Route path="/review" component={Review} />
-              <Route path="/comp" component={CourseCompleted} />
-              <Route path="/:coursename" component={Course} />
-            </Switch>
-          </div>
-          {/* {<Footer />} */}
-        {/* </Smrt> */}
-      </div>);
+    return <AppPresenter content={this.state.content}/>;
   }
 }
-
-export default App;
+export default AppContainer;

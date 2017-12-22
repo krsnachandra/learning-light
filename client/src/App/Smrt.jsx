@@ -9,6 +9,24 @@ class Smrt extends Component {
       section: ''
     }
 
+    axios.get('/courses/3/sections/3', {
+      // params: {
+      //   ID: 3
+      // }
+    })
+    .then(function (response) {
+      console.log(response);
+      console.log(response.data.content);
+      // console.log(response);
+      // const content = response.content;
+      // this.setState({section: content});
+
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    // this.setState({section});
+
   }
 
   componentDidMount() {
@@ -38,7 +56,6 @@ class Smrt extends Component {
         <div>
           <h1>Hello to Smart React Component</h1>
         </div>
-
     );
   }
 }
