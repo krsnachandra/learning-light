@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Review from './Review';
+import PublishedReviews from './PublishedReviews';
 
 export default function CourseSummary () {
   return (
-    <div className="col-sm-8">
+    <div>
     <h2>
         Related courses:
     </h2>
@@ -45,23 +45,6 @@ export default function CourseSummary () {
         5 Stars! Thee Beste Course That Ever Coursed
       </h4>
         by Geoffrey Chaucer
-      </div>
-      <div>
-        <h1>Rate and Review</h1>
-        <form action="/review" method="post">
-              Rating<br/>
-                <select name="rate">
-                  <option value="5">5</option>
-                  <option value="4">4</option>
-                  <option value="3">3</option>
-                  <option value="2">2</option>
-                  <option value="1">1</option>
-                </select>
-              <br/>
-              <br/>
-              Review<br/><textarea type="text" name="review" cols="80" rows="6"></textarea><br />
-            <input type="submit" value="Submit" />
-          </form>
       </div>
     </div>);
   }

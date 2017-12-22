@@ -26,7 +26,7 @@ class App extends Component {
       <div className="container-fluid">
         <Navbar />
       </div>
-      <div className="App container">
+      <div className="container">
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/profile" exact component={Profile} />

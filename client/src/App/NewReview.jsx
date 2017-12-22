@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-function Review () {
+function NewReview () {
   return <div>
-    <h1>Rate and Review JavaScript Essentials I</h1>
+    <h1>Rate and review this course</h1>
     <form action="/review" method="post">
           Rating<br/>
             <select name="rate">
@@ -21,4 +21,4 @@ function Review () {
   </div>;
 }
 
-export default Review;
+export default NewReview;

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 function Progress() {
   return <div>
     <br/>
-    <h1 align="center">Progress</h1>
+    <h1 align="center">My course progress</h1>
     <br/>
       <div align="center">
         <img src="/htmlcss.png" alt="htmlcss" height="400" width="240"/>
