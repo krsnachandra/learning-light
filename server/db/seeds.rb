@@ -32,7 +32,7 @@ Section.create!([
 ])
 User.create!([
   {first_name: "Jack", last_name: "Black", location: "Vancouver", motivation: "coding sounded fun", email: "jack@black.com", password_digest: "longunreadablestring"},
-  {first_name: "Rosalind", last_name: "Lake", location: "Toronto", motivation: "I'd like to build my own webpage", email: "rosy@lake.com", password_digest: "yep"}
+  {first_name: "Rosalind", last_name: "Lake", location: "Toronto", motivation: "I'd like to build my own webpage", email: "rosy@lake.com", password_digest: "yepyepyep"}
 ])
 Review.create!([
   {rating: 5, review: "I really enjoyed getting a taste of JavaScript. This course made it fun!", show_flag: true, course_id: 3, user_id: 1},

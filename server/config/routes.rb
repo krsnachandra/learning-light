@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     resources :sections, only: [:show]
   end
 
-  resources :users, only: [:create, :new, :index]
+  resources :users, only: [:create, :new, :show]
 
 end
