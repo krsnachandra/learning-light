@@ -2,17 +2,7 @@ import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 
 
-function CourseContent({ content, coursename }) {
-  return <div className="row">
-    <Sidebar coursename={coursename}/>
-    <Switch>
-      <Route path='/:coursename' exact component={CourseDescription}/>
-      <Route path='/:coursename/:section' exact component={ContentSection}/>
-    </Switch>
-  </div>
-}
-
-function ContentSection() {
+function CourseContent() {
   return <div className="col">
     <h3>Intro to Javascript</h3>
     <h4>By Joel Shinness.</h4>
