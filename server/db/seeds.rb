@@ -30,3 +30,30 @@ Section.create!([
   {name: "Lighthouse Labs Prep Course", section_number: 1, content: "### Lighthouse Labs Prep Course 🏋🏽\n\nAll incoming students for the Lighthouse Labs Web Development Bootcamp and iOS Development Bootcamp are required to complete 40-60 hours or preparatory work before they enter the classroom. Our prep course covers the foundation that is necessary for students to hit the ground running on day one! The prep material consists of some of our favourite resources paired with curriculum created by the Lighthouse Labs education team.\n\nWeb Development Bootcamp Prep Course | iOS Development Bootcamp Prep Course\n\nIf you're looking to dive deeper into Web or iOS Development or get a better idea of what taking our Bootcamp will entail, this is a great place to start.\n\n", chapter_id: 4},
   {name: "Additional Resources", section_number: 2, content: "### Additional Resources 📕\n\nLearning to code is more accessible than ever! There are endless online resources that cater to every learning style, and local organizations that offer free workshops for you to learn in person. If you're looking for more ways to explore programming or are getting stuck in a coding rut, explore some of the recommendations below or read our guide on How To Learn To Code.\n\n\n### Online Resources\n\nBento\n\nCodecademy\n\nCoderByte\n\nCodeWars\n\nEloquent JavaScript\n\nKhanAcademy\n\nTreehouse\n\n\n### Coding Non-Profits & Community Groups\n\nApp Camp For Girls\n\nBridging To Technology\n\nKids Code Jeunesse\n\nLadies Learning Code\n\nLighthouse Labs Workshops\n\n\n\n### Books/Videos\n\nHow To Learn To Code\n\nLearn Code The Hard Way", chapter_id: 4}
 ])
+User.create!([
+  {first_name: "Jack", last_name: "Black", location: "Vancouver", motivation: "coding sounded fun", email: "jack@black.com", password_digest: "longunreadablestring"},
+  {first_name: "Rosalind", last_name: "Lake", location: "Toronto", motivation: "I'd like to build my own webpage", email: "rosy@lake.com", password_digest: "yepyepyep"}
+])
+Review.create!([
+  {rating: 5, review: "I really enjoyed getting a taste of JavaScript. This course made it fun!", show_flag: true, course_id: 3, user_id: 1},
+  {rating: 5, review: "I was pleasantly surprised at how much I was able to learn in such a relatively short period of time. ", show_flag: true, course_id: 3, user_id: 2}
+])
+UserSection.create!([
+  {section_id: 1, user_id: 1},
+  {section_id: 2, user_id: 1},
+  {section_id: 3, user_id: 1},
+  {section_id: 4, user_id: 1},
+  {section_id: 5, user_id: 1},
+  {section_id: 6, user_id: 1},
+  {section_id: 7, user_id: 1},
+  {section_id: 8, user_id: 1},
+  {section_id: 9, user_id: 1},
+  {section_id: 10, user_id: 1},
+  {section_id: 11, user_id: 1},
+  {section_id: 12, user_id: 1},
+  {section_id: 1, user_id: 2},
+  {section_id: 2, user_id: 2},
+  {section_id: 3, user_id: 2},
+  {section_id: 4, user_id: 2},
+  {section_id: 5, user_id: 2}
+])
