@@ -15,29 +15,26 @@ import axios from 'axios';
 function AppPresenter(props){
   return (
     <div>
-      {/* <Smrt> */}
         <Navbar />
         <div className="App container">
           <Switch>
-            {/* <Route path="/" exact component={()=><Home test={this.state.test}/>} /> */}
             <Route exact path='/' render={() => (
               <Home test={props.content} />
             )}/>
-
             <Route path="/profile" exact component={Profile} />
             <Route path="/progress" exact component={Progress} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/review" component={Review} />
             <Route path="/comp" component={CourseCompleted} />
-            <Route path="/:coursename" component={Course} />
+            <Route path="/:coursename" render={({match:{params:{coursename}}}) => (
+              <Course coursename={coursename}/>
+            )} />
           </Switch>
         </div>
         {/* {<Footer />} */}
-      {/* </Smrt> */}
     </div>);
 }
-
 
 class AppContainer extends Component {
 
@@ -47,56 +44,24 @@ class AppContainer extends Component {
       test : 'Hello this is great content',
       content: ''
     }
+  }
 
+  componentDidMount() {
     axios.get('/courses/3/sections/3', {
       // params: {
       //   ID: 3
       // }
     })
     .then( (response) => {
-            // console.log(response.data.content);
-
-      this.setState({
-        content: response.data.content
-      })
-      // console.log(response);
-      // console.log(response.data.content);
-      // console.log(response);
-      // const content = response.content;
-      // this.setState({section: content});
-console.log(this.state.content);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-    // this.setState({section});
-
-  }
-
-  componentWillMount() {
-    axios.get('/courses/3/sections/3', {
-      // params: {
-      //   ID: 3
-      // }
-    })
-    .then(function (response) {
       // console.log(response.data.content);
       this.setState({
         content: response.data.content
       })
-      //console.log(response.data.content);
-      // console.log(response);
-      // const content = response.content;
-      // this.setState({section: content});
-
     })
     .catch(function (error) {
       console.log(error);
     });
-    // this.setState({section});
-
   }
-
 
   render() {
     return <AppPresenter content={this.state.content}/>;
