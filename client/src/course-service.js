@@ -10,7 +10,8 @@ function getCourse(coursename){
   return delay().then(() => {
     return {
       title: 'Intro to being Awesome',
-      author: {
+      coursename,
+      instructor: {
         name: 'Joel Shinness Who Is Awesome'
       },
       chapters: []
@@ -19,10 +20,16 @@ function getCourse(coursename){
 }
 
 function getCourseContent(coursename, section){
-  return delay().then(() => {
-    return {
-
-    }
-  })
+  return axios.get(`/courses/${coursename}/sections/${section}`
+    .then( (response) => {
+      console.log(response.data.content);
+      this.setState({
+        content: response.data.content
+      })
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  )
 }
-export {getCourse};
+export {getCourse, getCourseContent};
