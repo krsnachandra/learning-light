@@ -25,7 +25,8 @@ function getCourseContent(coursename, section){
       console.log(response.data.content);
       this.setState({
         content: response.data.content
-      })
+      });
+      return response.data;
     })
     .catch(function (error) {
       console.log(error);
