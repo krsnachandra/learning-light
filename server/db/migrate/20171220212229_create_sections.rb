@@ -2,6 +2,7 @@ class CreateSections < ActiveRecord::Migration[5.1]
   def change
     create_table :sections do |t|
       t.string :name
+      t.string :sectionname
       t.integer :section_number
       t.text :content
       t.references :chapter, foreign_key: true
