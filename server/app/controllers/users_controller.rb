@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-  
-  def show
-    @user = User.find params[:id]
-    render json: @user.to_json(include: :user_sections)
-  end
 
   def index
     render json: current_user
+  end
+
+  def show
+    @user = User.find params[:id]
+    render json: @user.to_json(include: :user_sections)
   end
 
   def create
