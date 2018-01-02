@@ -10,29 +10,61 @@ import Register from './Register';
 import Review from './Review';
 // import Footer from './Footer';
 import CourseCompleted from './CourseCompleted';
+import axios from 'axios';
 
-
-class App extends Component {
-
-  render() {
-    return (
-      <div>
+function AppPresenter(props){
+  return (
+    <div>
         <Navbar />
         <div className="App container">
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route exact path='/' render={() => (
+              <Home test={props.content} />
+            )}/>
             <Route path="/profile" exact component={Profile} />
             <Route path="/progress" exact component={Progress} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/review" component={Review} />
             <Route path="/comp" component={CourseCompleted} />
-            <Route path="/:coursename" component={Course} />
+            <Route path="/:coursename" render={({match:{params:{coursename}}}) => (
+              <Course coursename={coursename}/>
+            )} />
           </Switch>
         </div>
         {/* {<Footer />} */}
-      </div>);
-  }
+    </div>);
 }
 
-export default App;
+class AppContainer extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      test : 'Hello this is great content',
+      content: ''
+    }
+  }
+
+  componentDidMount() {
+    axios.get('/courses/3/sections/3', {
+      // params: {
+      //   ID: 3
+      // }
+    })
+    .then( (response) => {
+      // console.log(response.data.content);
+      this.setState({
+        content: response.data.content
+      })
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  render() {
+    return <AppPresenter content={this.state.content}/>;
+  }
+}
+export default AppContainer;

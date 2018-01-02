@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 import CourseDescription from './CourseDescription';
-
+import {getCourse, getCourseContent} from '../course-service';
 
 function Sidebar({coursename}) {
   return <div className="col-2">
@@ -21,32 +21,45 @@ function Sidebar({coursename}) {
   </div>
 }
 
-function ContentSection() {
-  return <div className="col">
-    <h3>Intro to Javascript</h3>
-    <h4>By Joel Shinness.</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et libero sit amet mi gravida maximus. Mauris eget nibh sed ipsum interdum semper eu vel nisl. Integer mollis lorem et lorem auctor lobortis. Ut at sodales sapien, sit amet rhoncus nulla. Morbi gravida nulla quam, sed bibendum enim auctor vel. Sed dolor mauris, sollicitudin mollis tortor convallis, congue tempor nisl. In maximus auctor dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed bibendum mauris nulla, quis suscipit dui egestas quis. Donec feugiat mauris eu mi semper, et ultrices mi congue. Vestibulum aliquam aliquet tortor et scelerisque.</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/TAbm4D_b9lc" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-    <p>Suspendisse potenti. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In nulla purus, pellentesque sit amet mauris ac, venenatis facilisis massa. Cras volutpat blandit risus quis rutrum. In consectetur mattis augue, vitae faucibus magna suscipit non. Donec elementum ornare luctus. Sed porta iaculis odio, eget volutpat metus tincidunt non. Vivamus lacinia diam at ex congue efficitur. Duis sed justo accumsan, vulputate dui sed, condimentum odio.</p>
-    <div>
-      <iframe width="900" height="450" src="http://codepen.io/mickwest/pen/eqtJo" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-    </div>
-    <div>
-      <img src="http://www.clker.com/cliparts/I/B/u/K/E/N/thin-gray-next-button-hi.png" height="45" width="100" />
-    </div>
-  </div>
+class ContentSection extends Component {
+  constructor(props) {
+    super(props);
+    this.state = props.state;
+  }
+  render() {
+    return (
+      <div className="col">
+        {/* <h3>{props.title}</h3> */}
+        {/* <h4>{props.instructor.name}</h4> */}
+        {/* <p>{getCourseContent(params.coursename, params.section)}</p> */}
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et libero sit amet mi gravida maximus. Mauris eget nibh sed ipsum interdum semper eu vel nisl. Integer mollis lorem et lorem auctor lobortis. Ut at sodales sapien, sit amet rhoncus nulla. Morbi gravida nulla quam, sed bibendum enim auctor vel. Sed dolor mauris, sollicitudin mollis tortor convallis, congue tempor nisl. In maximus auctor dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed bibendum mauris nulla, quis suscipit dui egestas quis. Donec feugiat mauris eu mi semper, et ultrices mi congue. Vestibulum aliquam aliquet tortor et scelerisque.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/TAbm4D_b9lc" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+        <p>Suspendisse potenti. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In nulla purus, pellentesque sit amet mauris ac, venenatis facilisis massa. Cras volutpat blandit risus quis rutrum. In consectetur mattis augue, vitae faucibus magna suscipit non. Donec elementum ornare luctus. Sed porta iaculis odio, eget volutpat metus tincidunt non. Vivamus lacinia diam at ex congue efficitur. Duis sed justo accumsan, vulputate dui sed, condimentum odio.</p>
+        <div>
+          <iframe width="900" height="450" src="http://codepen.io/mickwest/pen/eqtJo" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div>
+          <img src="http://www.clker.com/cliparts/I/B/u/K/E/N/thin-gray-next-button-hi.png" height="45" width="100" />
+        </div>
+      </div>
+    )
+  };
 }
-//
-// function CourseDescription() {
-//   return <h1>Course Description</h1>
-// }
 
-function CourseContent({ content, coursename }) {
+function Loading(){
+  return <h1>Loading...</h1>;
+}
+
+function CourseContent(props) {
   return <div className="row">
-    <Sidebar coursename={coursename}/>
+    <Sidebar {...props}/>
     <Switch>
-      <Route path='/:coursename' exact component={CourseDescription}/>
-      <Route path='/:coursename/:section' exact component={ContentSection}/>
+      <Route exact path='/:coursename' render={() => (
+        <CourseDescription {...props}/>
+      )}/>
+      <Route path='/:coursename/:section' render={() => (
+        <ContentSection {...props}/>
+      )}/>
     </Switch>
   </div>
 }
@@ -62,20 +75,25 @@ class Course extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      step: 0,
+      loading: true
     };
-    this.shuffle = this.shuffle.bind(this);
+    // this.shuffle = this.shuffle.bind(this);
   }
-  shuffle() {
-    this.setState({ step: (this.state.step + 1) % 2 });
+  componentDidMount(){
+    getCourse(this.props.coursename)
+      .then((course) => {
+        this.setState({loading: undefined, ...course});
+      });
   }
   render() {
-    const { match: { params: { coursename } } } = this.props;
-    const { step } = this.state;
-    const section = step === 0 ? <h1>Loading...</h1> :
-      step === 1 ? <CourseContent coursename={coursename} /> : <CourseNotFound />;
-    return (<div onClick={this.shuffle}>
-      {section}
+    if(this.state.loading){
+      return <Loading/>;
+    }
+    const { coursename } = this.props;
+    // const section = step === 0 ? <h1>Loading...</h1> :
+    //   step === 1 ? <CourseContent content={content} coursename={coursename} /> : <CourseNotFound />;
+    return (<div>
+      <CourseContent {...this.state}/>
     </div>);
   }
 }

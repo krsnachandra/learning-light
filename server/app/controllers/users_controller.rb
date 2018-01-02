@@ -1,20 +1,29 @@
 class UsersController < ApplicationController
-  
+  # before_action :authenticate_user, only: [:index]
+
+  def index
+    render json: current_user
+  end
+
   def show
     @user = User.find params[:id]
     render json: @user.to_json(include: :user_sections)
   end
-  
-  def new
-  end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to '/'
+    user = User.new(user_params)
+    if user.save
+      token = Knock::AuthToken.new payload: {sub: user.id}
+      render json:token
     else
-      redirect_to '/users/new'
+      render json:user.errors.messages, status: 400
     end
   end
+
+  private 
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  end
+
 end
