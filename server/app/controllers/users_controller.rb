@@ -4,8 +4,9 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
     render json: @user.to_json(include: :user_sections)
   end
-  
-  def new
+
+  def index
+    render json: current_user
   end
 
   def create
@@ -17,4 +18,11 @@ class UsersController < ApplicationController
       redirect_to '/users/new'
     end
   end
+
+  private 
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
 end
