@@ -13,7 +13,7 @@ class CourseSection extends Component {
         <iframe title="Example video" src="https://www.youtube.com/embed/TAbm4D_b9lc" frameBorder="0" gesture="media" allow="encrypted-media" allowFullScreen></iframe>
         <p>Suspendisse potenti. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In nulla purus, pellentesque sit amet mauris ac, venenatis facilisis massa. Cras volutpat blandit risus quis rutrum. In consectetur mattis augue, vitae faucibus magna suscipit non. Donec elementum ornare luctus. Sed porta iaculis odio, eget volutpat metus tincidunt non. Vivamus lacinia diam at ex congue efficitur. Duis sed justo accumsan, vulputate dui sed, condimentum odio.</p>
         <div>
-          <iframe title="Example Codepen" src="http://codepen.io/mickwest/pen/eqtJo" frameBorder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+          <iframe title="Example Codepen" src="http://codepen.io/mickwest/pen/eqtJo" frameBorder="0" gesture="media" allow="encrypted-media" allowFullScreen></iframe>
         </div>
 
         <div>
