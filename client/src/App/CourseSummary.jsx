@@ -36,6 +36,5 @@ export default function CourseSummary () {
     <div>
       <p>David is a sort of web dev Don Quixote, helping out wherever he is needed. He has grappled with his share of technological windmills yet continues his chivalrous fight for clean, beautiful code. That said, David is a renaissance man and pursues fine arts and music in his leisure.</p>
     </div>
-    <div>
-
-};
+</div>
+)};

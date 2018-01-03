@@ -1,0 +1,40 @@
+@import "https://use.fontawesome.com/d29e632bc9.js";
+
+.card-img {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    width: 100%;
+    height: auto;
+}
+
+.card-price {
+    color: #292b38;
+    font-weight: 600;
+    font-size: 0.875em;
+    text-align: right;
+    line-height: 1;
+    word-wrap: break-word;
+}
+
+.card {
+    height: 468px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 1px 1px 0 #e2e2e2;
+    position: relative;
+    background: #ffffff;
+}
+
+.rating input {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
