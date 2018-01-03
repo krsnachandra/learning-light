@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import {Switch, Route, Link} from 'react-router-dom';
-import CourseSidebar from './CourseSidebar';import CourseContent from './CourseContent';
-import CourseCompleted from './CourseCompleted';
-import {getCourse} from '../course-service';
-import CourseSummary from './CourseSummary';
-
-=======
 import {getCourse} from '../course-service';
 import CourseContent from './CourseContent';
->>>>>>> master
 
 // TODO: make display actually dependent on props
 // Based on course ID (from Link to React Router declaration in Home), display:
