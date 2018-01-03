@@ -14,7 +14,7 @@ import Progress from './Progress';
 
 import Login from './Login';
 import Register from './Register';
-import Review from './Review';
+import PublishedReviews from './PublishedReviews';
 // import Footer from './Footer';
 import CourseCompleted from './CourseCompleted';
 import axios from 'axios';
@@ -35,10 +35,10 @@ function AppPresenter(props){
             <Route path="/progress" exact component={Progress} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/review" component={Review} />
+            <Route path="/reviews" component={PublishedReviews} />
             <Route path="/comp" component={CourseCompleted} />
             <Route path="/:coursename" render={({match:{params:{coursename}}}) => (
-              <Course coursename={coursename}/>
+              <CourseContainer coursename={coursename}/>
             )} />
           </Switch>
         </div>

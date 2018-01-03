@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
-import CourseSidebar from './CourseSidebar';
-import CourseContent from './CourseContent';
-import CourseSummary from './CourseSummary';
+import CourseSidebar from './CourseSidebar';import CourseContent from './CourseContent';
 import CourseCompleted from './CourseCompleted';
+import {getCourse, getCourseContent} from '../course-service';
+import CourseSummary from './CourseSummary';
+
 
 // TODO: make display actually dependent on props
 // Based on course ID (from Link to React Router declaration in Home), display:
@@ -11,14 +12,19 @@ import CourseCompleted from './CourseCompleted';
 // CourseContent if course started
 // CourseCompleted if course done
 
-function MainCoursePanelDisplay({ content, coursename }) {
+function MainCoursePanel({ content, coursename }) {
   return <div className="row">
+    <CourseSidebar />
     <Switch>
       <Route path='/:coursename' exact component={CourseSummary}/>
       <Route path='/:coursename/:section' exact component={CourseContent}/>
       <Route path='/:coursename/complete' exact component={CourseCompleted}/>
     </Switch>
   </div>
+}
+
+function Loading() {
+  return <h1>Loading...</h1>;
 }
 
 function CourseNotFound() {
@@ -32,38 +38,34 @@ class CourseContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      step: 0,
+      loading: true
     };
-    this.shuffle = this.shuffle.bind(this);
   }
-  shuffle() {
-    this.setState(
-      { step:
-         (this.state.step + 1) % 4
-        }
-      );
+
+  componentDidMount(){
+    getCourse(this.props.coursename)
+    .then((course) => {
+      this.setState({loading: undefined, ...course});
+    });
   }
+
   render() {
-    const { match: { params: { coursename } } } = this.props;
-    const { step } = this.state;
-    const section =
-      step === 0 ? <h1>Loading...</h1> :
-        step === 1 ? <CourseSummary coursename={coursename} /> :
-          step === 2 ? <CourseContent coursename={coursename} /> :
-            step === 3 ? <CourseCompleted coursename={coursename} /> :
-            <CourseNotFound />;
+    if (this.state.loading) {
+      return <Loading />;
+    }
+    const { coursename } = this.props;
+
     return (
       <div className="container">
         <div className="row">
-        <div className="col-lg-3">
-          <CourseSidebar />
+          <div className="col-lg-3">
+            <CourseSidebar />
+          </div>
+          <div className="col-lg-9">
+            <CourseContent {...this.state}/>
+          </div>
         </div>
-        <div className="col-lg-9" onClick={this.shuffle}>
-          {section}
-        </div>
-      </div>
-      </div>
-    );
+      </div>);
   }
 }
 
