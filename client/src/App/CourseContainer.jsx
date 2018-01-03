@@ -12,13 +12,6 @@ function Loading() {
   return <h1>Loading...</h1>;
 }
 
-// function CourseNotFound() {
-//   return <div>
-//     <h1>Course not found</h1>
-//     <p>Hey, we didn't find that course. Did you mean:</p>
-//   </div>
-// }
-
 class CourseContainer extends Component {
   constructor(props) {
     super(props);

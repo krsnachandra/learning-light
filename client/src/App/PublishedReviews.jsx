@@ -3,8 +3,13 @@ import React from 'react';
 function PublishedReviews () {
   return (
   <div>
-    <h1>Reviews for this course</h1>
-
+    <h3>
+      Reviews (1)
+    </h3>
+    <h4>
+      5 Stars! Thee Beste Course That Ever Coursed
+    </h4>
+      by Geoffrey Chaucer
   </div>
   );
 }

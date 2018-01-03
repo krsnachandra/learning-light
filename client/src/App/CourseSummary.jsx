@@ -37,13 +37,5 @@ export default function CourseSummary () {
       <p>David is a sort of web dev Don Quixote, helping out wherever he is needed. He has grappled with his share of technological windmills yet continues his chivalrous fight for clean, beautiful code. That said, David is a renaissance man and pursues fine arts and music in his leisure.</p>
     </div>
     <div>
-      <h3>
-        Reviews (1)
-      </h3>
-      <h4>
-        5 Stars! Thee Beste Course That Ever Coursed
-      </h4>
-        by Geoffrey Chaucer
-      </div>
-    </div>);
-  }
+
+};
