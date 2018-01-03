@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
 
     def show
         @course = Course.find_by_coursename params[:coursename]
-        render json: @course.to_json(include: [:instructor, {chapters: {include: :sections}}])
+        render json: @course.to_json(include: [:instructor, :reviews, {chapters: {include: :sections}}])
     end
 
 end
