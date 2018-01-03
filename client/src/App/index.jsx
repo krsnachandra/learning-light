@@ -16,16 +16,15 @@ import Profile from './Profile';
 import PublishedReviews from './PublishedReviews';
 import CourseContainer from './CourseContainer';
 import CourseCompleted from './CourseCompleted';
-import axios from 'axios';
 
-function AppPresenter(props){
+function App(){
   return (
     <div>
         <Navbar />
         <div className="App container">
           <Switch>
             <Route exact path='/' render={() => (
-              <Home test={props.content} />
+              <Home  />
             )}/>
             <Route path="/profile" exact component={Profile} />
             <Route path="/progress" exact component={Progress} />
@@ -43,35 +42,4 @@ function AppPresenter(props){
     </div>);
 }
 
-class AppContainer extends Component {
-
-  constructor(props){
-    super(props);
-    this.state = {
-      test : 'Hello this is great content',
-      content: ''
-    }
-  }
-
-  componentDidMount() {
-    axios.get('/courses/3/sections/3', {
-      // params: {
-      //   ID: 3
-      // }
-    })
-    .then( (response) => {
-      // console.log(response.data.content);
-      this.setState({
-        content: response.data.content
-      })
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-
-  render() {
-    return <AppPresenter content={this.state.content}/>;
-  }
-}
-export default AppContainer;
+export default App;
