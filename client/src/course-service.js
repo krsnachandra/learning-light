@@ -19,18 +19,13 @@ function getCourse(coursename){
   })
 }
 
-function getCourseContent(coursename, section){
-  return axios.get(`/${coursename}/${section}`
+function getCourseContent(coursename, sectionname){
+  return axios.get(`/${coursename}/${sectionname}`)
     .then( (response) => {
-      console.log(response.data.content);
-      this.setState({
-        content: response.data.content
-      });
       return response.data;
     })
     .catch(function (error) {
       console.log(error);
     })
-  )
 }
 export {getCourse, getCourseContent};
