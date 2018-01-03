@@ -15,13 +15,12 @@ ActiveRecord::Schema.define(version: 20171225235128) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "chapters", force: :cascade do |t|
+  create_table "instructors", force: :cascade do |t|
     t.string "name"
-    t.integer "chapter_number"
-    t.bigint "course_id"
+    t.string "position"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_chapters_on_course_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -34,10 +33,33 @@ ActiveRecord::Schema.define(version: 20171225235128) do
     t.index ["instructor_id"], name: "index_courses_on_instructor_id"
   end
 
-  create_table "instructors", force: :cascade do |t|
+  create_table "chapters", force: :cascade do |t|
     t.string "name"
-    t.string "position"
-    t.text "description"
+    t.integer "chapter_number"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_chapters_on_course_id"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "name"
+    t.integer "section_number"
+    t.text "content"
+    t.bigint "chapter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "sectionname"
+    t.index ["chapter_id"], name: "index_sections_on_chapter_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "location"
+    t.text "motivation"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,17 +76,6 @@ ActiveRecord::Schema.define(version: 20171225235128) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "sections", force: :cascade do |t|
-    t.string "name"
-    t.integer "section_number"
-    t.text "content"
-    t.bigint "chapter_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "sectionname"
-    t.index ["chapter_id"], name: "index_sections_on_chapter_id"
-  end
-
   create_table "user_sections", force: :cascade do |t|
     t.bigint "section_id"
     t.bigint "user_id"
@@ -72,17 +83,6 @@ ActiveRecord::Schema.define(version: 20171225235128) do
     t.datetime "updated_at", null: false
     t.index ["section_id"], name: "index_user_sections_on_section_id"
     t.index ["user_id"], name: "index_user_sections_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "location"
-    t.text "motivation"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "chapters", "courses"

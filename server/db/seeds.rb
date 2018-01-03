@@ -31,8 +31,8 @@ Section.create!([
   {name: "Additional Resources", sectionname: "additional-resources", section_number: 2, content: "### Additional Resources 📕\n\nLearning to code is more accessible than ever! There are endless online resources that cater to every learning style, and local organizations that offer free workshops for you to learn in person. If you're looking for more ways to explore programming or are getting stuck in a coding rut, explore some of the recommendations below or read our guide on How To Learn To Code.\n\n\n### Online Resources\n\nBento\n\nCodecademy\n\nCoderByte\n\nCodeWars\n\nEloquent JavaScript\n\nKhanAcademy\n\nTreehouse\n\n\n### Coding Non-Profits & Community Groups\n\nApp Camp For Girls\n\nBridging To Technology\n\nKids Code Jeunesse\n\nLadies Learning Code\n\nLighthouse Labs Workshops\n\n\n\n### Books/Videos\n\nHow To Learn To Code\n\nLearn Code The Hard Way", chapter_id: 4}
 ])
 User.create!([
-  {first_name: "Jack", last_name: "Black", location: "Vancouver", motivation: "coding sounded fun", email: "jack@black.com", password_digest: "longunreadablestring"},
-  {first_name: "Rosalind", last_name: "Lake", location: "Toronto", motivation: "I'd like to build my own webpage", email: "rosy@lake.com", password_digest: "yepyepyep"}
+  {first_name: "Jack", last_name: "Black", location: "Vancouver", motivation: "coding sounded fun", email: "jack@black.com", password: "longunreadablestring", password_confirmation: "longunreadablestring"},
+  {first_name: "Rosalind", last_name: "Lake", location: "Toronto", motivation: "I'd like to build my own webpage", email: "rosy@lake.com", password: "yepyepyep", password_confirmation: "yepyepyep"}
 ])
 Review.create!([
   {rating: 5, review: "I really enjoyed getting a taste of JavaScript. This course made it fun!", show_flag: true, course_id: 3, user_id: 1},
