@@ -18,8 +18,8 @@ export default function CourseContent(props) {
             <Route exact path='/:coursename' render={() => (
               <CourseSummary {...props} />
             )}/>
-            <Route path='/:coursename/:section' render={() => (
-              <CourseSection {...props} />
+            <Route path='/:coursename/:section' render={({match: {params: {section}}}) => (
+              <CourseSection {...props} sectionname={section} />
             )}/>
             <Route exact path='/:coursename/complete' render={() => (
               <CourseCompleted {...props} />
