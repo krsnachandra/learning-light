@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-
-/* Always renders header and footer */
-
 import Footer from './Footer';
 import Navbar from './Navbar';
 
-/* The following to be conditionally rendered in centre view based on Switch routes below */
+// The following to be conditionally rendered in centre view based on Switch routes below
 
-import Home from './Home'; // Home will render for visitor, otherwise Progress when logged in
+// Home will render for visitor, otherwise Progress when logged in
+import Home from './Home';
 import Progress from './Progress';
-
 
 import Login from './Login';
 import Register from './Register';
+import Profile from './Profile';
+
 import PublishedReviews from './PublishedReviews';
-// import Footer from './Footer';
+import CourseContainer from './CourseContainer';
 import CourseCompleted from './CourseCompleted';
 import axios from 'axios';
-
-import Profile from './Profile';
-import CourseContainer from './CourseContainer';
 
 function AppPresenter(props){
   return (
@@ -37,12 +33,13 @@ function AppPresenter(props){
             <Route path="/register" component={Register} />
             <Route path="/reviews" component={PublishedReviews} />
             <Route path="/comp" component={CourseCompleted} />
-            <Route path="/:coursename" render={({match:{params:{coursename}}}) => (
-              <CourseContainer coursename={coursename}/>
-            )} />
+            <Route path="/:coursename" render={
+              ({match:{params:{coursename}}}) => (
+                <CourseContainer coursename={coursename}/>
+              )} />
           </Switch>
         </div>
-        {/* {<Footer />} */}
+        <Footer />
     </div>);
 }
 
