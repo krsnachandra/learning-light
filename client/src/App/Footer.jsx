@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React from 'react';
 
 function Footer() {
   return (
     <footer>
       <div className="container">
             <h4>Interested in more free content?</h4>
-            <form  action="/submit-subscriptions" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
-              <input required="required" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="E-mail address"  autocomplete="off" type="email" name="subscription[email]" id="subscription_email" />
+            <form  action="/submit-subscriptions" acceptCharset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+              <input required="required" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="E-mail address"  autoComplete="off" type="email" name="subscription[email]" id="subscription_email" />
               <button type="submit" name="commit" data-disable-with="Please wait">Subscribe</button>
             </form>
       </div>
@@ -47,7 +46,7 @@ function Footer() {
             © 2017 Lighthouse Labs
           </p>
           <div>
-            <a href="https://twitter.com/lighthouse_labs" target="_blank">
+            <a href="https://twitter.com/lighthouse_labs" target="_blank" rel="noopener noreferrer">
               <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
                 <path fill="#FFFFFF" d="M15.1,0c2.1,0,4.1,0.4,5.9,1.2C22.9,2,24.5,3,25.8,4.4c1.4,1.4,2.4,3,3.2,4.8c0.8,1.8,1.2,3.8,1.2,5.9
           c0,2.1-0.4,4.1-1.2,5.9c-0.8,1.8-1.9,3.4-3.2,4.8c-1.4,1.4-3,2.4-4.8,3.2c-1.8,0.8-3.8,1.2-5.9,1.2c-2.1,0-4.1-0.4-5.9-1.2
@@ -61,7 +60,7 @@ function Footer() {
           c1.1-0.5,2-1.2,2.7-2c0.7-0.8,1.3-1.8,1.7-2.8c0.4-1,0.6-2.1,0.6-3.1v-0.4c0.3-0.2,0.6-0.5,0.9-0.8C22.9,11.3,23.1,11,23.3,10.8z"/>
               </svg>
             </a>
-            <a href="https://www.facebook.com/lighthouselabsvancouver" target="_blank">
+            <a href="https://www.facebook.com/lighthouselabsvancouver" target="_blank" rel="noopener noreferrer">
               <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
                 <path fill="#FFFFFF" d="M15.1,30.2c-2.1,0-4.1-0.4-5.9-1.2c-1.8-0.8-3.4-1.9-4.8-3.2c-1.4-1.4-2.4-3-3.2-4.8C0.4,19.2,0,17.2,0,15.1
           c0-2.1,0.4-4.1,1.2-5.9C2,7.4,3.1,5.8,4.4,4.4c1.4-1.4,3-2.5,4.8-3.2C11.1,0.4,13,0,15.1,0c2.1,0,4.1,0.4,5.9,1.2
@@ -70,7 +69,7 @@ function Footer() {
           c0.1-0.2,0.2-0.3,0.4-0.3H19V7.8h-2.2c-0.9,0-1.7,0.4-2.4,1.1c-0.7,0.7-1,1.6-1,2.6v1.4h-2.2V15.6z"/>
               </svg>
             </a>
-            <a href="https://www.linkedin.com/company/lighthouse-labs" target="_blank">
+            <a href="https://www.linkedin.com/company/lighthouse-labs" target="_blank" rel="noopener noreferrer">
               <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
                 <path fill="#FFFFFF" d="M15.1,30.2c-2.1,0-4.1-0.4-5.9-1.2c-1.8-0.8-3.4-1.9-4.8-3.2c-1.4-1.4-2.4-3-3.2-4.8C0.4,19.1,0,17.1,0,15
           C0,13,0.4,11,1.2,9.2C2,7.3,3.1,5.7,4.4,4.4c1.4-1.4,3-2.4,4.8-3.2C11.1,0.4,13,0,15.1,0c2.1,0,4.1,0.4,5.9,1.2
@@ -82,7 +81,7 @@ function Footer() {
           c-0.5-0.3-1.1-0.4-1.7-0.4c-0.6,0-1.2,0.1-1.7,0.3v-0.4h-2.7V20z"/>
               </svg>
             </a>
-            <a href="https://plus.google.com/+LighthouselabsCan/posts" target="_blank">
+            <a href="https://plus.google.com/+LighthouselabsCan/posts" target="_blank" rel="noopener noreferrer">
               <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
                 <path fill="#FFFFFF" d="M15.1,30.2c-2.1,0-4.1-0.4-5.9-1.2c-1.8-0.8-3.4-1.9-4.8-3.2c-1.4-1.4-2.4-3-3.2-4.8C0.4,19.1,0,17.2,0,15.1
           C0,13,0.4,11,1.2,9.2C2,7.3,3.1,5.7,4.4,4.4c1.4-1.4,3-2.4,4.8-3.2C11.1,0.4,13,0,15.1,0c2.1,0,4.1,0.4,5.9,1.2

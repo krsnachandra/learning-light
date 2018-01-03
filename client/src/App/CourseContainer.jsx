@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import {Switch, Route, Link} from 'react-router-dom';
-import CourseSidebar from './CourseSidebar';import CourseContent from './CourseContent';
-import CourseCompleted from './CourseCompleted';
-import {getCourse, getCourseContent} from '../course-service';
-import CourseSummary from './CourseSummary';
-
+import {getCourse} from '../course-service';
+import CourseContent from './CourseContent';
 
 // TODO: make display actually dependent on props
 // Based on course ID (from Link to React Router declaration in Home), display:
@@ -12,27 +8,16 @@ import CourseSummary from './CourseSummary';
 // CourseContent if course started
 // CourseCompleted if course done
 
-function MainCoursePanel({ content, coursename }) {
-  return <div className="row">
-    <CourseSidebar />
-    <Switch>
-      <Route path='/:coursename' exact component={CourseSummary}/>
-      <Route path='/:coursename/:section' exact component={CourseContent}/>
-      <Route path='/:coursename/complete' exact component={CourseCompleted}/>
-    </Switch>
-  </div>
-}
-
 function Loading() {
   return <h1>Loading...</h1>;
 }
 
-function CourseNotFound() {
-  return <div>
-    <h1>Course not found</h1>
-    <p>Hey, we didn't find that course. Did you mean:</p>
-  </div>
-}
+// function CourseNotFound() {
+//   return <div>
+//     <h1>Course not found</h1>
+//     <p>Hey, we didn't find that course. Did you mean:</p>
+//   </div>
+// }
 
 class CourseContainer extends Component {
   constructor(props) {
@@ -51,22 +36,12 @@ class CourseContainer extends Component {
 
   render() {
     if (this.state.loading) {
-      return <Loading />;
+      return (<Loading />);
     }
     const { coursename } = this.props;
-
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-3">
-            <CourseSidebar />
-          </div>
-          <div className="col-lg-9">
-            <CourseContent {...this.state}/>
-          </div>
-        </div>
-      </div>);
+    return (<CourseContent {...this.state} />);
   }
 }
+
 
 export default CourseContainer;

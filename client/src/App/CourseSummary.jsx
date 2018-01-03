@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import PublishedReviews from './PublishedReviews';
 
 export default function CourseSummary () {
@@ -17,7 +16,7 @@ export default function CourseSummary () {
     </h2>
     <div>
       <p>
-        In this free course, you'll be learning how to build your own web-based chat app similar to Twitch or Slack using JavaScript and other modern tools like Node.js and Web Sockets. The goal of this course is to introduce you to the fundamentals of building web-based applications using some of the most prominent and widely used programming technologies! </p><p>If you're new to programming, we recommend you start with our <a href="http://lighthouse-labs.thinkific.com/courses/html-and-css" target="_blank">HTML & CSS Essentials</a> course.
+        In this free course, you'll be learning how to build your own web-based chat app similar to Twitch or Slack using JavaScript and other modern tools like Node.js and Web Sockets. The goal of this course is to introduce you to the fundamentals of building web-based applications using some of the most prominent and widely used programming technologies! </p><p>If you're new to programming, we recommend you start with our <a href="http://lighthouse-labs.thinkific.com/courses/html-and-css" target="_blank" rel="noopener noreferrer">HTML & CSS Essentials</a> course.
         </p>
     </div>
     <div>
@@ -26,7 +25,7 @@ export default function CourseSummary () {
       </h2>
     </div>
     <div>
-      <img src='https://s3.amazonaws.com/thinkific/instructors/000/046/9561488219777.small.png?1488219777' alt='David VanDusen' class='instructor__img' />
+      <img src='https://s3.amazonaws.com/thinkific/instructors/000/046/9561488219777.small.png?1488219777' alt='David VanDusen' className='instructor__img' />
     </div>
     <div>
       David VanDusen
