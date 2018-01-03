@@ -5,6 +5,7 @@ import CourseContent from './CourseContent';
 import CourseSummary from './CourseSummary';
 import CourseCompleted from './CourseCompleted';
 
+// TODO: make display actually dependent on props
 // Based on course ID (from Link to React Router declaration in Home), display:
 // CourseSummary if course not started
 // CourseContent if course started

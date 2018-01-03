@@ -1,0 +1,46 @@
+Courses
+
+GET  /courses(.:format)
+* Displays list of all courses (display in Home)
+
+* 200 - Course[]
+  * Example:
+
+
+GET  /courses/:id(.:format)
+* Displays specific course content (display in CourseContainer)
+
+* 200 - Course
+  * Example:
+
+* 404 - Error
+  * Example:
+
+
+Users
+
+POST /users(.:format)                           users#create
+* Submits new user information to DB
+* Method attached to Register component
+
+GET  /users/new(.:format)                       users#new
+* Displays new user creation component
+
+
+GET  /users/:id(.:format)                       users#show
+* Displays specific user profile component
+
+
+Instructors
+
+GET  /instructors/:id(.:format)                       users#show
+
+
+Courses
+
+GET  /courses/:id(.:format)                       users#show
+
+
+Reviews
+
+GET  /users/:id(.:format)                       users#show
