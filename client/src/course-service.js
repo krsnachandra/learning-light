@@ -19,8 +19,8 @@ function getCourse(coursename){
   })
 }
 
-function getCourseContent(coursename, section){
-  return axios.get(`/${coursename}/${section}`)
+function getCourseContent(coursename, sectionname){
+  return axios.get(`http://localhost:3000/${coursename}/${sectionname}`)
     .then( (response) => {
       console.log(response.data.content);
       this.setState({
