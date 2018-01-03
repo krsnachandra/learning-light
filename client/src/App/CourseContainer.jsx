@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 import CourseSidebar from './CourseSidebar';import CourseContent from './CourseContent';
 import CourseCompleted from './CourseCompleted';
-import {getCourse, getCourseContent} from '../course-service';
+import {getCourse} from '../course-service';
 import CourseSummary from './CourseSummary';
 
 

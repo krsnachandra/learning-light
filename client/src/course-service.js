@@ -20,7 +20,7 @@ function getCourse(coursename){
 }
 
 function getCourseContent(coursename, section){
-  return axios.get(`/${coursename}/${section}`
+  return axios.get(`/${coursename}/${section}`)
     .then( (response) => {
       console.log(response.data.content);
       this.setState({
@@ -31,6 +31,5 @@ function getCourseContent(coursename, section){
     .catch(function (error) {
       console.log(error);
     })
-  )
 }
 export {getCourse, getCourseContent};
