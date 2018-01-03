@@ -23,7 +23,7 @@ class ContentSection extends Component {
   render() {
     return (
       <div className="col">
-        {/* <h3>{props.title}</h3> */}
+        <h3>{this.props.title}</h3>
         {/* <h4>{props.instructor.name}</h4> */}
         {/* <p>{getCourseContent(params.coursename, params.section)}</p> */}
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et libero sit amet mi gravida maximus. Mauris eget nibh sed ipsum interdum semper eu vel nisl. Integer mollis lorem et lorem auctor lobortis. Ut at sodales sapien, sit amet rhoncus nulla. Morbi gravida nulla quam, sed bibendum enim auctor vel. Sed dolor mauris, sollicitudin mollis tortor convallis, congue tempor nisl. In maximus auctor dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed bibendum mauris nulla, quis suscipit dui egestas quis. Donec feugiat mauris eu mi semper, et ultrices mi congue. Vestibulum aliquam aliquet tortor et scelerisque.</p>
