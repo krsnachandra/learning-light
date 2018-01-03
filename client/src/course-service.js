@@ -7,16 +7,13 @@ function delay(by = 2000){
 }
 
 function getCourse(coursename){
-  return delay().then(() => {
-    return {
-      title: 'Intro to being Awesome',
-      coursename,
-      instructor: {
-        name: 'Joel Shinness Who Is Awesome'
-      },
-      chapters: []
-    }
-  })
+  return axios.get(`/${coursename}`)
+    .then( (response) => {
+      return response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
 }
 
 function getCourseContent(coursename, sectionname){
