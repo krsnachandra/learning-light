@@ -1,33 +1,41 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Login() {
+export default function Register() {
   return (
-  <div>
-     <h1>Login</h1>
-     <fieldset>
-     <div className="form-group row">
-       <label className="col-sm-1 col-form-label col-form-label-sm" for="textinput">Email</label>
+    <fieldset>
+      <legend>Log in</legend>
+      <div className="form-group row">
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">
+          E-mail
+        </label>
         <div className="col-sm-4">
-          <input id="textinput" name="email" placeholder="Email" className="form-control input-md" required="" type="text" />
-          <span className="help-block"> </span>
-       </div>
-     </div>
+          <input placeholder="E-mail address" className="form-control input-md" required="" type="text" />
+        </div>
+      </div>
 
-     <div className="form-group row">
-       <label className="col-sm-1 col-form-label col-form-label-sm" for="textinput">Password</label>
-       <div className="col-sm-4">
-         <input id="textinput" name="password" placeholder="Password" className="form-control input-md" required="" type="text" />
-         <span className="help-block"> </span>
-       </div>
-     </div>
+      <div className="form-group row">
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">
+          Password
+        </label>
+        <div className="col-sm-4">
+          <input placeholder="Password" className="form-control input-md" required="" type="text" />
+        </div>
+      </div>
 
-     <div className="form-group row">
-       <label className="col-sm-1 col-form-label col-form-label-sm" for="singlebutton"> </label>
-       <div className="col-sm-4">
-         <button id="singlebutton" name="singlebutton" className="btn btn-primary">Submit</button>
-       </div>
-     </div>
+      <div className="form-group row">
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="singlebutton" />
+        <div className="col-sm-1">
+          <button id="register-submit" className="btn btn-primary">Submit</button>
+        </div>
+      </div>
+
+      <div className="form-group row">
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="singlebutton" />
+        <div className="col-sm-4">
+        <small>Need to sign up? <Link to="/register">Log in.</Link></small>
+        </div>
+      </div>
     </fieldset>
-     </div>
-   );
+  );
 }
