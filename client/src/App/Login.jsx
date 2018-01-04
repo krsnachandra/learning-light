@@ -14,37 +14,37 @@ function Login({ onLogin, logIn, history }) {
     });
   };
   return (
-  <div>
-    <legend>Login</legend>
-      <form onSubmit={onSubmit}>
+    <div className="col-sm-10 offset-sm-1 text-center">
+      <legend>Login</legend>
+        <form onSubmit={onSubmit} className="justify-content-center row">
 
         <fieldset>
           <div className="form-group row">
-            <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">Email</label>
-            <div className="col-sm-4">
+            <label className="col-sm-3 col-form-label col-form-label-sm" for="textinput">Email</label>
+            <div className="col-sm-9">
               <input placeholder="E-mail address" className="form-control input-md" required="" type="text" />
             </div>
           </div>
 
           <div className="form-group row">
-            <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">
+            <label className="col-sm-3 col-form-label col-form-label-sm" for="textinput">
               Password
             </label>
-            <div className="col-sm-4">
+            <div className="col-sm-9">
               <input type="password" placeholder="Password" className="form-control input-md" required="" />
             </div>
           </div>
 
           <div className="form-group row">
             <label className="col-sm-2 col-form-label col-form-label-sm" for="singlebutton" />
-            <div className="col-sm-1">
+            <div className="col-sm-10">
               <button id="register-submit" className="btn btn-primary">Submit</button>
             </div>
           </div>
 
           <div className="form-group row">
-            <label className="col-sm-2 col-form-label col-form-label-sm" for="singlebutton" />
-            <div className="col-sm-4">
+            <label className="col-sm-3 col-form-label col-form-label-sm" for="singlebutton" />
+            <div className="col-sm-9">
             <small>Need to sign up? <Link to="/register">Register here</Link>!</small>
           </div>
 
