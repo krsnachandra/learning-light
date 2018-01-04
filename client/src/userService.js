@@ -16,7 +16,7 @@ function makeService(token) {
 
   function register(first_name, last_name, email, location, motivation, password, password_confirmation) {
     return ajaxer.post('/users', {
-      user: { first_name, last_name, email, location, motivation, password, password_confirmation},
+      user: { first_name, last_name, email, location, motivation, password, password_confirmation },
     }).then(({ data }) => data);
   }
 
