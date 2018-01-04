@@ -6,17 +6,24 @@ function delay(by = 2000){
   });
 }
 
+function getInstructors(){
+  return axios.get(`/courses`)
+    .then( (response) => {
+      return response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+}
+
 function getCourse(coursename){
-  return delay().then(() => {
-    return {
-      title: 'Intro to being Awesome',
-      coursename,
-      instructor: {
-        name: 'Joel Shinness Who Is Awesome'
-      },
-      chapters: []
-    }
-  })
+  return axios.get(`/${coursename}`)
+    .then( (response) => {
+      return response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
 }
 
 function getCourseContent(coursename, sectionname){
@@ -28,4 +35,4 @@ function getCourseContent(coursename, sectionname){
       console.log(error);
     })
 }
-export {getCourse, getCourseContent};
+export {getCourse, getCourseContent, getInstructors};

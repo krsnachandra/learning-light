@@ -28,7 +28,6 @@ class CourseSection extends Component {
     }
     return (
       <div className="col">
-        {/* <h4>{props.instructor.name}</h4> */}
         <Markdown>{this.state.content}</Markdown>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et libero sit amet mi gravida maximus. Mauris eget nibh sed ipsum interdum semper eu vel nisl. Integer mollis lorem et lorem auctor lobortis. Ut at sodales sapien, sit amet rhoncus nulla. Morbi gravida nulla quam, sed bibendum enim auctor vel. Sed dolor mauris, sollicitudin mollis tortor convallis, congue tempor nisl. In maximus auctor dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed bibendum mauris nulla, quis suscipit dui egestas quis. Donec feugiat mauris eu mi semper, et ultrices mi congue. Vestibulum aliquam aliquet tortor et scelerisque.</p>
         <iframe title="Example video" src="https://www.youtube.com/embed/TAbm4D_b9lc" frameBorder="0" gesture="media" allow="encrypted-media" allowFullScreen></iframe>
