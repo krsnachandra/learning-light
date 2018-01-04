@@ -1,4 +1,4 @@
-@import "https://use.fontawesome.com/d29e632bc9.js";
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
 .card {
   height: 468px;
@@ -26,7 +26,12 @@
   height: 20em;
   margin-bottom: 2em;
   color: white;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+}
+
+#banner span {
+  text-align: center;
 }
 
 .rating input {
@@ -46,8 +51,21 @@ footer {
     margin-left: auto;
     margin-right: auto;
     max-width: 1600px;
-    background: #292b38;
     padding: 30px 0;
     color: #fff;
     list-style: none;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+  padding: 0.5em;
+}
+
+.nav-item a {
+  color: #ffc107;
 }

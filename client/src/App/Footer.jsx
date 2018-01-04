@@ -2,42 +2,39 @@ import React from 'react';
 
 function Footer() {
   return (
-
-    <footer className="footer hidden-print" id="global-footer">
-      <div className="column">
-        <div className="row">
-          <div className="col-sm-12">
-            <ul className="footer-nav">
-              <li className="footer-nav__item">
-                <a href="/">
-                  Home
-                </a>
-              </li>
-              <li className="footer-nav__item">
-                <a data-uv-trigger="true" href="mailto:hello@lighthouselabs.ca">
-                  Support
-                </a>
-              </li>
-
-
-            </ul>
-          </div>
+    <div className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <footer>
+      <div className="text-center">
+        <div className="form">
+          <form className="form-inline my-2 my-lg-0" action="/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓" />
+            <input className="form-control mr-sm-2" type="text" required="required" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="E-mail address" autocomplete="off" type="email" name="subscription[email]" id="subscription_email" />
+            <button className="btn btn-secondary my-2 my-sm-0" type="submit" name="commit" data-disable-with="Please wait...">Subscribe</button>
+          </form>
         </div>
-      </div>
-
-      <div className="column">
-        <div className="row">
-          <div className="col-sm-12 text-center">
-            <div className="footer-copyright">
-              © Copyright Lighthouse Labs 2018
+        <div className="mx-auto">
+          <ul className="nav">
+            <li className="nav-item"><a href="https://twitter.com/lighthouse_labs" target="0"><i className="fa fa-twitter fa-2x"></i></a></li>
+            <li className="nav-item"><a href="https://www.facebook.com/lighthouselabsvancouver" target="0"><i className="fa fa-facebook fa-2x"></i></a></li>
+            <li className="nav-item"><a href="https://plus.google.com/+LighthouselabsCan/posts" target="0"><i className="fa fa-github fa-2x"></i></a></li>
+            <li className="nav-item"><a href="https://www.linkedin.com/company/lighthouse-labs" target="0"><i className="fa fa-linkedin fa-2x"></i></a></li>
+          </ul>
+        </div>
+        <div className="row text-center navbar-text">
+          <ul className="menu list-inline">
+            <li className="list-inline-item"><a href="/">Home</a></li>
+            <li className="list-inline-item"><a href="https://www.lighthouselabs.ca/contact" target="0">Contact</a></li>
+          </ul>
+        </div>
+        <div className="row text-center">
+          <div className="container">
+            <div>
+              <p>Lighthouse Labs © 2018</p>
             </div>
-
-
           </div>
         </div>
       </div>
-
     </footer>
+  </div>
   );
 }
 

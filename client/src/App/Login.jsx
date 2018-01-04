@@ -19,7 +19,7 @@ function Login({ onLogin, logIn, history }) {
      <form onSubmit={onSubmit}>
      <fieldset>
      <div className="form-group row">
-       <label className="col-sm-1 col-form-label col-form-label-sm" for="textinput">Email</label>
+       <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">Email</label>
         <div className="col-sm-4">
           <input placeholder="E-mail address" className="form-control input-md" required="" type="text" />
         </div>
@@ -44,7 +44,7 @@ function Login({ onLogin, logIn, history }) {
       <div className="form-group row">
         <label className="col-sm-2 col-form-label col-form-label-sm" for="singlebutton" />
         <div className="col-sm-4">
-        <small>Need to sign up? <Link to="/register">Log in.</Link></small>
+        <small>Need to sign up? <Link to="/register">Register here</Link>!</small>
         </div>
       </div>
     </fieldset>

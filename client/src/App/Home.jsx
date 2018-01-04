@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <div className="container">
     <div id="banner">
-        <h1 className="text-center">
-          Learn web and iOS development with us!
-        </h1>
+      <div className="text-center">
+        Learn web and iOS development with us!
+      </div>
     </div>
     <div className="row">
       <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
