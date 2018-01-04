@@ -43,8 +43,8 @@ function Login({ onLogin, logIn, history }) {
           </div>
 
           <div className="form-group row">
-            <label className="col-sm-3 col-form-label col-form-label-sm" for="singlebutton" />
-            <div className="col-sm-9">
+            <label className="col-sm-2 col-form-label col-form-label-sm" for="singlebutton" />
+            <div className="col-sm-10">
             <small>Need to sign up? <Link to="/register">Register here</Link>!</small>
           </div>
 
