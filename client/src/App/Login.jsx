@@ -43,7 +43,7 @@ function Login({ onLogin, logIn, history }) {
           <div className="form-group row">
             <label className="col-sm-2"/>
             <div className="col-sm-10">
-              <button id="register-submit" className="btn btn-primary">Submit</button>
+              <button id="login-submit" className="btn btn-primary">Submit</button>
             </div>
           </div>
 
