@@ -1,9 +1,14 @@
 import axios from 'axios';
+import React from 'react';
 
 function delay(by = 2000){
   return new Promise((resolve) => {
     setTimeout(resolve, by);
   });
+}
+
+function Loading() {
+  return <h1>Loading...</h1>;
 }
 
 function getInstructors(){
@@ -35,4 +40,4 @@ function getCourseContent(coursename, sectionname){
       console.log(error);
     })
 }
-export {getCourse, getCourseContent, getInstructors};
+export {getCourse, getCourseContent, getInstructors, Loading};
