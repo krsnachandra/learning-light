@@ -11,7 +11,7 @@ export default function CourseContent(props) {
     <div className="container">
       <div className="row">
         <div className="col-lg-3">
-          <CourseSidebar />
+          <CourseSidebar {...props} />
         </div>
         <div className="col-lg-9">
           <Switch>
