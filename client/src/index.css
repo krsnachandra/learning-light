@@ -28,6 +28,7 @@
   color: white;
   display: flex;
   align-items: center;
+  padding: 5em;
 }
 
 #banner span {

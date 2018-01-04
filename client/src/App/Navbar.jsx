@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 function Navbar({ loggedIn }) {
   const links = loggedIn ?
     (<Link to="/logout" className="nav-item nav-link">Log out</Link>) :
-    ([<Link to="/login" className="nav-item nav-link">Log in</Link>,
-      <Link to="/register" className="nav-item nav-link">Register</Link>]);
+      ([<Link to="/login" className="nav-item nav-link">Log in</Link>,
+        <Link to="/register" className="nav-item nav-link">Register</Link>]);
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a className="navbar-brand" href="/">Lighthouse Labs</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
 
