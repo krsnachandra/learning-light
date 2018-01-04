@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import PublishedReviews from './PublishedReviews';
-import {getCourse} from '../course-service';
-
-function Loading() {
-  return <h1>Loading...</h1>;
-}
+import {getCourse, Loading} from '../course-service';
 
 class CourseSummary extends Component {
   constructor(props) {

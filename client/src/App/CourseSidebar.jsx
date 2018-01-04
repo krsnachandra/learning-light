@@ -1,22 +1,44 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {getCourse, Loading} from '../course-service';
 
-export default function CourseSidebar({coursename}) {
-  return (
-  <div>
-    <h5><Link to={`/${coursename}/intro`}>Introduction <span className='text-success'>{'\u2714'}</span></Link></h5>
-    <ul>
-      <li>Intro</li>
-      <li>Section 2</li>
-      <li>Section 3</li>
-      <li>Section 4</li>
-      <li>Section 5</li>
-    </ul>
-    <h5>Chapter 2</h5>
-    <h5>Chapter 3</h5>
-    <h5>Chapter 4</h5>
-    <h5>Chapter 5</h5>
-    <h5>Chapter 6</h5>
-  </div>
-);
+
+class CourseSidebar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true
+    };
+  }
+
+  componentDidMount(){
+    getCourse("js-essentials-2")
+    .then((course) => {
+      this.setState({loading: undefined, ...course});
+    })
+  }
+  
+  render() {
+    console.log(this.props);
+    if (this.state.loading) {
+      return (<Loading />);
+    }
+    return (
+      <div>
+        {this.state.chapters.map(function(chapter, index){
+            return <div key={ index }>
+              <h5>{chapter.name}</h5>
+              {chapter.sections.map(function(section, index){
+              return <div key={ index }>
+                <li><Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link></li>
+              </div>;
+            })}
+            </div>;
+          })}
+        <span className='text-success'>{'\u2714'}</span>
+      </div>
+    );
+  }
 }
+
+export default CourseSidebar;

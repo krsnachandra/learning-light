@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {getCourse} from '../course-service';
+import {getCourse, Loading} from '../course-service';
 import CourseContent from './CourseContent';
 
 // TODO: make display actually dependent on props

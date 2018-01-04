@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import {getCourseContent} from '../course-service';
+import {getCourseContent, Loading} from '../course-service';
 import Markdown from 'react-remarkable';
-
-function Loading() {
-  return <h1>Loading...</h1>;
-}
 
 class CourseSection extends Component {
   constructor(props) {
