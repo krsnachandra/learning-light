@@ -65,7 +65,7 @@ function Register({ onLogin, register, history }) {
       <div className="form-group row">
         <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">Password</label>
         <div className="col-sm-4">
-        <input id="textinput" name="password" placeholder="Insert your Password" className="form-control input-md" required="" type="text" />
+        <input id="textinput" name="password" placeholder="Insert your Password" className="form-control input-md" required="" type="password" />
         <span className="help-block"> </span>
         </div>
       </div>
@@ -73,7 +73,7 @@ function Register({ onLogin, register, history }) {
       <div className="form-group row">
         <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">Confirm Password</label>
         <div className="col-sm-4">
-        <input id="textinput" name="passwordConfirm" placeholder="Confirm your Password" className="form-control input-md" required="" type="text" />
+        <input id="textinput" name="passwordConfirm" placeholder="Confirm your Password" className="form-control input-md" required="" type="password" />
         <span className="help-block"> </span>
         </div>
       </div>
