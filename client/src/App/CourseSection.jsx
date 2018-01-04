@@ -11,9 +11,20 @@ class CourseSection extends Component {
   }
 
   componentDidMount(){
-    getCourseContent(this.props.coursename, this.props.sectionname)
-    .then((course) => {
-      this.setState({loading: undefined, ...course});
+    this.loadSection(this.props.params.section);
+  }
+
+  componentWillReceiveProps({ params: { section }  }) {
+    if (this.props.params.sectionname !== section) {
+      this.setState({ loading: true });
+      this.loadSection(section)
+    }
+  }
+
+  loadSection(sectionname) {
+    getCourseContent(this.props.coursename, sectionname)
+      .then((course) => {
+        this.setState({loading: undefined, ...course});
     });
   }
 

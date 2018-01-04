@@ -13,7 +13,6 @@ class CourseSummary extends Component {
   componentDidMount(){
     getCourse(this.props.coursename)
     .then((course) => {
-
       this.setState({loading: undefined, ...course});
     })
   }
