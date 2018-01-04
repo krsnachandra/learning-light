@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
@@ -8,29 +8,73 @@ import Navbar from './Navbar';
 // Home will render for visitor, otherwise Progress when logged in
 import Home from './Home';
 import Progress from './Progress';
-
+import makeService from '../userService';
 import Login from './Login';
+import Logout from './Logout';
 import Register from './Register';
 import Profile from './Profile';
 
 import PublishedReviews from './PublishedReviews';
 import CourseContainer from './CourseContainer';
 import CourseCompleted from './CourseCompleted';
-import axios from 'axios';
 
-function AppPresenter(props){
-  return (
-    <div>
-        <Navbar />
+class App extends Component {
+  constructor(props) {
+    super(props);
+    const token = localStorage.getItem('token');
+
+    this.state = {
+      loggedIn: !!token,
+    };
+    this.service = makeService(token);
+    this.onLogin = this.onLogin.bind(this);
+    this.onLogOut = this.onLogOut.bind(this);
+  }
+  onLogin(token) {
+    this.service = makeService(token);
+    localStorage.setItem('token', token);
+    this.setState({ loggedIn: true });
+  }
+  onLogOut() {
+    this.service = makeService();
+    localStorage.removeItem('token');
+    this.setState({ loggedIn: false });
+  }
+  
+  render() {
+    return (
+      <div>
+        <Navbar loggedIn={this.state.loggedIn} />
         <div className="App container">
           <Switch>
             <Route exact path='/' render={() => (
-              <Home test={props.content} />
+              <Home  />
             )}/>
             <Route path="/profile" exact component={Profile} />
             <Route path="/progress" exact component={Progress} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
+            <Route 
+              path="/login" 
+              render={({ history }) => (<Login
+                onLogin={this.onLogin}
+                logIn={this.service.logIn}
+                history={history}
+              />)}
+             />
+             <Route 
+              path="/register" 
+              render={({ history }) => (<Register
+                onLogin={this.onLogin}
+                register={this.service.register}
+                history={history}
+              />)}
+             />
+              <Route 
+              path="/logout" 
+              render={({ history }) => <Logout
+                history={history}
+                onLogOut={this.onLogOut}
+              />}
+             />
             <Route path="/reviews" component={PublishedReviews} />
             <Route path="/comp" component={CourseCompleted} />
             <Route path="/:coursename" render={
@@ -41,37 +85,7 @@ function AppPresenter(props){
         </div>
         <Footer />
     </div>);
-}
 
-class AppContainer extends Component {
-
-  constructor(props){
-    super(props);
-    this.state = {
-      test : 'Hello this is great content',
-      content: ''
-    }
-  }
-
-  componentDidMount() {
-    axios.get('/courses/3/sections/3', {
-      // params: {
-      //   ID: 3
-      // }
-    })
-    .then( (response) => {
-      // console.log(response.data.content);
-      this.setState({
-        content: response.data.content
-      })
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-
-  render() {
-    return <AppPresenter content={this.state.content}/>;
-  }
-}
-export default AppContainer;
+  };
+};
+export default App;
