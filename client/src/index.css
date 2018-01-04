@@ -22,7 +22,7 @@
 }
 
 #banner {
-  background-image: url("banner.png");
+  background-image: url("/banner.png");
   height: 20em;
   margin-bottom: 2em;
   color: white;
