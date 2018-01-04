@@ -12,7 +12,7 @@ class CourseSidebar extends Component {
   }
 
   componentDidMount(){
-    getCourse(this.props.coursename)
+    getCourse("js-essentials-2")
     .then((course) => {
       this.setState({loading: undefined, ...course});
     })
@@ -23,24 +23,22 @@ class CourseSidebar extends Component {
     if (this.state.loading) {
       return (<Loading />);
     }
-  return (
-    <div>
-      <h5><Link to={`/${coursename}/intro`}>Introduction <span className='text-success'>{'\u2714'}</span></Link></h5>
-      <ul>
-        <li>Intro</li>
-        <li>Section 2</li>
-        <li>Section 3</li>
-        <li>Section 4</li>
-        <li>Section 5</li>
-      </ul>
-      <h5>Chapter 2</h5>
-      <h5>Chapter 3</h5>
-      <h5>Chapter 4</h5>
-      <h5>Chapter 5</h5>
-      <h5>Chapter 6</h5>
-    </div>
-  );
-}
+    return (
+      <div>
+        {this.state.chapters.map(function(chapter, index){
+            return <div key={ index }>
+              <h5>{chapter.name}</h5>
+              {chapter.sections.map(function(section, index){
+              return <div key={ index }>
+                <li><Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link></li>
+              </div>;
+            })}
+            </div>;
+          })}
+        <span className='text-success'>{'\u2714'}</span>
+      </div>
+    );
+  }
 }
 
 export default CourseSidebar;
