@@ -18,7 +18,7 @@ class CourseSummary extends Component {
     getCourse(this.props.coursename)
     .then((course) => {
       this.setState({loading: undefined, ...course});
-    });
+    })
   }
   
   render() {
@@ -38,23 +38,17 @@ class CourseSummary extends Component {
       <div>
         <img src='https://s3.amazonaws.com/thinkific/instructors/000/046/9561488219777.small.png?1488219777' alt='David VanDusen' className='instructor__img' />
       </div>
-      <div>
-        David VanDusen
-      </div>
-      <div>
-        Web Developer & Instructor
-      </div>
-      <div>
-        <p>David is a sort of web dev Don Quixote, helping out wherever he is needed. He has grappled with his share of technological windmills yet continues his chivalrous fight for clean, beautiful code. That said, David is a renaissance man and pursues fine arts and music in his leisure.</p>
-      </div>
+      <div>{this.state.instructor.name}</div>
+      <div>{this.state.instructor.position}</div>
+      <div>{this.state.instructor.description}</div>
       <div>
         <h3>
-          Reviews (1)
+          Reviews (2)
         </h3>
-        <h4>
-          5 Stars! Thee Beste Course That Ever Coursed
-        </h4>
-          by Geoffrey Chaucer
+        {/* <% for (const review of reviews) { %>
+          <div>{this.state.reviews.review}</div>
+          <div>{this.state.reviews.review.user.first_name}</div>
+        <% } %> */}
         </div>
       </div>);
     }

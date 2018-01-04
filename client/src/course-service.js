@@ -6,6 +6,16 @@ function delay(by = 2000){
   });
 }
 
+function getInstructors(){
+  return axios.get(`/courses`)
+    .then( (response) => {
+      return response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+}
+
 function getCourse(coursename){
   return axios.get(`/${coursename}`)
     .then( (response) => {
@@ -25,4 +35,4 @@ function getCourseContent(coursename, sectionname){
       console.log(error);
     })
 }
-export {getCourse, getCourseContent};
+export {getCourse, getCourseContent, getInstructors};
