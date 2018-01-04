@@ -31,7 +31,7 @@ function Login({ onLogin, logIn, history }) {
               Password
             </label>
             <div className="col-sm-4">
-              <input placeholder="Password" className="form-control input-md" required="" type="text" />
+              <input type="password" placeholder="Password" className="form-control input-md" required="" />
             </div>
           </div>
 
