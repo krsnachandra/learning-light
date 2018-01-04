@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <div className="container">
-    <div id="banner">
-      <div className="text-center">
-        Learn web and iOS development with us!
+
+      <div id="banner" className="justify-content-center">
+          <h1>Learn web and iOS development with us!</h1>
       </div>
-    </div>
-    <div className="row">
-      <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <div className="card">
-          <div className="card-img-container">
-            <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/071/5581490308310.original.jpg?1490308310" alt="" className="card-img-top" />
-          </div>
+
+      <div className="row">
+        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div className="card">
+            <div className="card-img-container">
+              <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/071/5581490308310.original.jpg?1490308310" alt="" className="card-img-top" />
+            </div>
           <div className="card-body">
 
             <div className="row">
