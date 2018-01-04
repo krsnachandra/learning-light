@@ -28,6 +28,7 @@ class CourseSummary extends Component {
     }
     return (
       <div>
+        <h1>{this.state.name}</h1>
         <h2>Course Details</h2>
       <div>
         <p>{this.state.description}</p>
@@ -45,10 +46,14 @@ class CourseSummary extends Component {
         <h3>
           Reviews (2)
         </h3>
-        {/* <% for (const review of reviews) { %>
-          <div>{this.state.reviews.review}</div>
-          <div>{this.state.reviews.review.user.first_name}</div>
-        <% } %> */}
+        <div>
+        {this.state.reviews.map(function(review, index){
+          return <div key={ index }>
+            <p>{review.review}</p>
+            <p>~{review.user.first_name}</p>
+          </div>;
+        })}
+        </div>
         </div>
       </div>);
     }
