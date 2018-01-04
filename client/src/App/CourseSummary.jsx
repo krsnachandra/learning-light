@@ -28,6 +28,7 @@ class CourseSummary extends Component {
     }
     return (
       <div>
+        <h1>{this.state.name}</h1>
         <h2>Course Details</h2>
       <div>
         <p>{this.state.description}</p>
