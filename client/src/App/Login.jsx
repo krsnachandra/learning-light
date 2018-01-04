@@ -15,19 +15,24 @@ function Login({ onLogin, logIn, history }) {
   };
   return (
     <div className="col-sm-10 offset-sm-1 text-center">
-      <legend>Login</legend>
-        <form onSubmit={onSubmit} className="justify-content-center row">
-
+      <form onSubmit={onSubmit} className="justify-content-center row">
         <fieldset>
           <div className="form-group row">
-            <label className="col-sm-3 col-form-label col-form-label-sm" for="textinput">Email</label>
+            <label className="col-sm-2"/>
+            <div className="col-sm-10">
+              <legend>Login</legend>
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <label className="col-sm-3 col-form-label">E-mail</label>
             <div className="col-sm-9">
               <input placeholder="E-mail address" className="form-control input-md" required="" type="text" />
             </div>
           </div>
 
           <div className="form-group row">
-            <label className="col-sm-3 col-form-label col-form-label-sm" for="textinput">
+            <label className="col-sm-3 col-form-label">
               Password
             </label>
             <div className="col-sm-9">
@@ -36,14 +41,14 @@ function Login({ onLogin, logIn, history }) {
           </div>
 
           <div className="form-group row">
-            <label className="col-sm-2 col-form-label col-form-label-sm" for="singlebutton" />
+            <label className="col-sm-2"/>
             <div className="col-sm-10">
               <button id="register-submit" className="btn btn-primary">Submit</button>
             </div>
           </div>
 
           <div className="form-group row">
-            <label className="col-sm-2 col-form-label col-form-label-sm" for="singlebutton" />
+            <label className="col-sm-2" />
             <div className="col-sm-10">
             <small>Need to sign up? <Link to="/register">Register here</Link>!</small>
           </div>
