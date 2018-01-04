@@ -1,9 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Register() {
+function Register({ onLogin, register, history }) {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const first_name = e.target.elements.first_name.value;
+    const last_name = e.target.elements.last_name.value;
+    const email = e.target.elements.email.value;
+    const location = e.target.elements.location.value;
+    const motivation = e.target.elements.motivation.value;
+    const password = e.target.elements.password.value;
+    const passwordConfirm = e.target.elements.passwordConfirm.value;
+    register(first_name, last_name, email, location, motivation, password, passwordConfirm)
+      .then((data) => {
+        onLogin(data.jwt);
+        history.push('/');
+      });
+  };
+
   return (
-    <fieldset>
+    <form onSubmit={onSubmit}>
       <legend>Register</legend>
       <div className="form-group row">
         <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">
@@ -76,6 +92,10 @@ export default function Register() {
         <small>Already registered? <Link to="/login">Log in.</Link></small>
         </div>
       </div>
-    </fieldset>
+    </form>
   );
+
+
 }
+
+export default Register;

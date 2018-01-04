@@ -3,17 +3,17 @@ import React from 'react';
 function Footer() {
   return (
 
-    <footer class="footer hidden-print" id="global-footer">
-      <div class="column">
-        <div class="row">
-          <div class="col-sm-12">
-            <ul class="footer-nav">
-              <li class="footer-nav__item">
+    <footer className="footer hidden-print" id="global-footer">
+      <div className="column">
+        <div className="row">
+          <div className="col-sm-12">
+            <ul className="footer-nav">
+              <li className="footer-nav__item">
                 <a href="/">
                   Home
                 </a>
               </li>
-              <li class="footer-nav__item">
+              <li className="footer-nav__item">
                 <a data-uv-trigger="true" href="mailto:hello@lighthouselabs.ca">
                   Support
                 </a>
@@ -25,10 +25,10 @@ function Footer() {
         </div>
       </div>
 
-      <div class="column">
-        <div class="row">
-          <div class="col-sm-12 text-center">
-            <div class="footer-copyright">
+      <div className="column">
+        <div className="row">
+          <div className="col-sm-12 text-center">
+            <div className="footer-copyright">
               © Copyright Lighthouse Labs 2018
             </div>
 
