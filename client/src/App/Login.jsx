@@ -27,7 +27,7 @@ function Login({ onLogin, logIn, history }) {
      <div className="form-group row">
        <label className="col-sm-1 col-form-label col-form-label-sm" for="textinput">Password</label>
        <div className="col-sm-4">
-         <input id="textinput" name="password" placeholder="Password" className="form-control input-md" required="" type="text" />
+         <input id="textinput" name="password" placeholder="Password" className="form-control input-md" required="" type="password" />
          <span className="help-block"> </span>
        </div>
      </div>
