@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Register({ onLogin, register, history }) {
   const onSubmit = (e) => {
@@ -18,76 +19,83 @@ function Register({ onLogin, register, history }) {
   };
 
   return (
-    <div>
-    <h1>Register</h1>
     <form onSubmit={onSubmit}>
-    <fieldset>
+      <legend>Register</legend>
       <div className="form-group row">
-        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">First Name</label>
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">
+          First name
+        </label>
         <div className="col-sm-4">
-        <input id="textinput" name="first_name" placeholder="Insert your First Name" className="form-control input-md" required="" type="text" />
-        <span className="help-block"> </span>
+          <input placeholder="First name" className="form-control input-md" required="" type="text" />
         </div>
       </div>
 
       <div className="form-group row">
-        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">Last Name</label>
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">
+          Last name
+        </label>
         <div className="col-sm-4">
-        <input id="textinput" name="last_name" placeholder="Insert your Last Name" className="form-control input-md" required="" type="text" />
-        <span className="help-block"> </span>
+          <input placeholder="Last name" className="form-control input-md" required="" type="text" />
         </div>
       </div>
 
       <div className="form-group row">
-        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">Location</label>
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">
+          Motivation
+        </label>
         <div className="col-sm-4">
-        <input id="textinput" name="location" placeholder="Insert your Location" className="form-control input-md" required="" type="text" />
-        <span className="help-block"> </span>
+          <input placeholder="Why are you learning to code?" className="form-control input-md" required="" type="text" />
         </div>
       </div>
 
       <div className="form-group row">
-        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">Motivation</label>
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">
+          E-mail
+        </label>
         <div className="col-sm-4">
-        <input id="textinput" name="motivation" placeholder="Why are you learning to code?" className="form-control input-md" required="" type="text" />
-        <span className="help-block"> </span>
+          <input placeholder="E-mail address" className="form-control input-md" required="" type="text" />
+          <small className="help-block form-text text-muted">We will never hand out your info without your permission.</small>
         </div>
       </div>
 
       <div className="form-group row">
-        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">Email</label>
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">
+          Password
+        </label>
         <div className="col-sm-4">
-        <input id="textinput" name="email" placeholder="Insert your Email" className="form-control input-md" required="" type="text" />
-        <span className="help-block"> </span>
+          <input placeholder="Password" className="form-control input-md" required="" type="text" />
+          <small className="help-block form-text text-muted">
+            Not sure how to choose a password? Click <a href="https://www.lifewire.com/choosing-secure-passwords-1174071" target="0">here</a> for ideas.
+          </small>
         </div>
       </div>
 
       <div className="form-group row">
-        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">Password</label>
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">
+          Confirm
+        </label>
         <div className="col-sm-4">
-        <input id="textinput" name="password" placeholder="Insert your Password" className="form-control input-md" required="" type="password" />
-        <span className="help-block"> </span>
+          <input id="textinput" name="textinput" placeholder="Confirm your password" className="form-control input-md" required="" type="text" />
         </div>
       </div>
 
       <div className="form-group row">
-        <label className="col-sm-2 col-form-label col-form-label-sm" for="textinput">Confirm Password</label>
-        <div className="col-sm-4">
-        <input id="textinput" name="passwordConfirm" placeholder="Confirm your Password" className="form-control input-md" required="" type="password" />
-        <span className="help-block"> </span>
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="singlebutton" />
+        <div className="col-sm-1">
+          <button id="register-submit" className="btn btn-primary">Submit</button>
         </div>
       </div>
 
       <div className="form-group row">
-        <label className="col-sm-2 col-form-label col-form-label-sm" for="singlebutton"> </label>
+        <label className="col-sm-2 col-form-label col-form-label-sm" for="singlebutton" />
         <div className="col-sm-4">
-          <button id="singlebutton" name="singlebutton" className="btn btn-primary">Submit</button>
+        <small>Already registered? <Link to="/login">Log in.</Link></small>
         </div>
       </div>
-    </fieldset>
     </form>
-  </div>
   );
+
+
 }
 
 export default Register;

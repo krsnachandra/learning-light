@@ -1,0 +1,72 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+.card {
+  height: 468px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 1px 1px 0 #e2e2e2;
+  position: relative;
+  background: #ffffff;
+}
+
+.card-img {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    width: 100%;
+    height: auto;
+}
+
+.register-container {
+  padding: 1em;
+}
+
+#banner {
+  background-image: url("/banner.png");
+  height: 20em;
+  margin-bottom: 2em;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 5em;
+}
+
+#banner span {
+  text-align: center;
+}
+
+.rating input {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+footer {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1600px;
+    padding: 30px 0;
+    color: #fff;
+    list-style: none;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+  padding: 0.5em;
+}
+
+.nav-item a {
+  color: #ffc107;
+}

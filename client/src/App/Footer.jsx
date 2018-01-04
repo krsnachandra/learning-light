@@ -2,104 +2,39 @@ import React from 'react';
 
 function Footer() {
   return (
+    <div className="navbar navbar-expand-lg navbar-dark bg-dark">
     <footer>
-      <div className="container">
-            <h4>Interested in more free content?</h4>
-            <form  action="/submit-subscriptions" acceptCharset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
-              <input required="required" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="E-mail address"  autoComplete="off" type="email" name="subscription[email]" id="subscription_email" />
-              <button type="submit" name="commit" data-disable-with="Please wait">Subscribe</button>
-            </form>
-      </div>
-
-      <div className="container">
-        <div className="row">
-        <div className="col-sm">
-          <p>
-            COMMUNITY
-          </p>
-          <ul>
-            <li><a title="Events" href="/events">Events</a></li>
-            <li><a title="Blog" href="/blog">Blog</a></li>
+      <div className="text-center">
+        <div className="form">
+          <form className="form-inline my-2 my-lg-0" action="/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓" />
+            <input className="form-control mr-sm-2" type="text" required="required" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="E-mail address" autocomplete="off" type="email" name="subscription[email]" id="subscription_email" />
+            <button className="btn btn-secondary my-2 my-sm-0" type="submit" name="commit" data-disable-with="Please wait...">Subscribe</button>
+          </form>
+        </div>
+        <div className="mx-auto">
+          <ul className="nav">
+            <li className="nav-item"><a href="https://twitter.com/lighthouse_labs" target="0"><i className="fa fa-twitter fa-2x"></i></a></li>
+            <li className="nav-item"><a href="https://www.facebook.com/lighthouselabsvancouver" target="0"><i className="fa fa-facebook fa-2x"></i></a></li>
+            <li className="nav-item"><a href="https://plus.google.com/+LighthouselabsCan/posts" target="0"><i className="fa fa-github fa-2x"></i></a></li>
+            <li className="nav-item"><a href="https://www.linkedin.com/company/lighthouse-labs" target="0"><i className="fa fa-linkedin fa-2x"></i></a></li>
           </ul>
         </div>
-        <div className="col-sm">
-          <p>
-            ABOUT US
-          </p>
-          <ul>
-            <li> <a title="Team" href="/team">Team</a></li>
+        <div className="row text-center navbar-text">
+          <ul className="menu list-inline">
+            <li className="list-inline-item"><a href="/">Home</a></li>
+            <li className="list-inline-item"><a href="https://www.lighthouselabs.ca/contact" target="0">Contact</a></li>
           </ul>
         </div>
-        <div className="col-sm">
-          <p>
-            SUPPORT
-          </p>
-          <ul>
-            <li> <a title="Contact" href="/contact">Contact</a></li>
-          </ul>
-        </div>
-        </div>
-      </div>
-      <div className="container">
-        <hr />
-          <p>
-            © 2017 Lighthouse Labs
-          </p>
-          <div>
-            <a href="https://twitter.com/lighthouse_labs" target="_blank" rel="noopener noreferrer">
-              <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
-                <path fill="#FFFFFF" d="M15.1,0c2.1,0,4.1,0.4,5.9,1.2C22.9,2,24.5,3,25.8,4.4c1.4,1.4,2.4,3,3.2,4.8c0.8,1.8,1.2,3.8,1.2,5.9
-          c0,2.1-0.4,4.1-1.2,5.9c-0.8,1.8-1.9,3.4-3.2,4.8c-1.4,1.4-3,2.4-4.8,3.2c-1.8,0.8-3.8,1.2-5.9,1.2c-2.1,0-4.1-0.4-5.9-1.2
-          c-1.8-0.8-3.4-1.9-4.8-3.2c-1.4-1.4-2.5-3-3.2-4.8C0.4,19.1,0,17.2,0,15.1C0,13,0.4,11,1.2,9.2C2,7.4,3.1,5.8,4.4,4.4
-          C5.8,3,7.4,2,9.2,1.2C11.1,0.4,13.1,0,15.1,0z M23.3,10.8C23,10.9,22.7,11,22.5,11c-0.3,0.1-0.6,0.1-0.9,0.2
-          c0.3-0.2,0.6-0.4,0.8-0.7c0.2-0.3,0.4-0.6,0.6-0.9c-0.3,0.1-0.6,0.3-1,0.4c-0.3,0.1-0.7,0.2-1.1,0.3C20.7,10,20.3,9.7,20,9.5
-          c-0.4-0.2-0.8-0.3-1.2-0.3c-0.8,0-1.5,0.3-2.2,0.9c-0.6,0.6-0.9,1.3-0.9,2.2c0,0.2,0,0.4,0.1,0.7c-1.3-0.1-2.5-0.4-3.6-0.9
-          c-1.1-0.6-2-1.3-2.8-2.3c-0.3,0.5-0.4,1-0.4,1.5c0,1.1,0.4,2,1.3,2.5c-0.5,0-1-0.1-1.4-0.3v0c0,0.7,0.2,1.4,0.7,2
-          c0.5,0.6,1,0.9,1.7,1.1c-0.1,0-0.2,0.1-0.4,0.1c-0.1,0-0.3,0-0.5,0c-0.1,0-0.3,0-0.5-0.1c0.2,0.6,0.5,1.1,1,1.5
-          c0.5,0.4,1.1,0.6,1.8,0.6c-1.1,0.9-2.4,1.3-3.8,1.3H8.4c0.7,0.4,1.4,0.8,2.2,1c0.8,0.2,1.6,0.4,2.5,0.4c1.4,0,2.7-0.3,3.7-0.8
-          c1.1-0.5,2-1.2,2.7-2c0.7-0.8,1.3-1.8,1.7-2.8c0.4-1,0.6-2.1,0.6-3.1v-0.4c0.3-0.2,0.6-0.5,0.9-0.8C22.9,11.3,23.1,11,23.3,10.8z"/>
-              </svg>
-            </a>
-            <a href="https://www.facebook.com/lighthouselabsvancouver" target="_blank" rel="noopener noreferrer">
-              <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
-                <path fill="#FFFFFF" d="M15.1,30.2c-2.1,0-4.1-0.4-5.9-1.2c-1.8-0.8-3.4-1.9-4.8-3.2c-1.4-1.4-2.4-3-3.2-4.8C0.4,19.2,0,17.2,0,15.1
-          c0-2.1,0.4-4.1,1.2-5.9C2,7.4,3.1,5.8,4.4,4.4c1.4-1.4,3-2.5,4.8-3.2C11.1,0.4,13,0,15.1,0c2.1,0,4.1,0.4,5.9,1.2
-          c1.8,0.8,3.4,1.9,4.8,3.2c1.4,1.4,2.4,3,3.2,4.8c0.8,1.8,1.2,3.8,1.2,5.9c0,2.1-0.4,4.1-1.2,5.9c-0.8,1.8-1.9,3.4-3.2,4.8
-          c-1.4,1.4-3,2.4-4.8,3.2C19.2,29.8,17.2,30.2,15.1,30.2z M11.2,15.6h2.2v6.8h2.8v-6.8H19v-2.8h-2.8v-1.4c0-0.2,0.1-0.4,0.2-0.6
-          c0.1-0.2,0.2-0.3,0.4-0.3H19V7.8h-2.2c-0.9,0-1.7,0.4-2.4,1.1c-0.7,0.7-1,1.6-1,2.6v1.4h-2.2V15.6z"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/company/lighthouse-labs" target="_blank" rel="noopener noreferrer">
-              <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
-                <path fill="#FFFFFF" d="M15.1,30.2c-2.1,0-4.1-0.4-5.9-1.2c-1.8-0.8-3.4-1.9-4.8-3.2c-1.4-1.4-2.4-3-3.2-4.8C0.4,19.1,0,17.1,0,15
-          C0,13,0.4,11,1.2,9.2C2,7.3,3.1,5.7,4.4,4.4c1.4-1.4,3-2.4,4.8-3.2C11.1,0.4,13,0,15.1,0c2.1,0,4.1,0.4,5.9,1.2
-          c1.8,0.8,3.4,1.9,4.8,3.2c1.4,1.4,2.5,3,3.2,4.8c0.8,1.8,1.2,3.8,1.2,5.9c0,2.1-0.4,4.1-1.2,5.9c-0.8,1.8-1.9,3.4-3.2,4.8
-          c-1.4,1.4-3,2.5-4.8,3.2C19.2,29.8,17.2,30.2,15.1,30.2z M10.9,6.5C10.4,6.5,10,6.7,9.7,7C9.4,7.3,9.2,7.7,9.2,8.2
-          c0,0.5,0.2,0.8,0.5,1.2c0.3,0.3,0.7,0.5,1.2,0.5c0.5,0,0.8-0.2,1.2-0.5c0.3-0.3,0.5-0.7,0.5-1.2c0-0.5-0.2-0.9-0.5-1.2
-          C11.7,6.7,11.3,6.5,10.9,6.5z M12.2,10.8H9.5V20h2.7V10.8z M13.5,20h2.7v-5.9c0.2-0.2,0.4-0.4,0.7-0.5c0.2-0.1,0.4-0.1,0.7-0.2
-          c0.3,0,0.5,0,0.8,0.2c0.1,0.1,0.2,0.2,0.3,0.3c0.1,0.2,0.2,0.3,0.2,0.5V20h2.6v-5.6c0-0.6-0.2-1.2-0.5-1.8c-0.3-0.6-0.8-1-1.3-1.3
-          c-0.5-0.3-1.1-0.4-1.7-0.4c-0.6,0-1.2,0.1-1.7,0.3v-0.4h-2.7V20z"/>
-              </svg>
-            </a>
-            <a href="https://plus.google.com/+LighthouselabsCan/posts" target="_blank" rel="noopener noreferrer">
-              <svg x="0px" y="0px" viewBox="0 0 30.2 30.2" enableBackground="new 0 0 30.2 30.2">
-                <path fill="#FFFFFF" d="M15.1,30.2c-2.1,0-4.1-0.4-5.9-1.2c-1.8-0.8-3.4-1.9-4.8-3.2c-1.4-1.4-2.4-3-3.2-4.8C0.4,19.1,0,17.2,0,15.1
-          C0,13,0.4,11,1.2,9.2C2,7.3,3.1,5.7,4.4,4.4c1.4-1.4,3-2.4,4.8-3.2C11.1,0.4,13,0,15.1,0c2.1,0,4.1,0.4,5.9,1.2
-          c1.8,0.8,3.4,1.9,4.8,3.2c1.4,1.4,2.4,3,3.2,4.8c0.8,1.8,1.2,3.8,1.2,5.9c0,2.1-0.4,4.1-1.2,5.9c-0.8,1.8-1.9,3.4-3.2,4.8
-          c-1.4,1.4-3,2.5-4.8,3.2C19.2,29.8,17.2,30.2,15.1,30.2z M12.5,15.7c0,0.5,0.1,0.9,0.3,1.2c-0.5,0.3-0.9,0.6-1.1,1.1
-          c-0.3,0.4-0.4,0.9-0.4,1.4c0,0.8,0.4,1.5,1.1,2.1c0.7,0.6,1.7,0.9,2.8,0.9c1.1,0,2-0.3,2.8-0.9c0.7-0.6,1.1-1.3,1.1-2.1
-          c0-0.8-0.4-1.5-1.1-2.1c-0.7-0.6-1.7-0.9-2.8-0.9h-0.3c-0.1-0.2-0.1-0.4-0.1-0.6c0-0.1,0-0.2,0-0.4c0-0.2,0-0.2,0.1-0.2h0.1
-          c0.9,0,1.6-0.3,2.3-0.9c0.6-0.6,0.9-1.4,0.9-2.3c0-0.2,0-0.5-0.1-0.7c-0.1-0.2-0.2-0.4-0.3-0.5l1.1-0.6V7.8l-2.3,1.3
-          C16.2,9,16,8.8,15.7,8.7c-0.3-0.1-0.6-0.2-0.9-0.2c-0.9,0-1.6,0.3-2.3,0.9c-0.6,0.6-0.9,1.4-0.9,2.3c0,0.5,0.1,1,0.3,1.4
-          c0.2,0.4,0.5,0.8,0.9,1.1C12.6,14.7,12.5,15.2,12.5,15.7z M14.9,13.3c-0.4,0-0.8-0.1-1.1-0.4c-0.3-0.3-0.5-0.6-0.5-1.1
-          c0-0.4,0.2-0.8,0.5-1.1c0.3-0.3,0.7-0.5,1.1-0.5c0.4,0,0.8,0.2,1.1,0.5c0.3,0.3,0.5,0.7,0.5,1.1c0,0.4-0.1,0.8-0.5,1.1
-          C15.7,13.2,15.3,13.3,14.9,13.3z M15.1,20.5c-0.5,0-0.9-0.1-1.2-0.3c-0.3-0.2-0.5-0.5-0.5-0.8c0-0.3,0.2-0.6,0.5-0.8
-          c0.3-0.2,0.7-0.3,1.2-0.3c0.5,0,0.9,0.1,1.2,0.3c0.3,0.2,0.5,0.5,0.5,0.8c0,0.3-0.2,0.6-0.5,0.8C16,20.4,15.6,20.5,15.1,20.5z"/>
-              </svg>
-            </a>
+        <div className="row text-center">
+          <div className="container">
+            <div>
+              <p>Lighthouse Labs © 2018</p>
+            </div>
           </div>
         </div>
+      </div>
     </footer>
+  </div>
   );
 }
 

@@ -13,10 +13,11 @@ class CourseSummary extends Component {
   componentDidMount(){
     getCourse(this.props.coursename)
     .then((course) => {
+
       this.setState({loading: undefined, ...course});
     })
   }
-  
+
   render() {
     console.log(this.props);
     if (this.state.loading) {
@@ -25,7 +26,7 @@ class CourseSummary extends Component {
     return (
       <div>
         <h1>{this.state.name}</h1>
-        <h2>Course Details</h2>
+        <h2>Course details</h2>
       <div>
         <p>{this.state.description}</p>
       </div>
@@ -33,14 +34,14 @@ class CourseSummary extends Component {
         <h2>Instructor</h2>
       </div>
       <div>
-        <img src='https://s3.amazonaws.com/thinkific/instructors/000/046/9561488219777.small.png?1488219777' alt='David VanDusen' className='instructor__img' />
+        <img src="./dv-small.png" alt="David VanDusen" />
       </div>
       <div>{this.state.instructor.name}</div>
       <div>{this.state.instructor.position}</div>
       <div>{this.state.instructor.description}</div>
       <div>
         <h3>
-          Reviews (2)
+          Reviews
         </h3>
         <div>
         {this.state.reviews.map(function(review, index){
