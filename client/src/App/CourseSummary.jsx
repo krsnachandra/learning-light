@@ -17,6 +17,7 @@ class CourseSummary extends Component {
   componentDidMount(){
     getCourse(this.props.coursename)
     .then((course) => {
+
       this.setState({loading: undefined, ...course});
     })
   }
@@ -26,7 +27,6 @@ class CourseSummary extends Component {
     if (this.state.loading) {
       return (<Loading />);
     }
-    console.log("This is:", this.state);
     return (
       <div>
         <h1>{this.state.name}</h1>
@@ -45,7 +45,7 @@ class CourseSummary extends Component {
       <div>{this.state.instructor.description}</div>
       <div>
         <h3>
-          Reviews
+          Reviews (2)
         </h3>
         <div>
         {this.state.reviews.map(function(review, index){
