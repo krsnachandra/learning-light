@@ -17,7 +17,7 @@ function Profile({ onLogin, profile, history }) {
         history.push('/');
       });
   };
-  
+
   return (
     <div className="col-sm-10 offset-sm-1 text-center">
       <form onSubmit={onSubmit} className="justify-content-center row">
@@ -32,30 +32,36 @@ function Profile({ onLogin, profile, history }) {
           <div className="form-group row">
             <label className="col-sm-3 col-form-label">First name</label>
             <div className="col-sm-9">
-              <input className="form-control input-md" required="" type="text" />
+              <input className="form-control input-md" required="" type="text" name="first_name" />
             </div>
           </div>
 
           <div className="form-group row">
             <label className="col-sm-3 col-form-label">Last name</label>
             <div className="col-sm-9">
-              <input className="form-control input-md" required="" type="text" />
+              <input className="form-control input-md" required="" type="text" name="last_name" />
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <label className="col-sm-3 col-form-label">Location</label>
+            <div className="col-sm-9">
+              <input className="form-control input-md" name="location" required="" type="text" />
             </div>
           </div>
 
           <div className="form-group row">
             <label className="col-sm-3 col-form-label">Motivation</label>
             <div className="col-sm-9">
-              <input className="form-control input-md" required="" type="text" />
+              <input className="form-control input-md" required="" type="text" name="motivation" />
               <small className="help-block form-text text-muted">Tell us about why you'd like to learn to code.</small>
-
             </div>
           </div>
 
           <div className="form-group row">
             <label className="col-sm-3 col-form-label">E-mail</label>
             <div className="col-sm-9">
-              <input className="form-control input-md" required="" type="text" />
+              <input className="form-control input-md" required="" type="text" name="email" />
               <small className="help-block form-text text-muted">We will never hand out your info without your permission.</small>
             </div>
           </div>
@@ -65,7 +71,7 @@ function Profile({ onLogin, profile, history }) {
               Password
             </label>
             <div className="col-sm-9">
-              <input type="password" className="form-control input-md" required="" />
+              <input type="password" className="form-control input-md" required="" name="password" />
               <small className="help-block form-text text-muted">Need help choosing a secure password? <br/> Click <a href="https://www.lifewire.com/choosing-secure-passwords-1174071" target="0">here</a> for ideas.
             </small>
             </div>
@@ -74,7 +80,7 @@ function Profile({ onLogin, profile, history }) {
           <div className="form-group row">
             <label className="col-sm-3 col-form-label" />
             <div className="col-sm-9">
-              <input type="password" placeholder="Confirm password" className="form-control input-md" required="" />
+              <input type="password" placeholder="Confirm password" className="form-control input-md" required="" name="passwordConfirm" />
             </div>
           </div>
 
@@ -84,6 +90,7 @@ function Profile({ onLogin, profile, history }) {
               <button id="register-submit" className="btn btn-primary">Submit</button>
             </div>
           </div>
+
         </fieldset>
       </form>
      </div>

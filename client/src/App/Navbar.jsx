@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 
 function Navbar({ loggedIn }) {
   const links = loggedIn ?
-    (<Link to="/logout" className="nav-item nav-link">Log out</Link>) :
-      ([<Link to="/login" className="nav-item nav-link">Log in</Link>,
-        <Link to="/register" className="nav-item nav-link">Register</Link>]);
+    ([<Link to="/logout" className="navbar nav-link">Log out</Link>,
+      <Link to="/profile" className="navbar nav-link">Profile</Link>]) :
+      ([<Link to="/login" className="navbar nav-link">Log In</Link>,
+        <Link to="/register" className="navbar nav-link">Register</Link>]);
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -23,10 +24,10 @@ function Navbar({ loggedIn }) {
               {links}
             </div>
           </ul>
-          <form className="form-inline my-2 my-lg-0">
+          {/* <form className="form-inline my-2 my-lg-0">
             <input className="form-control mr-sm-2" type="text" placeholder="Search" />
             <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          </form> */}
         </div>
       </nav>
     );
