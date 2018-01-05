@@ -12,7 +12,7 @@ export default function Home() {
       </div>
 
       <div className="row">
-        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div className="card">
             <div className="card-img-container">
               <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/071/5581490308310.original.jpg?1490308310" alt="" className="card-img-top" />
@@ -43,7 +43,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div className="card">
             <div className="card-img-container">
               <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/073/3551490308653.original.jpg?1490308653" alt="" className="card-img-top" />
@@ -72,7 +72,7 @@ export default function Home() {
       </div>
     </div>
 
-      <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div className="card">
           <div className="card-img-container">
             <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/120/8341495230939.original.png?1495230939" alt="" className="card-img-top" />
@@ -101,7 +101,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div className="card">
           <div className="card-img-container">
             <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/197/6151508709032.original.jpg?1508709032" alt="" className="card-img-top" />
