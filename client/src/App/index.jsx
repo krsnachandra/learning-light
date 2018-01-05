@@ -74,11 +74,15 @@ class App extends Component {
                 onLogOut={this.onLogOut}
               />}
              />
-            <Route path="/comp" component={CourseCompleted} />
+            <Route path="/:coursename/complete" render={
+              ({match:{params:{coursename}}}) => (
+                <CourseCompleted coursename={coursename}/>
+              )} />
             <Route path="/:coursename" render={
               ({match:{params:{coursename}}}) => (
                 <CourseContainer coursename={coursename}/>
               )} />
+            
           </Switch>
         </div>
         <Footer />
