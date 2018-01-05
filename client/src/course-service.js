@@ -11,7 +11,7 @@ function Loading() {
   return <h1>Loading...</h1>;
 }
 
-function getInstructors(){
+function getAllCourses(){
   return axios.get(`/courses`)
     .then( (response) => {
       return response.data;
@@ -40,4 +40,4 @@ function getCourseContent(coursename, sectionname){
       console.log(error);
     })
 }
-export {getCourse, getCourseContent, getInstructors, Loading};
+export {getCourse, getCourseContent, getAllCourses, Loading};
