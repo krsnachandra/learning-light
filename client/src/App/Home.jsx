@@ -62,8 +62,7 @@ class Home extends Component {
     		          </div>
     	            <div className="row">
   		              <div className="col-md-12">
-                    const coursename = {course.coursename}
-  			              <Link to="/coursename"><button className="btn btn-primary btn-block">View Course</button></Link>
+  			              <Link to={`/${course.coursename}`}><button className="btn btn-primary btn-block">View Course</button></Link>
   		              </div>
   	              </div>
                 </div>
