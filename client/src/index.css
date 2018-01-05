@@ -57,6 +57,15 @@ footer {
     list-style: none;
 }
 
+.card-title {
+  font-weight: bold;
+  font-size-adjust: auto;
+}
+
+.card-instructor {
+  text-transform:
+}
+
 .nav {
     display: flex;
     justify-content: center;

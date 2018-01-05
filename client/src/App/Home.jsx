@@ -18,15 +18,14 @@ export default function Home() {
               <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/071/5581490308310.original.jpg?1490308310" alt="" className="card-img-top" />
             </div>
           <div className="card-body">
-
             <div className="row">
               <div className="col-md-12">
-                <div className="card-instructor card-title">
+                <div className="card-instructor">
                   Maggie Moss
                 </div>
-                <h4 className="card-title">
+                <p className="card-title">
                   HTML &amp; CSS Essentials
-                </h4>
+                </p>
                 <p className="card-text">
                   Learn to build basic web pages using HTML &amp; CSS.
                 </p>
@@ -51,12 +50,12 @@ export default function Home() {
           <div className="card-body">
             <div className="row">
               <div className="col-md-12">
-                <div className=" card-instructor card-title">
+                <div className="card-instructor">
                   David VanDusen
                 </div>
-                <h4 className="card-title">
+                <p className="card-title">
                   Javascript Essentials Part I
-                </h4>
+                </p>
                 <p className="card-text">
                   Learn to build and style your own web-based chat app using JavaScript.
                 </p>
@@ -80,12 +79,12 @@ export default function Home() {
           <div className="card-body">
             <div className="row">
               <div className="col-md-12">
-                <div className=" card-instructor card-title">
+                <div className="card-instructor">
                   David Mills
                 </div>
-                <h4 className="card-title">
+                <p className="card-title">
                   iOS Essentials
-                </h4>
+                </p>
                 <p className="card-text">
                   Learn the basics of iOS development using Swift by building a mobile music player.
                 </p>
@@ -109,12 +108,12 @@ export default function Home() {
           <div className="card-body">
             <div className="row">
               <div className="col-md-12">
-                <div className=" card-instructor card-title">
+                <div className="card-instructor">
                   Juan Gonzalez
                 </div>
-                <h4 className="card-title">
+                <p className="card-title">
                   Javascript Essentials Part II
-                </h4>
+                </p>
                 <p className="card-text">
                   Upgrade your chat app by building your own Bot with JavaScript.
                 </p>

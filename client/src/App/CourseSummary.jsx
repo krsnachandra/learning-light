@@ -24,18 +24,18 @@ class CourseSummary extends Component {
     return (
       <div>
         <h1>{this.state.name}</h1>
-        <div class="card-body">
+        <div className="card-body">
         <h2>Course details</h2>
           <p>{this.state.description}</p>
         </div>
-        <div class="card-body">
+        <div className="card-body">
           <h2>Instructor</h2>
           <img src="./instructor-jg.png" alt="Juan Gonzalez" />
           <p>{this.state.instructor.name}</p>
           <p>{this.state.instructor.position}</p>
           <p>{this.state.instructor.description}</p>
         </div>
-        <div class="card-body">
+        <div className="card-body">
           <h3>
             Reviews for {this.state.name}
           </h3>

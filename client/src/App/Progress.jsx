@@ -47,12 +47,12 @@ class Progress extends Component {
                       filename and replace above line with:
                         <img src=`/{course.course_pic}` alt="" className="card-img-top" />
                      */}
-                     
+
   	              </div>
     	            <div className="card-body">
     		            <div className="row">
     			            <div className="col-md-12">
-    				            <div className=" card-instructor card-title">
+    				            <div className="card-instructor">
     					            {course.instructor.name}
     				            </div>
     				              <h4 className="card-title">
