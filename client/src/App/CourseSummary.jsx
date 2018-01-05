@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PublishedReviews from './PublishedReviews';
 import {getCourse, Loading} from '../course-service';
 
 class CourseSummary extends Component {
