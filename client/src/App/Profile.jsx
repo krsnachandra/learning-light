@@ -1,20 +1,92 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-
-function Profile() {
+function Profile({ onLogin, profile, history }) {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const first_name = e.target.elements.first_name.value;
+    const last_name = e.target.elements.last_name.value;
+    const email = e.target.elements.email.value;
+    const location = e.target.elements.location.value;
+    const motivation = e.target.elements.motivation.value;
+    const password = e.target.elements.password.value;
+    const passwordConfirm = e.target.elements.passwordConfirm.value;
+    profile(first_name, last_name, email, location, motivation, password, passwordConfirm)
+      .then((data) => {
+        onLogin(data.jwt);
+        history.push('/');
+      });
+  };
+  
   return (
-    <div>
-      <h1>Profile</h1>
-      <p>Update Your Profile</p>
-      <form action="/progress" method="post">
-          Email <input type="text" name="email" placeholder="Email" /><br />
-          First name<input type="text" name="fname" placeholder="First name" /><br />
-          Last name<input type="text" name="lname" placeholder="Last name" /><br />
-          Location<input type="text" name="location" placeholder="Location" /><br />
-          Why are you learning to code?<input type="text" name="motivation" placeholder="" /><br />
-        <input type="submit" value="Submit" />
+    <div className="col-sm-10 offset-sm-1 text-center">
+      <form onSubmit={onSubmit} className="justify-content-center row">
+        <fieldset>
+          <div className="form-group row">
+            <label className="col-sm-2"/>
+            <div className="col-sm-10">
+              <legend>Profile</legend>
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <label className="col-sm-3 col-form-label">First name</label>
+            <div className="col-sm-9">
+              <input className="form-control input-md" required="" type="text" />
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <label className="col-sm-3 col-form-label">Last name</label>
+            <div className="col-sm-9">
+              <input className="form-control input-md" required="" type="text" />
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <label className="col-sm-3 col-form-label">Motivation</label>
+            <div className="col-sm-9">
+              <input className="form-control input-md" required="" type="text" />
+              <small className="help-block form-text text-muted">Tell us about why you'd like to learn to code.</small>
+
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <label className="col-sm-3 col-form-label">E-mail</label>
+            <div className="col-sm-9">
+              <input className="form-control input-md" required="" type="text" />
+              <small className="help-block form-text text-muted">We will never hand out your info without your permission.</small>
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <label className="col-sm-3 col-form-label">
+              Password
+            </label>
+            <div className="col-sm-9">
+              <input type="password" className="form-control input-md" required="" />
+              <small className="help-block form-text text-muted">Need help choosing a secure password? <br/> Click <a href="https://www.lifewire.com/choosing-secure-passwords-1174071" target="0">here</a> for ideas.
+            </small>
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <label className="col-sm-3 col-form-label" />
+            <div className="col-sm-9">
+              <input type="password" placeholder="Confirm password" className="form-control input-md" required="" />
+            </div>
+          </div>
+
+          <div className="form-group row">
+            <label className="col-sm-2"/>
+            <div className="col-sm-10">
+              <button id="register-submit" className="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </fieldset>
       </form>
-    </div>
+     </div>
   );
 }
 
