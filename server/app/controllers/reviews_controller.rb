@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def create
-    review = Review.new(review_params)
+    review = current_user.reviews.new(review_params)
     if review.save
       console.log("saved new review")
     else
@@ -13,6 +13,6 @@ class ReviewsController < ApplicationController
   private 
 
   def review_params
-    params.require(:review).permit(:rating, :review, :show_flag, :course_id, :user_id)
+    params.require(:review).permit(:rating, :review, :show_flag, :course_id)
   end
 end
