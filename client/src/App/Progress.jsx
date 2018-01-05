@@ -59,7 +59,7 @@ class Progress extends Component {
     					              {course.name}
     				              </h4>
     				              <p className="card-text">
-    					              Insert card blurb code here.
+    					              Insert card blurb code here. Conditional - renders blurb when course has not been started, shows progress graphic instead when appropriate.
 
                             {/* TODO: update course table in DB with 'blurb' column and
                               replace above line with:
