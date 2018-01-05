@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {getCourseContent, Loading} from '../course-service';
 import Markdown from 'react-remarkable';
+import { Link } from 'react-router-dom';
 
 class CourseSection extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class CourseSection extends Component {
               {this.state.content}
             </Markdown>
             <div>
-              <button label="Next" />
+            <Link to={`/${this.props.coursename}`}><button label="Next">Next</button></Link>
             </div>
         </div>
         </div>

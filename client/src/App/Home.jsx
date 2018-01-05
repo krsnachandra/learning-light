@@ -74,7 +74,7 @@ export default function Home() {
       <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div className="card">
           <div className="card-img-container">
-            <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/120/8341495230939.original.png?1495230939" alt="" className="card-img-top" />
+            <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/197/6151508709032.original.jpg?1508709032" alt="" className="card-img-top" />
           </div>
           <div className="card-body">
             <div className="row">
@@ -86,7 +86,7 @@ export default function Home() {
                   iOS Essentials
                 </p>
                 <p className="card-text">
-                  Learn the basics of iOS development using Swift by building a mobile music player.
+                  Upgrade your chat app by building your own Bot with JavaScript.
                 </p>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function Home() {
           </div>
           <div className="row">
             <div className="col-md-12">
-              <a href="/courses/iOS-Essentials" className="btn btn-primary btn-block">View free course</a>
+              <Link to="/js-essentials-2"><button className="btn btn-primary btn-block">View free course</button></Link>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function Home() {
       <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div className="card">
           <div className="card-img-container">
-            <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/197/6151508709032.original.jpg?1508709032" alt="" className="card-img-top" />
+            <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/120/8341495230939.original.png?1495230939" alt="" className="card-img-top" />
           </div>
           <div className="card-body">
             <div className="row">
@@ -115,7 +115,7 @@ export default function Home() {
                   Javascript Essentials Part II
                 </p>
                 <p className="card-text">
-                  Upgrade your chat app by building your own Bot with JavaScript.
+                  Learn the basics of iOS development using Swift by building a mobile music player.
                 </p>
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function Home() {
           </div>
           <div className="row">
             <div className="col-md-12">
-              <Link to="/js-essentials-2"><button className="btn btn-primary btn-block">View free course</button></Link>
+              <a href="/courses/iOS-Essentials" className="btn btn-primary btn-block">View free course</a>
             </div>
           </div>
         </div>
