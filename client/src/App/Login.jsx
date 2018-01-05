@@ -27,7 +27,7 @@ function Login({ onLogin, logIn, history }) {
           <div className="form-group row">
             <label className="col-sm-3 col-form-label">E-mail</label>
             <div className="col-sm-9">
-              <input placeholder="E-mail address" className="form-control input-md" required="" type="text" />
+              <input placeholder="E-mail address" className="form-control input-md" required="" type="text" name="email" />
             </div>
           </div>
 
@@ -36,7 +36,7 @@ function Login({ onLogin, logIn, history }) {
               Password
             </label>
             <div className="col-sm-9">
-              <input type="password" placeholder="Password" className="form-control input-md" required="" />
+              <input type="password" placeholder="Password" className="form-control input-md" required="" name="password" />
             </div>
           </div>
 
