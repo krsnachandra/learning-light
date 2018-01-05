@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
 
 export default function Home() {
   return (
@@ -30,23 +32,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-
-              <div className="row">
-                <div className="col-md-12">
-                  <span className="star-rating star-rating__input star-rating__filled" data-id="4.8">
-                    <input type="radio" name="rating" value="1" />
-                    <i></i>
-                    <input type="radio" name="rating" value="2" />
-                    <i></i>
-                    <input type="radio" name="rating" value="3" />
-                    <i></i>
-                    <input type="radio" name="rating" value="4" />
-                    <i></i>
-                    <input type="radio" name="rating" value="5" />
-                    <i></i>
-                  </span>
-                </div>
-              </div>
+            <Rater total={5} rating={0} />
             </div>
 
             <div className="row">
@@ -76,24 +62,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          <div className="row">
-            <div className="col-md-12">
-              <span className="star-rating star-rating__input star-rating__filled" data-id="5.0">
-                <input type="radio" name="rating" value="1" />
-                <i></i>
-                <input type="radio" name="rating" value="2" />
-                <i></i>
-                <input type="radio" name="rating" value="3" />
-                <i></i>
-                <input type="radio" name="rating" value="4" />
-                <i></i>
-                <input type="radio" name="rating" value="5" />
-                <i></i>
-              </span>
-            </div>
-          </div>
+            <Rater total={5} rating={0} />
         </div>
-
         <div className="row">
           <div className="col-md-12">
             <Link to="/js-essentials"><button className="btn btn-primary btn-block">View free course</button></Link>
@@ -121,6 +91,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
+            <Rater total={5} rating={0} />
           </div>
           <div className="row">
             <div className="col-md-12">
@@ -149,6 +120,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
+            <Rater total={5} rating={0} />
           </div>
           <div className="row">
             <div className="col-md-12">
