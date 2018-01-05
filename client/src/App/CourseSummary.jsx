@@ -30,7 +30,7 @@ class CourseSummary extends Component {
         </div>
         <div className="card-body">
           <h2>Instructor</h2>
-          <img src="./instructor-jg.png" alt="Juan Gonzalez" />
+          <img src="./instructor-jg.png"/>
           <p>{this.state.instructor.name}</p>
           <p>{this.state.instructor.position}</p>
           <p>{this.state.instructor.description}</p>

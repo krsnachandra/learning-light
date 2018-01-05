@@ -59,13 +59,7 @@ class Progress extends Component {
     					              {course.name}
     				              </h4>
     				              <p className="card-text">
-    					              Insert card blurb code here.
-
-                            {/* TODO: update course table in DB with 'blurb' column and
-                              replace above line with:
-                                <p>{course.blurb}</p>
-                             */}
-
+                            {course.blurb}
     				              </p>
                       </div>
     			          </div>
