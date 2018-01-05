@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PublishedReviews from './PublishedReviews';
 import {getCourse, Loading} from '../course-service';
 
 class CourseSummary extends Component {
@@ -25,31 +24,36 @@ class CourseSummary extends Component {
     return (
       <div>
         <h1>{this.state.name}</h1>
+        <div class="card-body">
         <h2>Course details</h2>
-      <div>
-        <p>{this.state.description}</p>
-      </div>
-      <div>
-        <h2>Instructor</h2>
-      </div>
-      <div>
-        <img src="./dv-small.png" alt="David VanDusen" />
-      </div>
-      <div>{this.state.instructor.name}</div>
-      <div>{this.state.instructor.position}</div>
-      <div>{this.state.instructor.description}</div>
-      <div>
-        <h3>
-          Reviews
-        </h3>
-        <div>
-        {this.state.reviews.map(function(review, index){
-          return <div key={ index }>
-            <p>{review.review}</p>
-            <p>~{review.user.first_name}</p>
-          </div>;
-        })}
+          <p>{this.state.description}</p>
         </div>
+        <div class="card-body">
+          <h2>Instructor</h2>
+          <img src="./instructor-jg.png" alt="Juan Gonzalez" />
+          <p>{this.state.instructor.name}</p>
+          <p>{this.state.instructor.position}</p>
+          <p>{this.state.instructor.description}</p>
+        </div>
+        <div class="card-body">
+          <h3>
+            Reviews for {this.state.name}
+          </h3>
+          <div>
+            {this.state.reviews.map(function(review, index) {
+              return <div key={ index }>
+                <div className="block-text rel zmin">
+                  <div>
+                    {review.user.first_name}'s rating: {review.rating}
+                  </div>
+                  <div>
+                    <p>{review.review}</p>
+                  </div>
+                </div>
+              </div>;
+              })
+            }
+          </div>
         </div>
       </div>);
     }

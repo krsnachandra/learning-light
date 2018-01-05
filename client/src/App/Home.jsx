@@ -12,7 +12,7 @@ export default function Home() {
       </div>
 
       <div className="row">
-        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div className="card">
             <div className="card-img-container">
               <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/071/5581490308310.original.jpg?1490308310" alt="" className="card-img-top" />
@@ -43,7 +43,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div className="card">
             <div className="card-img-container">
               <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/073/3551490308653.original.jpg?1490308653" alt="" className="card-img-top" />
@@ -72,36 +72,7 @@ export default function Home() {
       </div>
     </div>
 
-      <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <div className="card">
-          <div className="card-img-container">
-            <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/120/8341495230939.original.png?1495230939" alt="" className="card-img-top" />
-          </div>
-          <div className="card-body">
-            <div className="row">
-              <div className="col-md-12">
-                <div className=" card-instructor card-title">
-                  David Mills
-                </div>
-                <h4 className="card-title">
-                  iOS Essentials
-                </h4>
-                <p className="card-text">
-                  Learn the basics of iOS development using Swift by building a mobile music player.
-                </p>
-              </div>
-            </div>
-            <Rater total={5} rating={0} />
-          </div>
-          <div className="row">
-            <div className="col-md-12">
-              <a href="/courses/iOS-Essentials" className="btn btn-primary btn-block">View free course</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div className="card">
           <div className="card-img-container">
             <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/197/6151508709032.original.jpg?1508709032" alt="" className="card-img-top" />
@@ -125,6 +96,35 @@ export default function Home() {
           <div className="row">
             <div className="col-md-12">
               <Link to="/js-essentials-2"><button className="btn btn-primary btn-block">View free course</button></Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div className="card">
+          <div className="card-img-container">
+            <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/120/8341495230939.original.png?1495230939" alt="" className="card-img-top" />
+          </div>
+          <div className="card-body">
+            <div className="row">
+              <div className="col-md-12">
+                <div className=" card-instructor card-title">
+                  David Mills
+                </div>
+                <h4 className="card-title">
+                  iOS Essentials
+                </h4>
+                <p className="card-text">
+                  Learn the basics of iOS development using Swift by building a mobile music player.
+                </p>
+              </div>
+            </div>
+            <Rater total={5} rating={0} />
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <a href="/courses/iOS-Essentials" className="btn btn-primary btn-block">View free course</a>
             </div>
           </div>
         </div>

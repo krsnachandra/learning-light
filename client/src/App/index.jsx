@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
@@ -14,7 +14,6 @@ import Logout from './Logout';
 import Register from './Register';
 import Profile from './Profile';
 
-import PublishedReviews from './PublishedReviews';
 import CourseContainer from './CourseContainer';
 import CourseCompleted from './CourseCompleted';
 
@@ -40,7 +39,7 @@ class App extends Component {
     localStorage.removeItem('token');
     this.setState({ loggedIn: false });
   }
-  
+
   render() {
     return (
       <div>
@@ -52,35 +51,38 @@ class App extends Component {
             )}/>
             <Route path="/profile" exact component={Profile} />
             <Route path="/progress" exact component={Progress} />
-            <Route 
-              path="/login" 
+            <Route
+              path="/login"
               render={({ history }) => (<Login
                 onLogin={this.onLogin}
                 logIn={this.service.logIn}
                 history={history}
               />)}
              />
-             <Route 
-              path="/register" 
+             <Route
+              path="/register"
               render={({ history }) => (<Register
                 onLogin={this.onLogin}
                 register={this.service.register}
                 history={history}
               />)}
              />
-              <Route 
-              path="/logout" 
+              <Route
+              path="/logout"
               render={({ history }) => <Logout
                 history={history}
                 onLogOut={this.onLogOut}
               />}
              />
-            <Route path="/reviews" component={PublishedReviews} />
-            <Route path="/comp" component={CourseCompleted} />
+            <Route path="/:coursename/complete" render={
+              ({match:{params:{coursename}}}) => (
+                <CourseCompleted coursename={coursename}/>
+              )} />
             <Route path="/:coursename" render={
               ({match:{params:{coursename}}}) => (
                 <CourseContainer coursename={coursename}/>
               )} />
+            
           </Switch>
         </div>
         <Footer />
