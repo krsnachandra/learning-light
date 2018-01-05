@@ -6,8 +6,8 @@ function Footer() {
     <footer>
       <div className="text-center">
         <div className="form">
-          <form className="form-inline my-2 my-lg-0" action="/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓" />
-            <input className="form-control mr-sm-2" type="text" required="required" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="E-mail address" autocomplete="off" type="email" name="subscription[email]" id="subscription_email" />
+          <form className="form-inline my-2 my-lg-0" action="/subscribe" acceptCharset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓" />
+            <input className="form-control mr-sm-2" type="text" required="required" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="E-mail address" autoComplete="off" type="email" name="subscription[email]" id="subscription_email" />
             <button className="btn btn-secondary my-2 my-sm-0" type="submit" name="commit" data-disable-with="Please wait...">Subscribe</button>
           </form>
         </div>
