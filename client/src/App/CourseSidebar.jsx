@@ -28,16 +28,16 @@ class CourseSidebar extends Component {
           <ul>
 
             {/* Begin creating headings from chapter names */}
-            {this.state.chapters.map(function(chapter, index) {
+            {this.state.chapters.map(function(chapter) {
               return (
-                <div key={ index }>
+                <div key={ chapter.id }>
                   <li>{chapter.name}
                     <ul id="chapter-submenu">
 
                     {/* Begin creating linkable subheadings from section names */}
-                      {chapter.sections.map(function(section, index) {
+                      {chapter.sections.map(function(section) {
                         return (
-                          <div key={ index }>
+                          <div key={ section.id }>
                             <li>
                               <Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link>
                             </li>
