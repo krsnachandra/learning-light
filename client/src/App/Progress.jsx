@@ -27,8 +27,8 @@ class Progress extends Component {
     <br/>
     <div align="center">
       
-    {this.state.courses.map(function(course, index){
-      return <div key={ index }>
+    {this.state.courses.map(function(course){
+      return <div key={ course.id }>
         <div className="row">
         <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div className="card">
