@@ -23,22 +23,39 @@ class CourseSidebar extends Component {
       return (<Loading />);
     }
     return (
-      <div>
-        {this.state.chapters.map(function(chapter, index) {
-          return (
-            <div key={ index }>
-              <h5>{chapter.name}</h5>
-              {chapter.sections.map(function(section, index) {
-                return (
-                  <div key={ index }>
-                    <li><Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link></li>
-                  </div>
-                )
-              })}
-            </div>
-          );
-        })}
-        <span className='text-success'>{'\u2714'}</span>
+      <div className="sidebar-wrapper">
+        <nav id="sidebar">
+          <ul>
+
+            {/* Begin creating headings from chapter names */}
+            {this.state.chapters.map(function(chapter, index) {
+              return (
+                <div key={ index }>
+                  <li>{chapter.name}
+                    <ul id="chapter-submenu">
+
+                    {/* Begin creating linkable subheadings from section names */}
+                      {chapter.sections.map(function(section, index) {
+                        return (
+                          <div key={ index }>
+                            <li>
+                              <Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link>
+                            </li>
+                          </div>
+                        )
+                      })}
+                    {/* End subheadings creator */}
+
+                    </ul>
+                  </li>
+                </div>
+              );
+            })}
+
+            {/* End creating headings from chapter names */}
+          </ul>
+        </nav>
+      <span className='text-success'>{'\u2714'}</span>
       </div>
     );
   }
