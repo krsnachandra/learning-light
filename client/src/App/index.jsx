@@ -14,7 +14,6 @@ import Logout from './Logout';
 import Register from './Register';
 import Profile from './Profile';
 
-import PublishedReviews from './PublishedReviews';
 import CourseContainer from './CourseContainer';
 import CourseCompleted from './CourseCompleted';
 
@@ -75,7 +74,6 @@ class App extends Component {
                 onLogOut={this.onLogOut}
               />}
              />
-            <Route path="/reviews" component={PublishedReviews} />
             <Route path="/comp" component={CourseCompleted} />
             <Route path="/:coursename" render={
               ({match:{params:{coursename}}}) => (
