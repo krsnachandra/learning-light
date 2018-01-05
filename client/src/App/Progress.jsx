@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 function Progress() {
   return <div className="container">
@@ -24,7 +23,7 @@ function Progress() {
                       HTML &amp; CSS Essentials
                     </h4>
                   </div>
-                </div>        
+                </div>
               </div>
 
               <div className="row">
