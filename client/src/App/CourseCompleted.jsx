@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NewReview from './NewReview';
+import Review from './Review';
 
 
 function CourseCompleted () {
@@ -8,7 +8,7 @@ function CourseCompleted () {
     <h1>Congratulations!</h1>
     <h2>You have completed the JavaScript Essentials I course!</h2>
     <img src="/badge-js.png" alt="jsbadge"/><br/>
-    <NewReview />
+    <Review />
     <Link to='/progress'>See your progress page</Link>
   </div>;
 }

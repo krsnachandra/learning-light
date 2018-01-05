@@ -13,7 +13,6 @@ import Login from './Login';
 import Logout from './Logout';
 import Register from './Register';
 import Profile from './Profile';
-
 import CourseContainer from './CourseContainer';
 import CourseCompleted from './CourseCompleted';
 
@@ -75,7 +74,7 @@ class App extends Component {
               />}
              />
             <Route path="/:coursename/complete" render={
-              ({match:{params:{coursename}}}) => (
+              ({match:{params:{coursename}}, history}) => (
                 <CourseCompleted coursename={coursename}/>
               )} />
             <Route path="/:coursename" render={
