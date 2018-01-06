@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 
-function Review({ onLogin, history, saveReview }) {
+function Review({ coursename, onLogin, history, saveReview }) {
   
   const onSubmit = (e) => {
     e.preventDefault();

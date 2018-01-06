@@ -37,37 +37,36 @@ ul {
 
 #banner {
   background-image: url("/banner.png");
+  background-size: cover;
   height: 20em;
   color: white;
   display: flex;
   align-items: center;
   padding: 5em;
+  text-shadow: 2px 2px 4px black;
 }
 
-#banner span {
-  text-align: center;
-}
 
 .rating input {
-    position: relative;
-    z-index: 2;
-    display: inline-block;
-    width: 20%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 footer {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1600px;
-    padding: 30px 0;
-    color: #fff;
-    list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px;
+  padding: 30px 0;
+  color: #fff;
+  list-style: none;
 }
 
 .card-deck {
@@ -79,14 +78,10 @@ footer {
   font-size-adjust: auto;
 }
 
-.card-instructor {
-  text-transform:
-}
-
 .nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .nav-item {
@@ -140,4 +135,12 @@ footer {
 
 .CircularProgressbar .CircularProgressbar-background {
   fill: #d6d6d6;
+.btn-primary {
+  border: none;
+  background-color: #383D8B;
+  align: center;
+}
+
+.btn-primary:hover{
+    background: #5A5ACD;
 }
