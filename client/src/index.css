@@ -37,16 +37,15 @@ ul {
 
 #banner {
   background-image: url("/banner.png");
+  background-size: cover;
   height: 20em;
   color: white;
   display: flex;
   align-items: center;
   padding: 5em;
+  text-shadow: 2px 2px 4px black;
 }
 
-#banner span {
-  text-align: center;
-}
 
 .rating input {
     position: relative;
@@ -79,10 +78,6 @@ footer {
   font-size-adjust: auto;
 }
 
-.card-instructor {
-  text-transform:
-}
-
 .nav {
     display: flex;
     justify-content: center;
@@ -95,4 +90,9 @@ footer {
 
 .nav-item a {
   color: #ffc107;
+}
+
+.btn-primary {
+  border: none;
+  background-color: darkslateblue;
 }
