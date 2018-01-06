@@ -12,21 +12,25 @@ class CourseSidebar extends Component {
   }
 
   componentDidMount(){
+    console.log("THIS PARAMS", this.props.params);
+    console.log("THIS PROPS", this.props);
     getCourse("js-essentials-2")
     .then((course) => {
+      console.log("COURSE IS", course);
       this.setState({loading: undefined, ...course});
     })
   }
 
   render() {
+
     if (this.state.loading) {
       return (<Loading />);
     }
+
     return (
-      <div className="sidebar-wrapper">
+      <div className="sidebar-wrapper card-body">
         <nav id="sidebar">
           <ul>
-
             {/* Begin creating headings from chapter names */}
             {this.state.chapters.map(function(chapter) {
               return (
@@ -52,7 +56,7 @@ class CourseSidebar extends Component {
               );
             })}
 
-            {/* End creating headings from chapter names */}
+            {/* End headings creator */}
           </ul>
         </nav>
       <span className='text-success'>{'\u2714'}</span>
