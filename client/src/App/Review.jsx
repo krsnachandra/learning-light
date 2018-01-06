@@ -6,12 +6,8 @@ import axios from 'axios';
 
 
 
-function Review({ history }) {
-  function saveReview(rating, review, show_flag, course_id, user_id) {
-  return axios.post('/reviews', {
-    review: { rating, review, show_flag, course_id, user_id },
-  }).then(({ data }) => data);
-};
+function Review({ onLogin, history, saveReview }) {
+  
   const onSubmit = (e) => {
     e.preventDefault();
     // const rating = e.target.elements.rating.value;
@@ -19,10 +15,11 @@ function Review({ history }) {
     const review = e.target.elements.review.value;
     const show_flag = false;
     const course_id = 3;
-    const user_id = 1;
-    saveReview(rating, review, show_flag, course_id, user_id)
+    
+    saveReview(rating, review, show_flag, course_id)
       .then((data) => {
-        history.push('/');
+        onLogin(data.jwt);
+        history.push('/progress');
       });
   };
 
