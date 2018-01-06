@@ -21,6 +21,10 @@ class CourseSummary extends Component {
     if (this.state.loading) {
       return (<Loading />);
     }
+
+    console.log("THIS STATE:", this.state);
+    console.log("THIS PROPS:", this.props);
+
     return (
       <div>
         <h1>{this.state.name}</h1>
@@ -30,7 +34,7 @@ class CourseSummary extends Component {
         </div>
         <div className="card-body">
           <h2>Instructor</h2>
-          <img src="./instructor-jg.png"/>
+          <img src={`/instructor-${this.state.instructor.id}.png`}/>
           <p>{this.state.instructor.name}</p>
           <p>{this.state.instructor.position}</p>
           <p>{this.state.instructor.description}</p>
@@ -56,6 +60,7 @@ class CourseSummary extends Component {
           </div>
         </div>
       </div>);
+
     }
   }
 
