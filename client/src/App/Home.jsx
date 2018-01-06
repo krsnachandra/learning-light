@@ -35,7 +35,7 @@ class Home extends Component {
       </div>
 
       <div className="row">
-        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div className="card-deck">
 
 {/* Generate card for each course */}
 
@@ -43,7 +43,7 @@ class Home extends Component {
               return (
                 <div key={ course.id } className="card">
   	              <div className="card-img-container">
-  		              <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/197/6151508709032.original.jpg?1508709032" alt="" className="card-img-top" />
+  		              <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
   	              </div>
     	            <div className="card-body">
     		            <div className="row">
@@ -62,7 +62,9 @@ class Home extends Component {
     		          </div>
     	            <div className="row">
   		              <div className="col-md-12">
-  			              <Link to={`/${course.coursename}`}><button className="btn btn-primary btn-block">View Course</button></Link>
+  			              <Link to={`/${course.coursename}`}>
+                        <button className="btn btn-primary btn-block">View Course</button>
+                      </Link>
   		              </div>
   	              </div>
                 </div>
@@ -189,7 +191,7 @@ class Home extends Component {
 
 
 
-      </div>    
+      </div>
     </div>
   </div>
   )};
