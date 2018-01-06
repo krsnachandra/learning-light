@@ -29,48 +29,22 @@ class CourseSection extends Component {
     });
   }
 
-  // getNextSectionName() {
-  // return getCourse(this.props.coursename)
-  //   .then((course) => {
-  //     const nextSectionName = course.chapters[(this.state.chapter_id - 1)].sections[this.state.id].sectionname;
-  //     console.log("nextSectioName appears as", nextSectionName);
-  //     return nextSectionName;
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   })
-  // }
-
-  getNextSectionName() {
-  return getCourse(this.props.coursename)
-    .then((course) => {
-      const nextSectionName = course.chapters[(this.state.chapter_id - 1)].sections[this.state.id]
-      console.log("nextSectioName appears as", nextSectionName);
-      return nextSectionName;
-    })
-    .catch(function (error) {
-      console.log("This is a catch error", error);
-    })
-  }
-
   render() {
-    console.log("This state is!", this.state);
-    console.log("This props is!", this.props);
-    // const nextSection = this.getNextSectionName();
     let nextSectionName = "";
-    const current_chapter_object = this.props.chapters[this.state.chapter_id - 1];
-
+    const currentChapterObject = this.props.chapters[this.state.chapter_id - 1];
+    const nextChapterObject = this.props.chapters[this.state.chapter_id];
+    console.log("Current chapter object is", currentChapterObject);
 
     if (this.state.loading) {
       return (<Loading />);
     }
 
-    console.log("Current chapter is", current_chapter_object);
-
-    if (this.state.section_number < current_chapter_object.sections.length) {
-      nextSectionName = current_chapter_object.sections[this.state.section_number].sectionname;
-      console.log("The next section is", nextSectionName);
+    if (this.state.section_number < currentChapterObject.sections.length) {
+      nextSectionName = currentChapterObject.sections[this.state.section_number].sectionname;
+    } else if (this.state.section_number === currentChapterObject.sections.length) {
+      nextSectionName = nextChapterObject.sections[0].sectionname;
     }
+
 
     return (
       <div className="container">
