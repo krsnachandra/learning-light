@@ -7,9 +7,9 @@ import axios from 'axios';
 
 
 function Review({ onLogin }) {
-  function saveReview(rating, review, show_flag, course_id, user_id) {
+  function saveReview(rating, review, show_flag, course_id) {
   return axios.post('/reviews', {
-    review: { rating, review, show_flag, course_id, user_id },
+    review: { rating, review, show_flag, course_id},
   }).then(({ data }) => data);
 };
   const onSubmit = (e) => {
@@ -23,7 +23,7 @@ function Review({ onLogin }) {
     saveReview(rating, review, show_flag, course_id)
       .then((data) => {
         onLogin(data.jwt);
-        // history.push('/');
+        // history.push('/progress');
       });
   };
 
