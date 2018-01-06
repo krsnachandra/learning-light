@@ -44,23 +44,34 @@ class CourseSection extends Component {
   getNextSectionName() {
   return getCourse(this.props.coursename)
     .then((course) => {
-      const nextSectionName = course.chapters[(this.state.chapter_id - 1)].sections[this.state.id].sectionname;
+      const nextSectionName = course.chapters[(this.state.chapter_id - 1)].sections[this.state.id]
       console.log("nextSectioName appears as", nextSectionName);
       return nextSectionName;
     })
     .catch(function (error) {
-      console.log(error);
+      console.log("This is a catch error", error);
     })
   }
 
   render() {
     console.log("This state is!", this.state);
     console.log("This props is!", this.props);
-    const nextSection = this.getNextSectionName();
+    // const nextSection = this.getNextSectionName();
+    let nextSectionName = "";
+    const current_chapter_object = this.props.chapters[this.state.chapter_id - 1];
+
 
     if (this.state.loading) {
       return (<Loading />);
     }
+
+    console.log("Current chapter is", current_chapter_object);
+
+    if (this.state.section_number < current_chapter_object.sections.length) {
+      nextSectionName = current_chapter_object.sections[this.state.section_number].sectionname;
+      console.log("The next section is", nextSectionName);
+    }
+
     return (
       <div className="container">
         <div className="row">
@@ -69,7 +80,7 @@ class CourseSection extends Component {
               {this.state.content}
             </Markdown>
             <div>
-            <Link to={`/${this.props.coursename}/${nextSection}`}><button label="Next">Next</button></Link>
+            <Link to={`/${this.props.coursename}/${nextSectionName}`}><button label="Next">Next</button></Link>
             </div>
         </div>
         </div>
