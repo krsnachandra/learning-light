@@ -17,13 +17,9 @@ class CourseSummary extends Component {
   }
 
   render() {
-    console.log(this.props);
     if (this.state.loading) {
       return (<Loading />);
     }
-
-    console.log("THIS STATE:", this.state);
-    console.log("THIS PROPS:", this.props);
 
     return (
       <div>
