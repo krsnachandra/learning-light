@@ -19,7 +19,7 @@ function Register({ onLogin, register, history }) {
   };
 
   return (
-    <div className="col-sm-10 offset-sm-1 text-center">
+    <div className="col-sm-10 offset-sm-1 text-center card-body">
       <form onSubmit={onSubmit} className="justify-content-center row">
         <fieldset>
           <div className="form-group row">
