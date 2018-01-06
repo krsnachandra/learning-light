@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {getAllCourses, Loading} from '../course-service';
+import CircularProgressbar from 'react-circular-progressbar';
 
 class Progress extends Component {
   constructor(props) {
@@ -53,8 +54,12 @@ class Progress extends Component {
     					              {course.name}
     				              </h4>
     				              <p className="card-text">
-                            {course.blurb}
+                            {/* {course.blurb} */}
     				              </p>
+                          
+                          <CircularProgressbar percentage={60} />
+                          
+                        
                       </div>
     			          </div>
     		          </div>
