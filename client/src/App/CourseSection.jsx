@@ -56,7 +56,7 @@ class CourseSection extends Component {
               {this.state.content}
             </Markdown>
             <div>
-              <Link to={`/${this.props.coursename}/${nextSectionName}`}><button label="Next">Next</button></Link>
+              <Link to={`/${this.props.coursename}/${nextSectionName}`}><button className="btn btn-primary" label="Next">Next</button></Link>
             </div>
         </div>
         </div>

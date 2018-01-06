@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {getCourse, Loading} from '../course-service';
+import { Link } from 'react-router-dom';
 
 class CourseSummary extends Component {
   constructor(props) {
@@ -36,6 +37,9 @@ class CourseSummary extends Component {
           <p>
             {this.state.description}
           </p>
+          <div>
+            <Link to={`/${this.props.coursename}/intro`}><button className="btn btn-primary" label="Start course">Start learning now!</button></Link>
+          </div>
         </div>
         <div className="card-body">
           <h2>Instructor</h2>
