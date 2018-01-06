@@ -30,12 +30,14 @@ class CourseSidebar extends Component {
     return (
       <div className="sidebar-wrapper card-body">
         <nav id="sidebar">
+          <h3>Outline</h3>
           <ul>
             {/* Begin creating headings from chapter names */}
             {this.state.chapters.map(function(chapter) {
               return (
                 <div key={ chapter.id }>
-                  <li>{chapter.name}
+                  <li>
+                    <strong>{chapter.name}</strong>
                     <ul id="chapter-submenu">
 
                     {/* Begin creating linkable subheadings from section names */}

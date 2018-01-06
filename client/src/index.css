@@ -5,6 +5,15 @@ body {
   font-family: 'PT Sans', sans-serif;
 }
 
+figure {
+  margin: 0.5em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 .card {
   height: 468px;
   margin-bottom: 30px;
@@ -87,4 +96,3 @@ footer {
 .nav-item a {
   color: #ffc107;
 }
-

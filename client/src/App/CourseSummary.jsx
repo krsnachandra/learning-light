@@ -28,7 +28,8 @@ class CourseSummary extends Component {
           <figure className="figure float-right">
             <img className="figure-img img-fluid rounded" src={`/instructor-${this.state.instructor.id}.png`} />
             <figcaption className="figure-caption text-center">
-              {this.state.instructor.name},<br /> {this.state.instructor.position}.
+              {this.state.instructor.name}<br />
+              {this.state.instructor.position}
             </figcaption>
           </figure>
         <h2>Course details</h2>
