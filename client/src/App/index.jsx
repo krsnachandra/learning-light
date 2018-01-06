@@ -13,7 +13,6 @@ import Login from './Login';
 import Logout from './Logout';
 import Register from './Register';
 import Profile from './Profile';
-
 import CourseContainer from './CourseContainer';
 import CourseCompleted from './CourseCompleted';
 
@@ -49,13 +48,22 @@ class App extends Component {
             <Route exact path='/' render={() => (
               <Home  />
             )}/>
-            <Route path="/profile" exact component={Profile} />
+           
             <Route path="/progress" exact component={Progress} />
             <Route
               path="/login"
               render={({ history }) => (<Login
                 onLogin={this.onLogin}
                 logIn={this.service.logIn}
+                history={history}
+              />)}
+             />
+            <Route
+              path="/profile"
+              render={({ history }) => (<Profile
+                loggedIn={this.state.loggedIn}
+                onLogin={this.onLogin}
+                updateUser={this.service.updateUser}
                 history={history}
               />)}
              />
@@ -75,8 +83,12 @@ class App extends Component {
               />}
              />
             <Route path="/:coursename/complete" render={
-              ({match:{params:{coursename}}}) => (
-                <CourseCompleted coursename={coursename}/>
+              ({match:{params:{coursename}}, history}) => (
+                <CourseCompleted 
+                  coursename={coursename}
+                  saveReview={this.service.saveReview}
+                  onLogin={this.onLogin}
+                  history={history}/>
               )} />
             <Route path="/:coursename" render={
               ({match:{params:{coursename}}}) => (
