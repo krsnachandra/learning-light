@@ -83,8 +83,12 @@ class App extends Component {
               />}
              />
             <Route path="/:coursename/complete" render={
-              ({match:{params:{coursename}}, onLogin, history}) => (
-                <CourseCompleted coursename={coursename}/>
+              ({match:{params:{coursename}}, history}) => (
+                <CourseCompleted 
+                  coursename={coursename}
+                  saveReview={this.service.saveReview}
+                  onLogin={this.onLogin}
+                  history={history}/>
               )} />
             <Route path="/:coursename" render={
               ({match:{params:{coursename}}}) => (

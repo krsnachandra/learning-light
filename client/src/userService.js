@@ -29,8 +29,15 @@ function makeService(token) {
   function isLoggedIn() {
     return token;
   }
+
+  function saveReview(rating, review, show_flag, course_id) {
+    return ajaxer.post('/reviews', {
+      review: { rating, review, show_flag, course_id},
+    }).then(({ data }) => data);
+  };
+
   return {
-    logIn, isLoggedIn, register, updateUser
+    logIn, isLoggedIn, register, updateUser, saveReview
   };
 }
 

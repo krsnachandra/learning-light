@@ -6,12 +6,8 @@ import axios from 'axios';
 
 
 
-function Review({ onLogin }) {
-  function saveReview(rating, review, show_flag, course_id) {
-  return axios.post('/reviews', {
-    review: { rating, review, show_flag, course_id},
-  }).then(({ data }) => data);
-};
+function Review({ onLogin, history, saveReview }) {
+  
   const onSubmit = (e) => {
     e.preventDefault();
     // const rating = e.target.elements.rating.value;
@@ -23,7 +19,7 @@ function Review({ onLogin }) {
     saveReview(rating, review, show_flag, course_id)
       .then((data) => {
         onLogin(data.jwt);
-        // history.push('/progress');
+        history.push('/progress');
       });
   };
 

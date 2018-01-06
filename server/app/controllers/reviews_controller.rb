@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     @user = current_user
     review = @user.reviews.new(review_params)
     if review.save
-      console.log("saved new review")
+      # puts "saved new review"
     else
       render json:review.errors.messages, status: 400
     end
