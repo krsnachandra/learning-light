@@ -28,7 +28,7 @@ class CourseSidebar extends Component {
     }
 
     return (
-      <div className="sidebar-wrapper">
+      <div className="sidebar-wrapper card-body">
         <nav id="sidebar">
           <ul>
             {/* Begin creating headings from chapter names */}

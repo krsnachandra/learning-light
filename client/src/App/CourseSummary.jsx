@@ -22,7 +22,7 @@ class CourseSummary extends Component {
     }
 
     return (
-      <div>
+      <div className="card-body">
         <h1>{this.state.name}</h1>
         <div className="card-body">
           <figure className="figure float-right">
