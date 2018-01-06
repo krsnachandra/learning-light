@@ -48,13 +48,22 @@ class App extends Component {
             <Route exact path='/' render={() => (
               <Home  />
             )}/>
-            <Route path="/profile" exact component={Profile} />
+           
             <Route path="/progress" exact component={Progress} />
             <Route
               path="/login"
               render={({ history }) => (<Login
                 onLogin={this.onLogin}
                 logIn={this.service.logIn}
+                history={history}
+              />)}
+             />
+            <Route
+              path="/profile"
+              render={({ history }) => (<Profile
+                loggedIn={this.state.loggedIn}
+                onLogin={this.onLogin}
+                updateUser={this.service.updateUser}
                 history={history}
               />)}
              />
@@ -74,7 +83,7 @@ class App extends Component {
               />}
              />
             <Route path="/:coursename/complete" render={
-              ({match:{params:{coursename}}, history}) => (
+              ({match:{params:{coursename}}, onLogin, history}) => (
                 <CourseCompleted coursename={coursename}/>
               )} />
             <Route path="/:coursename" render={

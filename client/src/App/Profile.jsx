@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Profile({ onLogin, profile, history }) {
+function Profile({ loggedIn, onLogin, updateUser, history }) {
   const onSubmit = (e) => {
     e.preventDefault();
     const first_name = e.target.elements.first_name.value;
@@ -11,10 +11,10 @@ function Profile({ onLogin, profile, history }) {
     const motivation = e.target.elements.motivation.value;
     const password = e.target.elements.password.value;
     const passwordConfirm = e.target.elements.passwordConfirm.value;
-    profile(first_name, last_name, email, location, motivation, password, passwordConfirm)
+    updateUser(first_name, last_name, email, location, motivation, password, passwordConfirm)
       .then((data) => {
         onLogin(data.jwt);
-        history.push('/');
+        history.push('/progress');
       });
   };
 

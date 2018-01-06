@@ -1,7 +1,10 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user, only: [:create]
+
 
   def create
-    review = current_user.reviews.new(review_params)
+    @user = current_user
+    review = @user.reviews.new(review_params)
     if review.save
       console.log("saved new review")
     else

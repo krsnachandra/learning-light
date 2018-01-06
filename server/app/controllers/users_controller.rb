@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user, only: [:index]
+  before_action :authenticate_user, only: [:index, :update]
 
   def index
     render json: current_user
@@ -19,6 +19,12 @@ class UsersController < ApplicationController
       render json:user.errors.messages, status: 400
     end
   end
+
+  def update
+    @user = current_user
+    @user.update_attributes(user_params)
+  end
+
 
   private 
 
