@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {getCourseContent, Loading} from '../course-service';
+import {getCourseContent, getCourse, Loading} from '../course-service';
 import Markdown from 'react-remarkable';
 import { Link } from 'react-router-dom';
 
@@ -29,8 +29,35 @@ class CourseSection extends Component {
     });
   }
 
+  // getNextSectionName() {
+  // return getCourse(this.props.coursename)
+  //   .then((course) => {
+  //     const nextSectionName = course.chapters[(this.state.chapter_id - 1)].sections[this.state.id].sectionname;
+  //     console.log("nextSectioName appears as", nextSectionName);
+  //     return nextSectionName;
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   })
+  // }
+
+  getNextSectionName() {
+  return getCourse(this.props.coursename)
+    .then((course) => {
+      const nextSectionName = course.chapters[(this.state.chapter_id - 1)].sections[this.state.id].sectionname;
+      console.log("nextSectioName appears as", nextSectionName);
+      return nextSectionName;
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  }
+
   render() {
-    console.log(this.props);
+    console.log("This state is!", this.state);
+    console.log("This props is!", this.props);
+    const nextSection = this.getNextSectionName();
+
     if (this.state.loading) {
       return (<Loading />);
     }
@@ -42,7 +69,7 @@ class CourseSection extends Component {
               {this.state.content}
             </Markdown>
             <div>
-            <Link to={`/${this.props.coursename}`}><button label="Next">Next</button></Link>
+            <Link to={`/${this.props.coursename}/${nextSection}`}><button label="Next">Next</button></Link>
             </div>
         </div>
         </div>
