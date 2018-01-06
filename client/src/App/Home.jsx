@@ -61,9 +61,9 @@ class Home extends Component {
     			          </div>
     		          </div>
     	            <div className="row">
-  		              <div className="col-md-12">
+  		              <div className="col-md-12 text-center">
   			              <Link to={`/${course.coursename}`}>
-                        <button className="btn btn-primary btn-block">View Course</button>
+                        <button className="btn btn-primary btn-block">View course</button>
                       </Link>
   		              </div>
   	              </div>
