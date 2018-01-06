@@ -25,28 +25,38 @@ class CourseSummary extends Component {
       <div>
         <h1>{this.state.name}</h1>
         <div className="card-body">
+          <figure className="figure float-right">
+            <img className="figure-img img-fluid rounded" src={`/instructor-${this.state.instructor.id}.png`} />
+            <figcaption className="figure-caption text-center">
+              {this.state.instructor.name},<br /> {this.state.instructor.position}.
+            </figcaption>
+          </figure>
         <h2>Course details</h2>
-          <p>{this.state.description}</p>
+          <p>
+            {this.state.description}
+          </p>
         </div>
         <div className="card-body">
           <h2>Instructor</h2>
-          <img src={`/instructor-${this.state.instructor.id}.png`}/>
-          <p>{this.state.instructor.name}</p>
-          <p>{this.state.instructor.position}</p>
-          <p>{this.state.instructor.description}</p>
+          <p>
+            {this.state.instructor.description}
+          </p>
         </div>
         <div className="card-body">
           <h3>
             Reviews for {this.state.name}
           </h3>
-          <div>
+          <div className="card-block">
+
+            {/* Begin generating reviews from DB array */}
+
             {this.state.reviews.map(function(review, index) {
               return <div key={ index }>
-                <div className="block-text rel zmin">
-                  <div>
+                <div className="card-body">
+                  <div className="card-title">
                     {review.user.first_name}'s rating: {review.rating}
                   </div>
-                  <div>
+                  <div className="card-text">
                     <p>{review.review}</p>
                   </div>
                 </div>
@@ -54,6 +64,9 @@ class CourseSummary extends Component {
               })
             }
           </div>
+
+          {/* End reviews generation */}
+
         </div>
       </div>);
 
