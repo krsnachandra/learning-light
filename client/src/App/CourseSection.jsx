@@ -44,7 +44,7 @@ class CourseSection extends Component {
     } else if (this.state.section_number === currentChapterObject.sections.length && nextChapterObject) {
       nextSectionName = nextChapterObject.sections[0].sectionname;
     } else {
-      nextSectionName = "Complete";
+      nextSectionName = "complete";
     }
 
 
