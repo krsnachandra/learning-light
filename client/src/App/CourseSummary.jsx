@@ -51,19 +51,20 @@ class CourseSummary extends Component {
 
             {/* Begin generating reviews from DB array */}
 
-            {this.state.reviews.map(function(review, index) {
-              return <div key={ index }>
-                <div className="card-body">
-                  <div className="card-title">
-                    {review.user.first_name}'s rating: {review.rating}
+            {this.state.reviews.map(function(review) {
+              if (review.show_flag == true) {
+                return <div key={ review.id }>
+                  <div className="card-body">
+                    <div className="card-title">
+                      {review.user.first_name}'s rating: {review.rating}
+                    </div>
+                    <div className="card-text">
+                      <p>{review.review}</p>
+                    </div>
                   </div>
-                  <div className="card-text">
-                    <p>{review.review}</p>
-                  </div>
-                </div>
-              </div>;
-              })
-            }
+                </div>;
+              }
+            })}
           </div>
 
           {/* End reviews generation */}
