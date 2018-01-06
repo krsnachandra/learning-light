@@ -33,28 +33,33 @@ class CourseSection extends Component {
     let nextSectionName = "";
     const currentChapterObject = this.props.chapters[this.state.chapter_id - 1];
     const nextChapterObject = this.props.chapters[this.state.chapter_id];
-    console.log("Current chapter object is", currentChapterObject);
 
     if (this.state.loading) {
       return (<Loading />);
     }
 
+    console.log("CURRENT CHAPTER OBJECT", currentChapterObject);
+    console.log("NEXT CHAPTER OBJECT", nextChapterObject);
+
     if (this.state.section_number < currentChapterObject.sections.length) {
       nextSectionName = currentChapterObject.sections[this.state.section_number].sectionname;
-    } else if (this.state.section_number === currentChapterObject.sections.length) {
+    } else if (this.state.section_number === currentChapterObject.sections.length && nextChapterObject) {
       nextSectionName = nextChapterObject.sections[0].sectionname;
+    } else {
+      nextSectionName = "Complete";
     }
+
 
 
     return (
       <div className="container">
         <div className="row">
-          <div className="col-sm">
+          <div className="mx-auto">
             <Markdown>
               {this.state.content}
             </Markdown>
             <div>
-            <Link to={`/${this.props.coursename}/${nextSectionName}`}><button label="Next">Next</button></Link>
+              <Link to={`/${this.props.coursename}/${nextSectionName}`}><button label="Next">Next</button></Link>
             </div>
         </div>
         </div>
