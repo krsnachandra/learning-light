@@ -41,13 +41,7 @@ class Progress extends Component {
               return (
                 <div key={ course.id } className="card">
   	              <div className="card-img-container">
-  		              <img src="https://s3.amazonaws.com/thinkific/courses/course_card_image_000/197/6151508709032.original.jpg?1508709032" alt="" className="card-img-top" />
-
-                    {/* TODO: update course table in DB with 'image' column containing pic
-                      filename and replace above line with:
-                        <img src=`/{course.course_pic}` alt="" className="card-img-top" />
-                     */}
-
+                    <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
   	              </div>
     	            <div className="card-body">
     		            <div className="row">
@@ -66,13 +60,7 @@ class Progress extends Component {
     		          </div>
     	            <div className="row">
   		              <div className="col-md-12">
-  			              <Link to="/js-essentials-2"><button className="btn btn-primary btn-block">Resume course</button></Link>
-
-                      {/* TODO: update course table in DB with 'path' column and
-                        replace above line with:
-                        <Link to=`/{course.path}`><button className="btn btn-primary btn-block">Resume course</button></Link>
-                        */}
-
+                      <Link to={`/${course.coursename}`}><button className="btn btn-primary btn-block">View Course</button></Link>
   		              </div>
   	              </div>
                 </div>
