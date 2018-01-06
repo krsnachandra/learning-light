@@ -38,8 +38,6 @@ class CourseSection extends Component {
       return (<Loading />);
     }
 
-    console.log("CURRENT CHAPTER OBJECT", currentChapterObject);
-    console.log("NEXT CHAPTER OBJECT", nextChapterObject);
 
     if (this.state.section_number < currentChapterObject.sections.length) {
       nextSectionName = currentChapterObject.sections[this.state.section_number].sectionname;
@@ -48,7 +46,6 @@ class CourseSection extends Component {
     } else {
       nextSectionName = "Complete";
     }
-
 
 
     return (
