@@ -35,7 +35,7 @@ class Home extends Component {
       </div>
 
       <div className="row">
-        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div className="card-deck">
 
 {/* Generate card for each course */}
 
