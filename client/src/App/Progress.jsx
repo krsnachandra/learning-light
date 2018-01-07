@@ -9,7 +9,7 @@ class Progress extends Component {
     this.state = {
       loading: true
     };
-    this.componentDidMount = this.componentDidMount.bind(this);
+    // this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount(){
@@ -27,8 +27,7 @@ class Progress extends Component {
         courses: courses,
         current_user: current_user
       })
-      .then(() => {console.log("here STATE", this.state)});
-    })
+    });
 
   }
 
@@ -36,7 +35,7 @@ class Progress extends Component {
     if (this.state.loading) {
       return (<Loading />);
     }
-
+    {console.log("here STATE", this.state)};
     return (
       <div className="container">
 
