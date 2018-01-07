@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {getCourseContent, getCourse, Loading} from '../course-service';
-import {makeService} from '../userService';
+// import {makeService} from '../userService';
 import Markdown from 'react-remarkable';
 import { Link } from 'react-router-dom';
 
@@ -33,11 +33,11 @@ class CourseSection extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    // sectionCompleted(this.state.section_number)
-    // .then((data) => {
-    //   onLogin(data.jwt);
-    //   history.push('/progress');
-    // });
+    this.props.sectionCompleted(this.state.section_number)
+    .then((data) => {
+      this.props.onLogin(data.jwt);
+      this.props.history.push('/progress');
+    });
   };
 
   render() {
@@ -71,7 +71,7 @@ class CourseSection extends Component {
             </Markdown>
             <form onSubmit={this.onSubmit} >
               <div>
-                <Link to={`/${this.props.coursename}/${nextSectionName}`}><button className="btn btn-primary" label="Next">Next</button></Link>
+                <Link to={`/${this.props.coursename}/${nextSectionName}`}><button className="btn btn-primary" type="submit" label="Next">Next</button></Link>
               </div>
             </form>
           </div>

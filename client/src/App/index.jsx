@@ -98,10 +98,12 @@ class App extends Component {
                   history={history}/>
               )} />
             <Route path="/:coursename" render={
-              ({match:{params:{coursename}}}) => (
+              ({match:{params:{coursename}}, history}) => (
                 <CourseContainer 
                   coursename={coursename}
-                  sectionCompleted={this.service.sectionCompleted}/>
+                  sectionCompleted={this.service.sectionCompleted}
+                  onLogin={this.onLogin}
+                  history={history}/>
               )} />
             
           </Switch>
