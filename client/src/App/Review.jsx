@@ -12,7 +12,7 @@ class Review extends React.Component {
   constructor(props) {
     super(props);
     this. state = {
-      rating: 1
+      rating: 0
     };
   }
   
@@ -41,9 +41,9 @@ class Review extends React.Component {
       <div>
         <h1>Rate and review this course</h1>
         <form onSubmit={this.onSubmit.bind(this)} >
-              Rating<br/>
+              
               <div>
-                <h2>Rating from state: {rating}</h2>
+                {/* <h2>{rating}</h2> */}
                 <StarRatingComponent 
                     name="rate1" 
                     starCount={5}
