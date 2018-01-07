@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 function Navbar({ loggedIn }) {
   const links = loggedIn ?
     ([<Link to="/logout" className="navbar nav-link">Log out</Link>,
-      <Link to="/profile" className="navbar nav-link">Profile</Link>]) :
+      <Link to="/profile" className="navbar nav-link">Profile</Link>, 
+      <Link to="/progress" className="navbar nav-link">Progress</Link>]) :
       ([<Link to="/login" className="navbar nav-link">Log In</Link>,
         <Link to="/register" className="navbar nav-link">Register</Link>]);
 
