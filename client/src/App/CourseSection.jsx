@@ -39,7 +39,7 @@ class CourseSection extends Component {
     this.props.props.sectionCompleted(this.state.section_number)
     .then((data) => {
       this.props.props.onLogin(data.jwt);
-      this.props.props.history.push('/progress');
+      // this.props.props.history.push('/progress');
     });
   };
 
