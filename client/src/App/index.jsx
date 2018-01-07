@@ -55,6 +55,7 @@ class App extends Component {
               render={({ history }) => (<Login
                 onLogin={this.onLogin}
                 logIn={this.service.logIn}
+                getUserSections={this.service.getUserSections}
                 history={history}
               />)}
              />
