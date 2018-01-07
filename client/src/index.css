@@ -14,6 +14,15 @@ ul {
     padding: 0;
 }
 
+a {
+  color: #383D8B;
+}
+
+a:hover {
+  color: #5A5ACD;
+}
+
+
 .card {
   height: 468px;
   margin-bottom: 30px;
@@ -30,9 +39,8 @@ ul {
     width: 100%;
     height: auto;
 }
-
-.register-container {
-  padding: 1em;
+.chapter-name {
+  margin-top: 10px;
 }
 
 #banner {
@@ -45,7 +53,6 @@ ul {
   padding: 5em;
   text-shadow: 2px 2px 4px black;
 }
-
 
 .rating input {
   position: relative;

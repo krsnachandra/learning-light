@@ -37,7 +37,7 @@ class CourseSidebar extends Component {
               return (
                 <div key={ chapter.id }>
                   <li>
-                    <strong>{chapter.name}</strong>
+                    <strong className="chapter-name">{chapter.name}</strong>
                     <ul id="chapter-submenu">
 
                     {/* Begin creating linkable subheadings from section names */}
