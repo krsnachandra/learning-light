@@ -34,7 +34,7 @@ class Progress extends Component {
     if (this.state.loading) {
       return (<Loading />);
     }
-    {console.log("here STATE", this.state)};
+    console.log("here STATE", this.state);
     return (
       <div className="container">
 
@@ -49,9 +49,9 @@ class Progress extends Component {
 
             {this.state.courses.map(function(course) {
               const showProgress = function () {
-                if (course.coursename == "js-essentials-2") {
+                if (course.coursename === "js-essentials-2") {
                   return <CircularProgressbar percentage={60} />
-                } else if (course.coursename == "ios-essentials") {
+                } else if (course.coursename === "ios-essentials") {
                   return <p className="card-text">
                     {course.blurb}
                   </p>

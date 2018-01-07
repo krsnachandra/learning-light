@@ -52,7 +52,7 @@ class CourseSummary extends Component {
             {/* Begin generating reviews from DB array */}
 
             {this.state.reviews.map(function(review) {
-              if (review.show_flag == true) {
+              if (review.show_flag === true) {
                 return <div key={ review.id }>
                   <div className="card-body">
                     <div className="card-title">
