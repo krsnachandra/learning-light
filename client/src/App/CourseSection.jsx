@@ -44,11 +44,6 @@ class CourseSection extends Component {
       const currentChapterObject = this.props.chapters[this.state.chapter_id - 1];
       const nextChapterObject = this.props.chapters[this.state.chapter_id];
 
-      if (this.state.loading) {
-        return (<Loading />);
-      }
-
-
       if (this.state.section_number < currentChapterObject.sections.length) {
         nextSectionName = currentChapterObject.sections[this.state.section_number].sectionname;
       } else if (this.state.section_number === currentChapterObject.sections.length && nextChapterObject) {
@@ -62,7 +57,9 @@ class CourseSection extends Component {
   };
 
   render() {
-    
+    if (this.state.loading) {
+      return (<Loading />);
+    }
 
     console.log("STATE", this.state);
     console.log("PROPS", this.props);
