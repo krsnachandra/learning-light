@@ -70,7 +70,7 @@ class Progress extends Component {
                 } else {
                   return (
                     <div>
-                      <img src={`/badge-${course.coursename}.png`} alt="Course Complete!" />
+                      <img src={`/badge-${course.coursename}.png`} className="mx-auto d-block" alt="Course Complete!" />
                     </div>
                   )
                 }}
@@ -78,7 +78,7 @@ class Progress extends Component {
               return (
                 <div key={ course.id } className="card h-100">
   	              <div className="card-img-container">
-  		              <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
+  		              <img src={`/card-${course.coursename}.png`} alt="" className="img-fluid card-img-top" />
   	              </div>
     	            <div className="card-body">
     		            <div className="row">

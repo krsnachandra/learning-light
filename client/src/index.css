@@ -22,6 +22,12 @@ a:hover {
   color: #5A5ACD;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  justify: center;
+}
+
 .card {
   height: 468px;
   margin-bottom: 30px;
