@@ -21,8 +21,8 @@ class CourseContainer extends Component {
     if (this.state.loading) {
       return (<Loading />);
     }
-    const { coursename } = this.props;
-    return (<CourseContent {...this.state} />);
+    const { props } = this.props;
+    return (<CourseContent {...this.state} {...props} />);
   }
 }
 
