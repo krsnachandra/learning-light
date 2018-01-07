@@ -76,7 +76,7 @@ class Progress extends Component {
                 }}
 
               return (
-                <div key={ course.id } className="card">
+                <div key={ course.id } className="card h-100">
   	              <div className="card-img-container">
   		              <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
   	              </div>
