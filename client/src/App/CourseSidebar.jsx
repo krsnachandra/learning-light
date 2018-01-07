@@ -12,11 +12,12 @@ class CourseSidebar extends Component {
   }
 
   componentDidMount(){
-    console.log("THIS PARAMS", this.props.params);
-    console.log("THIS PROPS", this.props);
+
+    // TODO: update code to dynamically grab course name, once DB has more than
+    // one course in it
+
     getCourse("js-essentials-2")
     .then((course) => {
-      console.log("COURSE IS", course);
       this.setState({loading: undefined, ...course});
     })
   }
@@ -30,15 +31,23 @@ class CourseSidebar extends Component {
     return (
       <div className="sidebar-wrapper card-body">
         <nav id="sidebar">
-          <h3>Outline</h3>
-          <ul>
+          <div className="sidebar-header">
+            <h3>Outline</h3>
+          </div>
+
+          <ul className="list-unstyled compoents">
+
             {/* Begin creating headings from chapter names */}
+
             {this.state.chapters.map(function(chapter) {
               return (
                 <div key={ chapter.id }>
                   <li>
-                    <strong className="chapter-name">{chapter.name}</strong>
-                    <ul id="chapter-submenu">
+                    <a href="#chapter-submenu" data-toggle="collapse" aria-expanded="false">
+                      <strong className="chapter-name">{chapter.name}</strong>
+                    </a>
+
+                    <ul id="chapter-submenu" className="collapse list-unstyled">
 
                     {/* Begin creating linkable subheadings from section names */}
                       {chapter.sections.map(function(section) {
@@ -54,6 +63,7 @@ class CourseSidebar extends Component {
 
                     </ul>
                   </li>
+
                 </div>
               );
             })}
