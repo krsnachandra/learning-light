@@ -9,7 +9,6 @@ class Progress extends Component {
     this.state = {
       loading: true
     };
-    // this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount(){
@@ -48,7 +47,7 @@ class Progress extends Component {
 
             {/* Generate card for each course */}
 
-            {/* {this.state.courses.map(function(course) {
+            {this.state.courses.map(function(course) {
               const showProgress = function () {
                 if (course.coursename == "js-essentials-2") {
                   return <CircularProgressbar percentage={60} />
@@ -90,7 +89,7 @@ class Progress extends Component {
   	              </div>
                 </div>
               )
-            })} */}
+            })}
 
             {/* End card generator */}
 
