@@ -8,7 +8,12 @@ function delay(by = 2000){
 }
 
 function Loading() {
-  return <h1>Loading...</h1>;
+  return (
+    <div className="card-body">
+      <h1>Now loading...</h1>
+      <img src="/loading.gif"/>
+    </div>
+  )
 }
 
 function getAllCourses(){

@@ -10,10 +10,10 @@ export default function CourseContent(props) {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-lg-3">
+        <div className="col-md-3">
           <CourseSidebar {...props} />
         </div>
-        <div className="col-lg-9">
+        <div className="col-md-9">
           <Switch>
             <Route exact path='/:coursename' render={() => (
               <CourseSummary {...props} />
