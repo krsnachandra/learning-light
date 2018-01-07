@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {getAllCourses, Loading} from '../course-service';
+import CircularProgressbar from 'react-circular-progressbar';
 
 class Progress extends Component {
   constructor(props) {
@@ -38,6 +39,19 @@ class Progress extends Component {
             {/* Generate card for each course */}
 
             {this.state.courses.map(function(course) {
+              const showProgress = function () {
+                if (course.coursename == "js-essentials-2") {
+                  return <CircularProgressbar percentage={60} />
+                } else if (course.coursename == "ios-essentials") {
+                  return <p className="card-text">
+                    {course.blurb}
+                  </p>
+                } else {
+                  return <div>
+                    <img src={`/badge-${course.coursename}.png`} alt="Course Complete!" />
+                  </div>
+                }}
+              
               return (
                 <div key={ course.id } className="card">
   	              <div className="card-img-container">
@@ -52,9 +66,10 @@ class Progress extends Component {
     				              <h4 className="card-title">
     					              {course.name}
     				              </h4>
-    				              <p className="card-text">
-                            {course.blurb}
-    				              </p>
+                          <div>
+                            {showProgress()}
+                          </div>
+    				              
                       </div>
     			          </div>
     		          </div>
