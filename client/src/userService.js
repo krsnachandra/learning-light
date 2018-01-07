@@ -40,8 +40,14 @@ function makeService(token) {
     return ajaxer.get('/users').then(({ data }) => data);
   }
 
+  function sectionCompleted() {
+    return ajaxer.post('/user_sections', {
+      user_section: { section_id},
+    }).then(({ data }) => data);
+  }
+
   return {
-    logIn, isLoggedIn, register, updateUser, saveReview, getUserSections
+    logIn, isLoggedIn, register, updateUser, saveReview, getUserSections, sectionCompleted
   };
 }
 
