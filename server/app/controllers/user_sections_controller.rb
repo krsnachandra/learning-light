@@ -14,7 +14,7 @@ class UserSectionsController < ApplicationController
   private 
 
   def user_section_params
-    params.require(:section_id)
+    params.require(:user_section).permit(:section_id)
   end
 
 end
