@@ -33,11 +33,11 @@ class CourseSection extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    sectionCompleted(this.state.section_number)
-    .then((data) => {
-      onLogin(data.jwt);
-      history.push('/progress');
-    });
+    // sectionCompleted(this.state.section_number)
+    // .then((data) => {
+    //   onLogin(data.jwt);
+    //   history.push('/progress');
+    // });
   };
 
   render() {
@@ -59,6 +59,7 @@ class CourseSection extends Component {
     }
 
     console.log("STATE", this.state);
+    console.log("PROPS", this.props);
 
 
     return (
