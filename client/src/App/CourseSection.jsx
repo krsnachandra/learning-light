@@ -18,7 +18,7 @@ class CourseSection extends Component {
   }
 
   componentWillReceiveProps({ params: { section }  }) {
-    if (this.props.params.sectionname !== section) {
+    if (this.props.params.section !== section) {
       this.setState({ loading: true });
       this.loadSection(section)
     }
@@ -35,10 +35,11 @@ class CourseSection extends Component {
     console.log("This is submitSectionCompleted");
 
     e.preventDefault();
-    this.props.sectionCompleted(this.state.section_number)
+    console.log("My Props", this.props);
+    this.props.props.sectionCompleted(this.state.section_number)
     .then((data) => {
-      this.props.onLogin(data.jwt);
-      this.props.history.push('/progress');
+      this.props.props.onLogin(data.jwt);
+      this.props.props.history.push('/progress');
     });
   };
 

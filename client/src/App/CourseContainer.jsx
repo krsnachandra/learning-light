@@ -22,7 +22,7 @@ class CourseContainer extends Component {
       return (<Loading />);
     }
     const { props } = this.props;
-    return (<CourseContent {...this.state} {...props} />);
+    return (<CourseContent {...this.state} props={this.props} />);
   }
 }
 
