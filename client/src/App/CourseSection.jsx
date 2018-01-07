@@ -51,7 +51,7 @@ class CourseSection extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="mx-auto">
+          <div className="card-body">
             <Markdown>
               {this.state.content}
             </Markdown>
