@@ -49,13 +49,19 @@ class App extends Component {
               <Home  />
             )}/>
            
-            <Route path="/progress" exact component={Progress} />
+            <Route path="/progress" 
+            render={({ history }) => (<Progress
+                onLogin={this.onLogin}
+                logIn={this.service.logIn}
+                getUserSections={this.service.getUserSections}
+                history={history}
+              />)}
+             />
             <Route
               path="/login"
               render={({ history }) => (<Login
                 onLogin={this.onLogin}
                 logIn={this.service.logIn}
-                getUserSections={this.service.getUserSections}
                 history={history}
               />)}
              />
