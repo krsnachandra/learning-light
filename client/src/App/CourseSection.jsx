@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 class CourseSection extends Component {
   constructor(props) {
     super(props);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.submitSectionCompleted = this.submitSectionCompleted.bind(this);
     this.state = {
       loading: true
     };
@@ -31,7 +31,9 @@ class CourseSection extends Component {
     });
   }
 
-  onSubmit = (e) => {
+  submitSectionCompleted = (e) => {
+    console.log("This is submitSectionCompleted");
+
     e.preventDefault();
     this.props.sectionCompleted(this.state.section_number)
     .then((data) => {
@@ -61,7 +63,6 @@ class CourseSection extends Component {
     console.log("STATE", this.state);
     console.log("PROPS", this.props);
 
-
     return (
       <div className="container">
         <div className="row">
@@ -69,11 +70,11 @@ class CourseSection extends Component {
             <Markdown>
               {this.state.content}
             </Markdown>
-            <form onSubmit={this.onSubmit} >
               <div>
-                <Link to={`/${this.props.coursename}/${nextSectionName}`}><button className="btn btn-primary" type="submit" label="Next">Next</button></Link>
+                <Link to={`/${this.props.coursename}/${nextSectionName}`}>
+                  <button className="btn btn-primary" onClick={this.submitSectionCompleted} name="Next section" value="Next">Next</button>
+                </Link>
               </div>
-            </form>
           </div>
         </div>
       </div>
