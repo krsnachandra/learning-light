@@ -9,6 +9,7 @@ class Progress extends Component {
     this.state = {
       loading: true
     };
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount(){
@@ -20,12 +21,13 @@ class Progress extends Component {
         this.props.getUserSections()
       ])
     })
-    .then((courses, current_user) => {
+    .then(([courses, current_user]) => {
       this.setState({
         loading: undefined,
         courses: courses,
         current_user: current_user
-      }).then(() => {console.log("here STATE", this.state)});
+      })
+      .then(() => {console.log("here STATE", this.state)});
     })
 
   }
@@ -47,7 +49,7 @@ class Progress extends Component {
 
             {/* Generate card for each course */}
 
-            {this.state.courses.map(function(course) {
+            {/* {this.state.courses.map(function(course) {
               const showProgress = function () {
                 if (course.coursename == "js-essentials-2") {
                   return <CircularProgressbar percentage={60} />
@@ -89,7 +91,7 @@ class Progress extends Component {
   	              </div>
                 </div>
               )
-            })}
+            })} */}
 
             {/* End card generator */}
 
