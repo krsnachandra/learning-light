@@ -36,8 +36,12 @@ function makeService(token) {
     }).then(({ data }) => data);
   };
 
+  function getUserSections() {
+    return ajaxer.get('/users').then(({ data }) => data);
+  }
+
   return {
-    logIn, isLoggedIn, register, updateUser, saveReview
+    logIn, isLoggedIn, register, updateUser, saveReview, getUserSections
   };
 }
 

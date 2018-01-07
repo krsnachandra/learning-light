@@ -70,10 +70,6 @@ class Progress extends Component {
                             {showProgress()}
                           </div>
     				              
-                          
-                          
-                          
-                        
                       </div>
     			          </div>
     		          </div>
