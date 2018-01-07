@@ -39,27 +39,30 @@ class CourseSection extends Component {
     this.props.props.sectionCompleted(this.state.section_number)
     .then((data) => {
       this.props.props.onLogin(data.jwt);
-      // this.props.props.history.push('/progress');
+
+      let nextSectionName = "";
+      const currentChapterObject = this.props.chapters[this.state.chapter_id - 1];
+      const nextChapterObject = this.props.chapters[this.state.chapter_id];
+
+      if (this.state.loading) {
+        return (<Loading />);
+      }
+
+
+      if (this.state.section_number < currentChapterObject.sections.length) {
+        nextSectionName = currentChapterObject.sections[this.state.section_number].sectionname;
+      } else if (this.state.section_number === currentChapterObject.sections.length && nextChapterObject) {
+        nextSectionName = nextChapterObject.sections[0].sectionname;
+      } else {
+        nextSectionName = "complete";
+      }
+
+      this.props.props.history.push(`/${this.props.coursename}/${nextSectionName}`);
     });
   };
 
   render() {
-    let nextSectionName = "";
-    const currentChapterObject = this.props.chapters[this.state.chapter_id - 1];
-    const nextChapterObject = this.props.chapters[this.state.chapter_id];
-
-    if (this.state.loading) {
-      return (<Loading />);
-    }
-
-
-    if (this.state.section_number < currentChapterObject.sections.length) {
-      nextSectionName = currentChapterObject.sections[this.state.section_number].sectionname;
-    } else if (this.state.section_number === currentChapterObject.sections.length && nextChapterObject) {
-      nextSectionName = nextChapterObject.sections[0].sectionname;
-    } else {
-      nextSectionName = "complete";
-    }
+    
 
     console.log("STATE", this.state);
     console.log("PROPS", this.props);
@@ -72,9 +75,9 @@ class CourseSection extends Component {
               {this.state.content}
             </Markdown>
               <div>
-                <Link to={`/${this.props.coursename}/${nextSectionName}`}>
+                {/* <Link to={`/${this.props.coursename}/${nextSectionName}`}> */}
                   <button className="btn btn-primary" onClick={this.submitSectionCompleted} name="Next section" value="Next">Next</button>
-                </Link>
+                {/* </Link> */}
               </div>
           </div>
         </div>
