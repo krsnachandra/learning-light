@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {getCourseContent, getCourse, Loading} from '../course-service';
+import {makeService} from '../userService';
 import Markdown from 'react-remarkable';
 import { Link } from 'react-router-dom';
 
 class CourseSection extends Component {
   constructor(props) {
     super(props);
+    this.onSubmit = this.onSubmit.bind(this);
     this.state = {
       loading: true
     };
@@ -29,6 +31,15 @@ class CourseSection extends Component {
     });
   }
 
+  onSubmit = (e) => {
+    e.preventDefault();
+    sectionCompleted(this.state.section_number)
+    .then((data) => {
+      onLogin(data.jwt);
+      history.push('/progress');
+    });
+  };
+
   render() {
     let nextSectionName = "";
     const currentChapterObject = this.props.chapters[this.state.chapter_id - 1];
@@ -47,6 +58,8 @@ class CourseSection extends Component {
       nextSectionName = "complete";
     }
 
+    console.log("STATE", this.state);
+
 
     return (
       <div className="container">
@@ -55,10 +68,12 @@ class CourseSection extends Component {
             <Markdown>
               {this.state.content}
             </Markdown>
-            <div>
-              <Link to={`/${this.props.coursename}/${nextSectionName}`}><button className="btn btn-primary" label="Next">Next</button></Link>
-            </div>
-        </div>
+            <form onSubmit={this.onSubmit} >
+              <div>
+                <Link to={`/${this.props.coursename}/${nextSectionName}`}><button className="btn btn-primary" label="Next">Next</button></Link>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     )

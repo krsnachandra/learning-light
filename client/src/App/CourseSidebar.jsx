@@ -12,11 +12,8 @@ class CourseSidebar extends Component {
   }
 
   componentDidMount(){
-    console.log("THIS PARAMS", this.props.params);
-    console.log("THIS PROPS", this.props);
     getCourse("js-essentials-2")
     .then((course) => {
-      console.log("COURSE IS", course);
       this.setState({loading: undefined, ...course});
     })
   }
