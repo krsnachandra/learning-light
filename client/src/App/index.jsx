@@ -93,7 +93,9 @@ class App extends Component {
               )} />
             <Route path="/:coursename" render={
               ({match:{params:{coursename}}}) => (
-                <CourseContainer coursename={coursename}/>
+                <CourseContainer 
+                  coursename={coursename}
+                  sectionCompleted={this.service.sectionCompleted}/>
               )} />
             
           </Switch>
