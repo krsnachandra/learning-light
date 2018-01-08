@@ -27,38 +27,39 @@ class CourseSidebar extends Component {
     return (
       <div className="sidebar-wrapper card-body">
         <nav id="sidebar">
+        <div className="sidebar-header">
           <h3>Outline</h3>
-          <ul>
+        </div>
+          <ul className="list-unstyled components">
+
             {/* Begin creating headings from chapter names */}
+
             {this.state.chapters.map(function(chapter) {
               return (
-                <div key={ chapter.id }>
-                  <li>
-                    <strong className="chapter-name">{chapter.name}</strong>
-                    <ul id="chapter-submenu">
+                <li key={chapter.id} className="active">
+                  <a href="#chapter-submenu" className="chapter-name">{chapter.name}</a>
+                  <ul className="collapse list-unstyled" id="chapter-submenu">
 
-                    {/* Begin creating linkable subheadings from section names */}
-                      {chapter.sections.map(function(section) {
-                        return (
-                          <div key={ section.id }>
-                            <li>
-                              <Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link>
-                            </li>
-                          </div>
-                        )
-                      })}
-                    {/* End subheadings creator */}
+                  {/* Begin creating linkable subheadings from section names */}
+                    {chapter.sections.map(function(section) {
+                      return (
+                        <li key={ section.id }>
+                          <Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link>
+                        </li>
+                      )
+                    })}
 
-                    </ul>
-                  </li>
-                </div>
+                  {/* End subheadings creator */}
+                  </ul>
+                </li>
               );
             })}
 
             {/* End headings creator */}
+
           </ul>
         </nav>
-      <span className='text-success'>{'\u2714'}</span>
+        <span className='text-success'>{'\u2714'}</span>
       </div>
     );
   }
