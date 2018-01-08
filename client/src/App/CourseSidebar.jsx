@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import {getCourse, Loading} from '../course-service';
+import Loading from '../Loading';
 
 
 class CourseSidebar extends Component {
@@ -12,7 +12,9 @@ class CourseSidebar extends Component {
   }
 
   componentDidMount(){
-    getCourse("js-essentials-2")
+    console.log("THIS PARAMS", this.props.params);
+    console.log("THIS PROPS", this.props);
+    this.props.getCourse("js-essentials-2")
     .then((course) => {
       this.setState({loading: undefined, ...course});
     })

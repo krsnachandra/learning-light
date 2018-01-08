@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import {getAllCourses, Loading} from '../course-service';
+import Loading from '../Loading';
 import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
@@ -14,7 +14,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    getAllCourses()
+    this.props.getAllCourses()
     .then((courses) => {
       this.setState({
         loading: undefined,

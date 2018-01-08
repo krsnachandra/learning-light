@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import {getAllCourses, Loading} from '../course-service';
+import Loading from '../Loading';
 import CircularProgressbar from 'react-circular-progressbar';
 
 class Progress extends Component {
@@ -13,13 +13,10 @@ class Progress extends Component {
   }
 
   componentDidMount(){  
-    getAllCourses()
-    .then((courses) => {
-      return Promise.all([
-        courses,
-        this.props.getUserSections()
-      ])
-    })
+    Promise.all([
+      this.props.getAllCourses(),
+      this.props.getUserSections()
+    ])
     .then(([courses, current_user]) => {
       this.setState({
         loading: undefined,
