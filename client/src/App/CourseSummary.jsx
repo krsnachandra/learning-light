@@ -38,7 +38,10 @@ class CourseSummary extends Component {
             {this.state.description}
           </p>
           <div>
-            <Link to={`/${this.props.coursename}/intro`}><button className="btn btn-primary" label="Start course">Start learning now!</button></Link>
+            <% i
+            <Link to={`/${this.props.coursename}/intro`}>
+              <button className="btn btn-primary" label="Start course">Start learning now!</button>
+            </Link>
           </div>
         </div>
         <div className="card-body">
