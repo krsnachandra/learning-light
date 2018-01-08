@@ -38,7 +38,9 @@ class CourseSummary extends Component {
             {this.state.description}
           </p>
           <div>
-            <Link to={`/${this.props.coursename}/intro`}><button className="btn btn-primary" label="Start course">Start learning now!</button></Link>
+            <Link to={`/${this.props.coursename}/intro`}>
+              <button className="btn btn-primary" label="Start course">Start learning now!</button>
+            </Link>
           </div>
         </div>
         <div className="card-body">
@@ -56,7 +58,7 @@ class CourseSummary extends Component {
             {/* Begin generating reviews from DB array */}
 
             {this.state.reviews.map(function(review) {
-              if (review.show_flag == true) {
+              if (review.show_flag === true) {
                 return <div key={ review.id }>
                   <div className="card-body">
                     <div className="card-title">
