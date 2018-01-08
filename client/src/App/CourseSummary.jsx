@@ -38,7 +38,6 @@ class CourseSummary extends Component {
             {this.state.description}
           </p>
           <div>
-            <% i
             <Link to={`/${this.props.coursename}/intro`}>
               <button className="btn btn-primary" label="Start course">Start learning now!</button>
             </Link>
