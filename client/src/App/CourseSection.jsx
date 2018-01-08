@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {getCourseContent, getCourse, Loading} from '../course-service';
+import  Loading from '../Loading';
 import Markdown from 'react-remarkable';
 import { Link } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ class CourseSection extends Component {
   }
 
   loadSection(sectionname) {
-    getCourseContent(this.props.coursename, sectionname)
+    this.props.getCourseContent(this.props.coursename, sectionname)
       .then((course) => {
         this.setState({loading: undefined, ...course});
     });

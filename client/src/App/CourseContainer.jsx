@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {getCourse, Loading} from '../course-service';
+import Loading from '../Loading';
 import CourseContent from './CourseContent';
 
 class CourseContainer extends Component {
@@ -11,7 +11,7 @@ class CourseContainer extends Component {
   }
 
   componentDidMount(){
-    getCourse(this.props.coursename)
+    this.props.getCourse(this.props.coursename)
     .then((course) => {
       this.setState({loading: undefined, ...course});
     });
@@ -21,8 +21,7 @@ class CourseContainer extends Component {
     if (this.state.loading) {
       return (<Loading />);
     }
-    const { props } = this.props;
-    return (<CourseContent {...this.state} {...props} />);
+    return (<CourseContent {...this.state} {...this.props} />);
   }
 }
 
