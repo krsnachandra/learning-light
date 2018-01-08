@@ -15,7 +15,7 @@ class Review extends React.Component {
       rating: 0
     };
   }
-  
+
   onStarClick(nextValue, preValue, name) {
     this.setState({rating: nextValue});
   }
@@ -27,7 +27,7 @@ class Review extends React.Component {
     const review = e.target.elements.review.value;
     const show_flag = false;
     const course_id = 3;
-    
+
     this.props.saveReview(rating, review, show_flag, course_id)
       .then((data) => {
         this.props.onLogin(data.jwt);
@@ -41,11 +41,11 @@ class Review extends React.Component {
       <div>
         <h1>Rate and review this course</h1>
         <form onSubmit={this.onSubmit.bind(this)} >
-              
+
               <div>
                 {/* <h2>{rating}</h2> */}
-                <StarRatingComponent 
-                    name="rate1" 
+                <StarRatingComponent
+                    name="rate1"
                     starCount={5}
                     value={rating}
                     onStarClick={this.onStarClick.bind(this)}

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 class CourseSection extends Component {
   constructor(props) {
     super(props);
+    this.submitSectionCompleted = this.submitSectionCompleted.bind(this);
     this.state = {
       loading: true
     };
@@ -16,7 +17,7 @@ class CourseSection extends Component {
   }
 
   componentWillReceiveProps({ params: { section }  }) {
-    if (this.props.params.sectionname !== section) {
+    if (this.props.params.section !== section) {
       this.setState({ loading: true });
       this.loadSection(section)
     }
@@ -29,24 +30,38 @@ class CourseSection extends Component {
     });
   }
 
-  render() {
-    let nextSectionName = "";
-    const currentChapterObject = this.props.chapters[this.state.chapter_id - 1];
-    const nextChapterObject = this.props.chapters[this.state.chapter_id];
+  submitSectionCompleted = (e) => {
+    console.log("This is submitSectionCompleted");
 
+    e.preventDefault();
+    console.log("My Props", this.props);
+    this.props.props.sectionCompleted(this.state.section_number)
+    .then((data) => {
+      this.props.props.onLogin(data.jwt);
+
+      let nextSectionName = "";
+      const currentChapterObject = this.props.chapters[this.state.chapter_id - 1];
+      const nextChapterObject = this.props.chapters[this.state.chapter_id];
+
+      if (this.state.section_number < currentChapterObject.sections.length) {
+        nextSectionName = currentChapterObject.sections[this.state.section_number].sectionname;
+      } else if (this.state.section_number === currentChapterObject.sections.length && nextChapterObject) {
+        nextSectionName = nextChapterObject.sections[0].sectionname;
+      } else {
+        nextSectionName = "complete";
+      }
+
+      this.props.props.history.push(`/${this.props.coursename}/${nextSectionName}`);
+    });
+  };
+
+  render() {
     if (this.state.loading) {
       return (<Loading />);
     }
 
-
-    if (this.state.section_number < currentChapterObject.sections.length) {
-      nextSectionName = currentChapterObject.sections[this.state.section_number].sectionname;
-    } else if (this.state.section_number === currentChapterObject.sections.length && nextChapterObject) {
-      nextSectionName = nextChapterObject.sections[0].sectionname;
-    } else {
-      nextSectionName = "complete";
-    }
-
+    console.log("STATE", this.state);
+    console.log("PROPS", this.props);
 
     return (
       <div className="container">
@@ -55,10 +70,12 @@ class CourseSection extends Component {
             <Markdown>
               {this.state.content}
             </Markdown>
-            <div>
-              <Link to={`/${this.props.coursename}/${nextSectionName}`}><button className="btn btn-primary" label="Next">Next</button></Link>
-            </div>
-        </div>
+              <div>
+                {/* <Link to={`/${this.props.coursename}/${nextSectionName}`}> */}
+                  <button className="btn btn-primary" onClick={this.submitSectionCompleted} name="Next section" value="Next">Next</button>
+                {/* </Link> */}
+              </div>
+          </div>
         </div>
       </div>
     )

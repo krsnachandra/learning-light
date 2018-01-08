@@ -54,19 +54,6 @@ a:hover {
   text-shadow: 2px 2px 4px black;
 }
 
-.rating input {
-  position: relative;
-  z-index: 2;
-  display: inline-block;
-  width: 20%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
 footer {
   margin-left: auto;
   margin-right: auto;
@@ -99,29 +86,20 @@ footer {
   color: #ffc107;
 }
 
-
+.CircularProgressbar {
 /*
- * react-circular-progressbar styles
+ * This fixes an issue where the CircularProgressbar svg has
+ * 0 width inside a "display: flex" container, and thus not visible.
  *
- * All of the styles in this file are optional and configurable!
+ * If you're not using "display: flex", you can remove this style.
  */
+/* display: inline-block; */
 
- .CircularProgressbar {
-  /*
-   * This fixes an issue where the CircularProgressbar svg has
-   * 0 width inside a "display: flex" container, and thus not visible.
-   *
-   * If you're not using "display: flex", you can remove this style.
-   */
-  /* display: inline-block; */
-
-  width: 70%;
-
-  padding-left: 50px;
-  display: flex;
-  justify-content: center;
-  
- }
+width: 70%;
+padding-left: 50px;
+display: flex;
+justify-content: center;
+}
 
 
 .CircularProgressbar .CircularProgressbar-path {
@@ -153,4 +131,13 @@ footer {
 
 .btn-primary:hover{
     background: #5A5ACD;
+}
+
+.react-rater-star {
+  font-size: 200%;
+}
+
+.react-rater-star:hover {
+  font-size: 220%;
+  font-color: #ffc107;
 }

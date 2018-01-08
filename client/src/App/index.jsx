@@ -52,8 +52,8 @@ class App extends Component {
             <Route exact path='/' render={() => (
               <Home getAllCourses={this.courseService.getAllCourses}/>
             )}/>
-           
-            <Route path="/progress" 
+
+            <Route path="/progress"
             render={({ history }) => (<Progress
                 getAllCourses={this.courseService.getAllCourses}
                 getUserSections={this.service.getUserSections}
@@ -94,7 +94,7 @@ class App extends Component {
              />
             <Route path="/:coursename/complete" render={
               ({match:{params:{coursename}}, history}) => (
-                <CourseCompleted 
+                <CourseCompleted
                   coursename={coursename}
                   saveReview={this.service.saveReview}
                   onLogin={this.onLogin}
@@ -106,9 +106,11 @@ class App extends Component {
                   getCourseContent={this.courseService.getCourseContent}
                   getCourse={this.courseService.getCourse}
                   coursename={coursename}
-                  sectionCompleted={this.service.sectionCompleted}/>
+                  sectionCompleted={this.service.sectionCompleted}
+                  onLogin={this.onLogin}
+                  history={history}/>
               )} />
-            
+
           </Switch>
         </div>
         <Footer />
