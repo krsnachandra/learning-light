@@ -32,12 +32,9 @@ class CourseSection extends Component {
 
   submitSectionCompleted = (e) => {
     console.log("This is submitSectionCompleted");
-
-    e.preventDefault();
     console.log("My Props", this.props);
-    this.props.sectionCompleted(this.state.section_number)
+    this.props.sectionCompleted(this.state.id)
     .then((data) => {
-      this.props.onLogin(data.jwt);
 
       let nextSectionName = "";
       const currentChapterObject = this.props.chapters[this.state.chapter_id - 1];
