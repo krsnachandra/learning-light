@@ -9,10 +9,10 @@ class Progress extends Component {
     this.state = {
       loading: true
     };
+    this.startOrResumeCourse = this.startOrResumeCourse.bind(this);
   }
 
   componentDidMount(){
-
     getAllCourses()
     .then((courses) => {
       return Promise.all([
@@ -27,14 +27,24 @@ class Progress extends Component {
         current_user: current_user
       })
     });
-
   }
+
+  startOrResumeCourse = (coursename) => {
+    if (this.state.current_user.user_sections === []) {
+      return <div className="col-md-12">
+        <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Start Course</button></Link>
+      </div>
+    } else {
+      return <div className="col-md-12">
+        <Link to={`/${coursename}/callbacks`}><button className="btn btn-primary btn-block">Resume Course</button></Link>
+      </div>
+    }};
 
   render() {
     if (this.state.loading) {
       return (<Loading />);
     }
-    {console.log("here STATE", this.state)};
+    console.log("here STATE", this.state);
     return (
       <div className="container">
 
@@ -47,26 +57,21 @@ class Progress extends Component {
 
             {/* Generate card for each course */}
 
-            {this.state.courses.map(function(course) {
-
+            {this.state.courses.map((course) => {
               const showProgress = function () {
+                if (course.coursename === "js-essentials-2") {
 
-                // TODO: implement logic to check coursename against current_user's
-                // user_sections
-                // * "CircularProgressbar percentage" value should be a variable:
-                //   percentageComplete = user_sections / course_sections * 100
-                // * if percentageComplete = 100%, display badge
+                  // TODO: implement logic to check coursename against current_user's
+                  // user_sections
+                  // * "CircularProgressbar percentage" value should be a variable:
+                  //   percentageComplete = user_sections / course_sections * 100
+                  // * if percentageComplete = 100%, display badge
 
-                if (course.coursename == "js-essentials-2") {
-                  return (
-                    <CircularProgressbar percentage={60} />
-                  )
-                } else if (course.coursename == "ios-essentials") {
-                  return (
-                    <p className="card-text">
-                      {course.blurb}
-                    </p>
-                  )
+                  return <CircularProgressbar percentage={60} />
+                } else if (course.coursename === "ios-essentials") {
+                  return <p className="card-text">
+                    {course.blurb}
+                  </p>
                 } else {
                   return (
                     <div>
@@ -97,9 +102,7 @@ class Progress extends Component {
     			          </div>
     		          </div>
     	            <div className="row">
-  		              <div className="col-md-12">
-                      <Link to={`/${course.coursename}`}><button className="btn btn-primary btn-block">Go to course</button></Link>
-  		              </div>
+                    {this.startOrResumeCourse(course.coursename)}
   	              </div>
                 </div>
               )

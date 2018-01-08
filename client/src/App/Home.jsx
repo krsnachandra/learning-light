@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import Rater from 'react-rater'
 import {getAllCourses, Loading} from '../course-service';
-import 'react-rater/lib/react-rater.css'
+import ReactDOM from 'react-dom';
+import StarRatingComponent from 'react-star-rating-component';
+
 
 class Home extends Component {
   constructor(props) {
@@ -23,6 +24,8 @@ class Home extends Component {
   }
 
   render() {
+    const { rating } = this.state;
+
     if (this.state.loading) {
       return (<Loading />);
     }
@@ -39,43 +42,54 @@ class Home extends Component {
 
         {/* Generate card for each course */}
 
-          {this.state.courses.map(function(course) {
-            return (
-              <div key={ course.id } className="card h-100">
-	              <div className="card-img-container">
-		              <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
-	              </div>
-  	            <div className="card-body">
-  		            <div className="row">
-  			            <div className="col-md-12">
-				              <div className="card-title">
-					              {course.name}
-				              </div>
-                      <div className="card-title">
-  					            <small className="text-muted">by {course.instructor.name}</small>
-  				            </div>
-                      <div className="card-text">
-                        {course.blurb}
+{this.state.courses.map(function(course) {
+              return (
+                <div key={ course.id } className="card">
+  	              <div className="card-img-container">
+  		              <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
+  	              </div>
+    	            <div className="card-body">
+    		            <div className="row">
+    			            <div className="col-md-12">
+    				            <div className="card-instructor">
+    					            {course.instructor.name}
+    				            </div>
+                        <div>
+    				              <h4 className="card-title">
+    					              {course.name}
+    				              </h4>
+    				              <p className="card-text">
+                            {course.blurb}
+    				              </p>
+                        </div>
+                        <div>
+                          <h2>{rating}</h2>
+                          <StarRatingComponent
+                              name="rate2"
+                              editing={false}
+                              starCount={5}
+                              value={3}
+                          />
+                        </div>
+                        <div className="row">
+                          <div className="col-md-12 text-center">
+                            <Link to={`/${course.coursename}`}>
+                            <button className="btn btn-primary btn-block">View free course</button>
+                          </Link>
+                        </div>
+                      </div>
                       </div>
                     </div>
   			          </div>
   		          </div>
-  	            <div className="row">
-		              <div className="col-md-12 text-center">
-			              <Link to={`/${course.coursename}`}>
-                      <button className="btn btn-primary btn-block">View free course</button>
-                    </Link>
-		              </div>
-	              </div>
-              </div>
-            )
-          })}
+              )
+            })}
 
-        {/* End card generator */}
+            {/* End card generator */}
 
+        </div>
       </div>
     </div>
-  </div>
   )};
 }
 
