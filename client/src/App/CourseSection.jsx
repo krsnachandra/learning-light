@@ -29,24 +29,13 @@ class CourseSection extends Component {
         this.setState({loading: undefined, ...course});
     });
   }
-  getNextSectionName(){
-    const currentChapterObject = this.props.chapters[this.state.chapter_id - 1];
-    const nextChapterObject = this.props.chapters[this.state.chapter_id];
 
-    if (this.state.section_number < currentChapterObject.sections.length) {
-      return currentChapterObject.sections[this.state.section_number].sectionname;
-    } 
-    if (this.state.section_number === currentChapterObject.sections.length && nextChapterObject) {
-      return nextChapterObject.sections[0].sectionname;
-    } 
-    return "complete";
-  }
   submitSectionCompleted = (e) => {
     console.log("This is submitSectionCompleted");
     console.log("My Props", this.props);
     this.props.sectionCompleted(this.state.id)
     .then((data) => {
-      this.props.history.push(`/${this.props.coursename}/${this.getNextSectionName()}`);
+      this.props.history.push(`/${this.props.coursename}/${this.state.next_section}`);
     });
   };
 
