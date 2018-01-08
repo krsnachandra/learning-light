@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import Rater from 'react-rater'
-import {getAllCourses, Loading} from '../course-service';
-import 'react-rater/lib/react-rater.css'
+import Loading from '../Loading';
+import ReactDOM from 'react-dom';
+import StarRatingComponent from 'react-star-rating-component';
+
 
 class Home extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    getAllCourses()
+    this.props.getAllCourses()
     .then((courses) => {
       this.setState({
         loading: undefined,
@@ -23,6 +24,8 @@ class Home extends Component {
   }
 
   render() {
+    const { rating } = this.state;
+
     if (this.state.loading) {
       return (<Loading />);
     }
@@ -57,6 +60,15 @@ class Home extends Component {
     				              <p className="card-text">
                             {course.blurb}
     				              </p>
+                          <div>
+                            <h2>{rating}</h2>
+                            <StarRatingComponent 
+                                name="rate2" 
+                                editing={false}
+                                starCount={5}
+                                value={3}
+                            />
+                          </div>
                       </div>
     			          </div>
     		          </div>

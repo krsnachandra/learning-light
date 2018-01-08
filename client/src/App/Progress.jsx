@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import {getAllCourses, Loading} from '../course-service';
+import Loading from '../Loading';
 import CircularProgressbar from 'react-circular-progressbar';
 
 class Progress extends Component {
@@ -9,17 +9,14 @@ class Progress extends Component {
     this.state = {
       loading: true
     };
+    this.startOrResumeCourse = this.startOrResumeCourse.bind(this);
   }
 
-  componentDidMount(){
-    
-    getAllCourses()
-    .then((courses) => {
-      return Promise.all([
-        courses,
-        this.props.getUserSections()
-      ])
-    })
+  componentDidMount(){  
+    Promise.all([
+      this.props.getAllCourses(),
+      this.props.getUserSections()
+    ])
     .then(([courses, current_user]) => {
       this.setState({
         loading: undefined,
@@ -27,14 +24,24 @@ class Progress extends Component {
         current_user: current_user
       })
     });
-
   }
+
+  startOrResumeCourse = (coursename) => {
+    if (this.state.current_user.user_sections === []) {
+      return <div className="col-md-12">
+        <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Start Course</button></Link>
+      </div>
+    } else {
+      return <div className="col-md-12">
+        <Link to={`/${coursename}/callbacks`}><button className="btn btn-primary btn-block">Resume Course</button></Link>
+      </div>
+    }};
 
   render() {
     if (this.state.loading) {
       return (<Loading />);
     }
-    {console.log("here STATE", this.state)};
+    console.log("here STATE", this.state);
     return (
       <div className="container">
 
@@ -47,11 +54,11 @@ class Progress extends Component {
 
             {/* Generate card for each course */}
 
-            {this.state.courses.map(function(course) {
+            {this.state.courses.map((course) => {
               const showProgress = function () {
-                if (course.coursename == "js-essentials-2") {
+                if (course.coursename === "js-essentials-2") {
                   return <CircularProgressbar percentage={60} />
-                } else if (course.coursename == "ios-essentials") {
+                } else if (course.coursename === "ios-essentials") {
                   return <p className="card-text">
                     {course.blurb}
                   </p>
@@ -83,9 +90,7 @@ class Progress extends Component {
     			          </div>
     		          </div>
     	            <div className="row">
-  		              <div className="col-md-12">
-                      <Link to={`/${course.coursename}`}><button className="btn btn-primary btn-block">View Course</button></Link>
-  		              </div>
+                    {this.startOrResumeCourse(course.coursename)}
   	              </div>
                 </div>
               )
