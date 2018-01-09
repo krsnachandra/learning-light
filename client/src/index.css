@@ -137,11 +137,6 @@ footer {
     background: #5A5ACD;
 }
 
-.react-rater-star {
-  font-size: 200%;
-}
-
-.react-rater-star:hover {
-  font-size: 220%;
-  font-color: #ffc107;
+.dv-star-rating-star {
+  font-size: 250%;
 }
