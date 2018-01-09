@@ -34,56 +34,57 @@ class Home extends Component {
       return (<Loading />);
     }
 
-  return (
-    <div className="container">
-
-      <div id="banner" className="justify-content-center">
+    return (
+      <div className="container">
+        <div className="banner banner-home justify-content-center">
           <h1>Learn web and iOS development with us!</h1>
-      </div>
+        </div>
 
-      <div className="row">
-        <div className="card-deck">
+        <div className="row">
+          <div className="card-deck">
 
-{/* Generate card for each course */}
+          {/* Generate card for each course */}
 
-{this.state.courses.map ((course) => {
+            {this.state.courses.map ((course) => {
               return (
-                <div key={ course.id } className="card">
-  	              <div className="card-img-container">
-  		              <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
-  	              </div>
+                <div key={ course.id } className="card-home">
+                  <div className="card-img-container">
+                    <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
+                  </div>
     	            <div className="card-body">
     		            <div className="row">
     			            <div className="col-md-12">
     				            <div className="card-instructor">
     					            {course.instructor.name}
     				            </div>
-    				              <h4 className="card-title">
-    					              {course.name}
-    				              </h4>
-    				              <p className="card-text">
-                            {course.blurb}
-    				              </p>
-                          <div>
-                            <h2>{rating}</h2>
-                            <StarRatingComponent
-                                name="rate2"
-                                editing={false}
-                                starCount={5}
-                                value={course.reviews.reduce(this.getSum, 0)/course.reviews.length}
-                            />
-                          </div>
+                      <div>
+    				            <h4 className="card-title">{course.name}</h4>
+  				              <p className="card-text">{course.blurb}</p>
+                        <div>
+                          <h2>{rating}</h2>
+                          <p align="center">
+                          <StarRatingComponent
+                            name="rate2"
+                            editing={false}
+                            starCount={5}
+                            value={course.reviews.reduce(this.getSum, 0)/course.reviews.length}
+                          />
+                        </p>
+                        </div>
                       </div>
     			          </div>
     		          </div>
     	            <div className="row">
-  		              <div className="col-md-12 text-center">
+  		              <div className="col-md-12">
   			              <Link to={`/${course.coursename}`}>
-                        <button className="btn btn-primary btn-block">View course</button>
+                        <button className="btn btn-primary btn-block view-course">
+                          View free course
+                        </button>
                       </Link>
   		              </div>
   	              </div>
                 </div>
+              </div>
               )
             })}
 

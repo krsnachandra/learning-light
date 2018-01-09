@@ -2,7 +2,12 @@ import axios from 'axios';
 import React from 'react';
 
 function Loading() {
-  return <h1>Loading...</h1>;
+  return (
+    <div className="card-body">
+      <h1>Now loading...</h1>
+      <img src="/loading.gif" alt=""/>
+    </div>
+  )
 }
 function makeCourseService(token){
   const ajaxer = token ? axios.create({ headers: {

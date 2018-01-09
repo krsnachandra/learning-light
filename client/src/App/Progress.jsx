@@ -33,15 +33,15 @@ class Progress extends Component {
   }
 
   startOrResumeCourse = (coursename) => {
-    if (this.state.current_user.user_sections === []) {
+    if (this.state.current_user.user_sections.length === 0) {
       return <div className="col-md-12">
         <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Start Course</button></Link>
       </div>
-    } else {
-      return <div className="col-md-12">
-        <Link to={`/${coursename}/callbacks`}><button className="btn btn-primary btn-block">Resume Course</button></Link>
-      </div>
-    }};
+    }
+    return <div className="col-md-12">
+      <Link to={`/${coursename}/callbacks`}><button className="btn btn-primary btn-block">Resume Course</button></Link>
+    </div>
+    };
 
   render() {
     if (this.state.loading) {

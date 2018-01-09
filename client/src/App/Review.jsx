@@ -1,9 +1,4 @@
 import React from 'react';
-// import { review } from '../reviewService';
-// import Rater from 'react-rater';
-// import 'react-rater/lib/react-rater.css';
-import axios from 'axios';
-import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
 
@@ -11,7 +6,7 @@ import StarRatingComponent from 'react-star-rating-component';
 class Review extends React.Component {
   constructor(props) {
     super(props);
-    this. state = {
+    this.state = {
       rating: 0
     };
   }
@@ -22,12 +17,11 @@ class Review extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    // const rating = e.target.elements.rating.value;
     const rating = 5;
     const review = e.target.elements.review.value;
     const show_flag = false;
     const course_id = 3;
-    
+
     this.props.saveReview(rating, review, show_flag, course_id)
       .then((data) => {
         this.props.history.push('/progress');
@@ -37,14 +31,15 @@ class Review extends React.Component {
   render() {
     const { rating } = this.state;
     return (
-      <div>
-        <h1>Rate and review this course</h1>
+      <div className="card-body">
+        <h4>What did you think?</h4>
+        <p>Your feedback will help us improve this course for future learners.</p>
         <form onSubmit={this.onSubmit.bind(this)} >
 
               <div>
-                {/* <h2>{rating}</h2> */}
                 <StarRatingComponent
                     name="rate1"
+                    className="review-star"
                     starCount={5}
                     value={rating}
                     onStarClick={this.onStarClick.bind(this)}
