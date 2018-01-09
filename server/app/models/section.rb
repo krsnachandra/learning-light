@@ -13,4 +13,5 @@ class Section < ApplicationRecord
       chapter.course.sections.find(next_section_id).sectionname
     end
   end
+
 end

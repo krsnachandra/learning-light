@@ -10,6 +10,7 @@ class Progress extends Component {
       loading: true
     };
     this.startOrResumeCourse = this.startOrResumeCourse.bind(this);
+    this.progressStatus = this.progressStatus.bind(this);
   }
 
   componentDidMount(){  
@@ -24,6 +25,11 @@ class Progress extends Component {
         current_user: current_user
       })
     });
+  }
+
+  progressStatus = (course_id) => {
+    const percentage = (this.state.current_user.user_sections.length/this.state.courses[course_id - 1].sections.length) * 100;
+    return parseInt(percentage);
   }
 
   startOrResumeCourse = (coursename) => {
@@ -55,9 +61,9 @@ class Progress extends Component {
             {/* Generate card for each course */}
 
             {this.state.courses.map((course) => {
-              const showProgress = function () {
+              const showProgress = () => {
                 if (course.coursename === "js-essentials-2") {
-                  return <CircularProgressbar percentage={60} />
+                  return <CircularProgressbar percentage={this.progressStatus(course.id)} />
                 } else if (course.coursename === "ios-essentials") {
                   return <p className="card-text">
                     {course.blurb}
