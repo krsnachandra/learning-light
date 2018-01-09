@@ -106,7 +106,8 @@ class App extends Component {
                   coursename={coursename}
                   sectionCompleted={this.service.sectionCompleted}
                   getUserSections={this.service.getUserSections}
-                  history={history}/>
+                  history={history}
+                  loggedIn={this.state.loggedIn}/>
               )} />
 
           </Switch>
