@@ -32,26 +32,10 @@ class CourseSection extends Component {
 
   submitSectionCompleted = (e) => {
     console.log("This is submitSectionCompleted");
-
-    e.preventDefault();
     console.log("My Props", this.props);
-    this.props.props.sectionCompleted(this.state.section_number)
+    this.props.sectionCompleted(this.state.id)
     .then((data) => {
-      this.props.props.onLogin(data.jwt);
-
-      let nextSectionName = "";
-      const currentChapterObject = this.props.chapters[this.state.chapter_id - 1];
-      const nextChapterObject = this.props.chapters[this.state.chapter_id];
-
-      if (this.state.section_number < currentChapterObject.sections.length) {
-        nextSectionName = currentChapterObject.sections[this.state.section_number].sectionname;
-      } else if (this.state.section_number === currentChapterObject.sections.length && nextChapterObject) {
-        nextSectionName = nextChapterObject.sections[0].sectionname;
-      } else {
-        nextSectionName = "complete";
-      }
-
-      this.props.props.history.push(`/${this.props.coursename}/${nextSectionName}`);
+      this.props.history.push(`/${this.props.coursename}/${this.state.next_section}`);
     });
   };
 
@@ -70,11 +54,9 @@ class CourseSection extends Component {
             <Markdown>
               {this.state.content}
             </Markdown>
-              <div>
-                {/* <Link to={`/${this.props.coursename}/${nextSectionName}`}> */}
-                  <button className="btn btn-primary" onClick={this.submitSectionCompleted} name="Next section" value="Next">Next</button>
-                {/* </Link> */}
-              </div>
+            <div>
+              <button className="btn btn-primary" onClick={this.submitSectionCompleted} name="Next section" value="Next">Next</button>
+            </div>
           </div>
         </div>
       </div>

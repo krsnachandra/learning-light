@@ -5,8 +5,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App/';
 import registerServiceWorker from './registerServiceWorker';
-import Rater from 'react-rater';
-import 'react-rater/lib/react-rater.css';
 import CircularProgressbar from 'react-circular-progressbar';
 
 

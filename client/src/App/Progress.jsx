@@ -10,9 +10,10 @@ class Progress extends Component {
       loading: true
     };
     this.startOrResumeCourse = this.startOrResumeCourse.bind(this);
+    this.progressStatus = this.progressStatus.bind(this);
   }
 
-  componentDidMount(){  
+  componentDidMount(){
     Promise.all([
       this.props.getAllCourses(),
       this.props.getUserSections()
@@ -24,6 +25,11 @@ class Progress extends Component {
         current_user: current_user
       })
     });
+  }
+
+  progressStatus = (course_id) => {
+    const percentage = (this.state.current_user.user_sections.length/this.state.courses[course_id - 1].sections.length) * 100;
+    return parseInt(percentage);
   }
 
   startOrResumeCourse = (coursename) => {
@@ -45,8 +51,8 @@ class Progress extends Component {
     return (
       <div className="container">
 
-        <div id="banner" className="justify-content-center">
-          <h1>My course progress</h1>
+        <div className="banner banner-progress justify-content-center">
+          <h1>My learning progress</h1>
         </div>
 
         <div className="row">
@@ -55,37 +61,39 @@ class Progress extends Component {
             {/* Generate card for each course */}
 
             {this.state.courses.map((course) => {
-              const showProgress = function () {
+              const showProgress = () => {
                 if (course.coursename === "js-essentials-2") {
-                  return <CircularProgressbar percentage={60} />
+                  return <CircularProgressbar percentage={this.progressStatus(course.id)} />
                 } else if (course.coursename === "ios-essentials") {
                   return <p className="card-text">
                     {course.blurb}
                   </p>
                 } else {
-                  return <div>
-                    <img src={`/badge-${course.coursename}.png`} alt="Course Complete!" />
-                  </div>
+                  return (
+                    <div>
+                      <img src={`/badge-${course.coursename}.png`} className="mx-auto d-block" alt="Course Complete!" />
+                    </div>
+                  )
                 }}
-              
+
               return (
-                <div key={ course.id } className="card">
+                <div key={ course.id } className="card h-100">
   	              <div className="card-img-container">
-                    <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
+  		              <img src={`/card-${course.coursename}.png`} alt="" className="img-fluid card-img-top" />
   	              </div>
     	            <div className="card-body">
     		            <div className="row">
     			            <div className="col-md-12">
-    				            <div className="card-instructor">
-    					            {course.instructor.name}
+  				              <div className="card-title">
+  					              {course.name}
+  				              </div>
+                        <div className="card-title">
+    					            <small className="text-muted">by {course.instructor.name}</small>
     				            </div>
-    				              <h4 className="card-title">
-    					              {course.name}
-    				              </h4>
-                          <div>
+                          <div className="card-block">
                             {showProgress()}
                           </div>
-    				              
+
                       </div>
     			          </div>
     		          </div>

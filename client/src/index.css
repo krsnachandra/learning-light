@@ -49,8 +49,7 @@ a:hover {
   margin-top: 10px;
 }
 
-#banner {
-  background-image: url("/banner.png");
+.banner {
   background-size: cover;
   height: 20em;
   color: white;
@@ -58,6 +57,14 @@ a:hover {
   align-items: center;
   padding: 5em;
   text-shadow: 2px 2px 4px black;
+}
+
+.banner-home {
+  background-image: url("/banner-home.png");
+}
+
+.banner-progress {
+  background-image: url("/banner-progress.png");
 }
 
 footer {
@@ -71,6 +78,7 @@ footer {
 
 .card-deck {
   margin: 2em;
+  width: 100%;
 }
 
 .card-title {
@@ -93,19 +101,9 @@ footer {
 }
 
 .CircularProgressbar {
-/*
- * This fixes an issue where the CircularProgressbar svg has
- * 0 width inside a "display: flex" container, and thus not visible.
- *
- * If you're not using "display: flex", you can remove this style.
- */
-/* display: inline-block; */
-
-width: 70%;
-padding-left: 50px;
-display: flex;
-justify-content: center;
-}
+  display: flex;
+  justify-content: center;
+  }
 
 
 .CircularProgressbar .CircularProgressbar-path {
@@ -146,4 +144,10 @@ justify-content: center;
 .react-rater-star:hover {
   font-size: 220%;
   font-color: #ffc107;
+}
+
+.chapter-name {
+  padding-top: 0.25em;
+  display: inline-block;
+  font-size: 115%;
 }

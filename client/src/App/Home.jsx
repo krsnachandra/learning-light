@@ -23,6 +23,10 @@ class Home extends Component {
     })
   }
 
+  getSum(total, reviewObj) {
+    return total + reviewObj.rating
+  }
+
   render() {
     const { rating } = this.state;
 
@@ -42,7 +46,7 @@ class Home extends Component {
 
 {/* Generate card for each course */}
 
-{this.state.courses.map(function(course) {
+{this.state.courses.map ((course) => {
               return (
                 <div key={ course.id } className="card">
   	              <div className="card-img-container">
@@ -62,11 +66,11 @@ class Home extends Component {
     				              </p>
                           <div>
                             <h2>{rating}</h2>
-                            <StarRatingComponent 
-                                name="rate2" 
+                            <StarRatingComponent
+                                name="rate2"
                                 editing={false}
                                 starCount={5}
-                                value={3}
+                                value={course.reviews.reduce(this.getSum, 0)/course.reviews.length}
                             />
                           </div>
                       </div>
