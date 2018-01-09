@@ -23,9 +23,6 @@ class CourseSidebar extends Component {
         course: course,
         current_user: current_user
       });
-      console.log("THIS PARAMS", this.props.params);
-      console.log("THIS PROPS", this.props);
-      console.log("THIS STATE", this.state);
     });
     
   }
