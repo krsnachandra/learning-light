@@ -27,10 +27,9 @@ class Review extends React.Component {
     const review = e.target.elements.review.value;
     const show_flag = false;
     const course_id = 3;
-
+    
     this.props.saveReview(rating, review, show_flag, course_id)
       .then((data) => {
-        this.props.onLogin(data.jwt);
         this.props.history.push('/progress');
       });
   };

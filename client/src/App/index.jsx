@@ -72,7 +72,6 @@ class App extends Component {
               path="/profile"
               render={({ history }) => (<Profile
                 loggedIn={this.state.loggedIn}
-                onLogin={this.onLogin}
                 updateUser={this.service.updateUser}
                 history={history}
               />)}
@@ -97,7 +96,6 @@ class App extends Component {
                 <CourseCompleted
                   coursename={coursename}
                   saveReview={this.service.saveReview}
-                  onLogin={this.onLogin}
                   history={history}/>
               )} />
             <Route path="/:coursename" render={
@@ -107,7 +105,6 @@ class App extends Component {
                   getCourse={this.courseService.getCourse}
                   coursename={coursename}
                   sectionCompleted={this.service.sectionCompleted}
-                  onLogin={this.onLogin}
                   history={history}/>
               )} />
 

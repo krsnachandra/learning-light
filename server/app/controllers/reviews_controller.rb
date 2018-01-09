@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
 
   def create
     @user = current_user
-    review = @user.all_reviews.new(review_params)
+    review = @user.reviews.new(review_params)
     if review.save
       # puts "saved new review"
     else
