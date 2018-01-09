@@ -14,10 +14,22 @@ class CourseSidebar extends Component {
   componentDidMount(){
     console.log("THIS PARAMS", this.props.params);
     console.log("THIS PROPS", this.props);
-    this.props.getCourse("js-essentials-2")
-    .then((course) => {
-      this.setState({loading: undefined, ...course});
-    })
+    // this.props.getCourse("js-essentials-2")
+    // .then((course) => {
+    //   this.setState({loading: undefined, ...course});
+    // })
+
+    Promise.all([
+      this.props.getCourse("js-essentials-2"),
+      this.props.getUserSections()
+    ])
+    .then(([course, current_user]) => {
+      this.setState({
+        loading: undefined,
+        course: course,
+        current_user: current_user
+      })
+    });
   }
 
   render() {
@@ -32,7 +44,7 @@ class CourseSidebar extends Component {
           <h3>Outline</h3>
           <ul>
             {/* Begin creating headings from chapter names */}
-            {this.state.chapters.map(function(chapter) {
+            {this.state.course.chapters.map(function(chapter) {
               return (
                 <div key={ chapter.id }>
                   <li>
