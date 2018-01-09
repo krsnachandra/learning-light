@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import {getCourseContent, Loading} from '../course-service';
-=======
 import  Loading from '../Loading';
->>>>>>> master
 import Markdown from 'react-remarkable';
 import { Link } from 'react-router-dom';
 

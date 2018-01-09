@@ -63,7 +63,6 @@ class Home extends Component {
                         <div>
                           <h2>{rating}</h2>
                           <StarRatingComponent
-                            className="review-star"
                             name="rate2"
                             editing={false}
                             starCount={5}

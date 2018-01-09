@@ -37,9 +37,9 @@ class Review extends React.Component {
         <form onSubmit={this.onSubmit.bind(this)} >
 
               <div>
-                {/* <h2>{rating}</h2> */}
                 <StarRatingComponent
                     name="rate1"
+                    className="review-star"
                     starCount={5}
                     value={rating}
                     onStarClick={this.onStarClick.bind(this)}
