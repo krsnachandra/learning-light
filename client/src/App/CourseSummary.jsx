@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Loading from '../Loading';
 import { Link } from 'react-router-dom';
+import StarRatingComponent from 'react-star-rating-component';
 
 class CourseSummary extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class CourseSummary extends Component {
     }
 
     return (
+      <div className="card">
       <div className="card-body">
         <h1>{this.state.name}</h1>
         <div className="card-body">
@@ -49,11 +51,13 @@ class CourseSummary extends Component {
             {this.state.instructor.description}
           </p>
         </div>
-        <div className="card-body">
+      </div>
+
+        <div className="card-deck">
           <h3>
             Reviews for {this.state.name}
           </h3>
-          <div className="card-block">
+          <div className="card-body">
 
             {/* Begin generating reviews from DB array */}
 
@@ -61,12 +65,22 @@ class CourseSummary extends Component {
 
               if (review.show_flag === true) {
                 return <div key={ review.id }>
-                  <div className="card-body">
-                    <div className="card-title">
-                      {review.user.first_name}'s rating: {review.rating}
-                    </div>
-                    <div className="card-text">
-                      <p>{review.review}</p>
+                  <div className="card review-card">
+                    <div className="card-body">
+                      <div className="card-title row justify-content-center">
+                        {review.user.first_name} says:
+                      </div>
+                      <div className="row justify-content-center">
+                        <StarRatingComponent
+                          name="rate2"
+                          editing={false}
+                          starCount={5}
+                          value={review.rating}
+                        />
+                      </div>
+                      <div className="card-text row justify-content-center">
+                        <p>{review.review}</p>
+                      </div>
                     </div>
                   </div>
                 </div>;

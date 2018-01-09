@@ -47,7 +47,7 @@ class Home extends Component {
 
             {this.state.courses.map ((course) => {
               return (
-                <div key={ course.id } className="card">
+                <div key={ course.id } className="card-home">
                   <div className="card-img-container">
                     <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
                   </div>
