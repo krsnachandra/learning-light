@@ -37,34 +37,15 @@ class Home extends Component {
   return (
     <div className="container">
 
-      <div className="banner banner-home justify-content-center">
+      <div id="banner" className="justify-content-center">
           <h1>Learn web and iOS development with us!</h1>
       </div>
 
       <div className="row">
         <div className="card-deck">
 
-        {/* Generate card for each course */}
+{/* Generate card for each course */}
 
-<<<<<<< HEAD
-          {this.state.courses.map(function(course) {
-            return (
-              <div key={ course.id } className="card h-100">
-	              <div className="card-img-container">
-		              <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
-	              </div>
-  	            <div className="card-body">
-  		            <div className="row">
-  			            <div className="col-md-12">
-				              <div className="card-title">
-					              {course.name}
-				              </div>
-                      <div className="card-title">
-  					            <small className="text-muted">by {course.instructor.name}</small>
-  				            </div>
-                      <div className="card-text">
-                        {course.blurb}
-=======
 {this.state.courses.map ((course) => {
               return (
                 <div key={ course.id } className="card">
@@ -85,30 +66,28 @@ class Home extends Component {
     				              </p>
                           <div>
                             <h2>{rating}</h2>
-                            <StarRatingComponent 
-                                name="rate2" 
+                            <StarRatingComponent
+                                name="rate2"
                                 editing={false}
                                 starCount={5}
                                 value={course.reviews.reduce(this.getSum, 0)/course.reviews.length}
                             />
                           </div>
->>>>>>> master
                       </div>
-                    </div>
-  			          </div>
-  		          </div>
-  	            <div className="row">
-		              <div className="col-md-12 text-center">
-			              <Link to={`/${course.coursename}`}>
-                      <button className="btn btn-primary btn-block">View free course</button>
-                    </Link>
-		              </div>
-	              </div>
-              </div>
-            )
-          })}
+    			          </div>
+    		          </div>
+    	            <div className="row">
+  		              <div className="col-md-12 text-center">
+  			              <Link to={`/${course.coursename}`}>
+                        <button className="btn btn-primary btn-block">View course</button>
+                      </Link>
+  		              </div>
+  	              </div>
+                </div>
+              )
+            })}
 
-        {/* End card generator */}
+            {/* End card generator */}
 
       </div>
     </div>

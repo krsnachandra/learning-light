@@ -13,23 +13,11 @@ class Progress extends Component {
     this.progressStatus = this.progressStatus.bind(this);
   }
 
-<<<<<<< HEAD
   componentDidMount(){
-
-    getAllCourses()
-    .then((courses) => {
-      return Promise.all([
-        courses,
-        this.props.getUserSections()
-      ])
-    })
-=======
-  componentDidMount(){  
     Promise.all([
       this.props.getAllCourses(),
       this.props.getUserSections()
     ])
->>>>>>> master
     .then(([courses, current_user]) => {
       this.setState({
         loading: undefined,
@@ -72,28 +60,6 @@ class Progress extends Component {
 
             {/* Generate card for each course */}
 
-<<<<<<< HEAD
-            {this.state.courses.map(function(course) {
-
-              const showProgress = function () {
-
-                // TODO: implement logic to check coursename against current_user's
-                // user_sections
-                // * "CircularProgressbar percentage" value should be a variable:
-                //   percentageComplete = user_sections / course_sections * 100
-                // * if percentageComplete = 100%, display badge
-
-                if (course.coursename == "js-essentials-2") {
-                  return (
-                    <CircularProgressbar percentage={60} />
-                  )
-                } else if (course.coursename == "ios-essentials") {
-                  return (
-                    <p className="card-text">
-                      {course.blurb}
-                    </p>
-                  )
-=======
             {this.state.courses.map((course) => {
               const showProgress = () => {
                 if (course.coursename === "js-essentials-2") {
@@ -102,7 +68,6 @@ class Progress extends Component {
                   return <p className="card-text">
                     {course.blurb}
                   </p>
->>>>>>> master
                 } else {
                   return (
                     <div>
@@ -133,13 +98,7 @@ class Progress extends Component {
     			          </div>
     		          </div>
     	            <div className="row">
-<<<<<<< HEAD
-  		              <div className="col-md-12">
-                      <Link to={`/${course.coursename}`}><button className="btn btn-primary btn-block">Go to course</button></Link>
-  		              </div>
-=======
                     {this.startOrResumeCourse(course.coursename)}
->>>>>>> master
   	              </div>
                 </div>
               )
