@@ -22,4 +22,8 @@ class User < ApplicationRecord
     user = User.find_by_email(email)
     user && user.authenticate(password)
   end
+
+  def dto
+    {email: email, first_name: first_name, last_name: last_name, location: location, user_sections: user_sections}
+  end
 end
