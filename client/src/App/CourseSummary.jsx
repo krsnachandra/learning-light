@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {getCourse, Loading} from '../course-service';
+import Loading from '../Loading';
 import { Link } from 'react-router-dom';
 
 class CourseSummary extends Component {
@@ -11,7 +11,7 @@ class CourseSummary extends Component {
   }
 
   componentDidMount(){
-    getCourse(this.props.coursename)
+    this.props.getCourse(this.props.coursename)
     .then((course) => {
       this.setState({loading: undefined, ...course});
     })
@@ -38,7 +38,9 @@ class CourseSummary extends Component {
             {this.state.description}
           </p>
           <div>
-            <Link to={`/${this.props.coursename}/intro`}><button className="btn btn-primary" label="Start course">Start learning now!</button></Link>
+            <Link to={`/${this.props.coursename}/intro`}>
+              <button className="btn btn-primary" label="Start course">Start learning now!</button>
+            </Link>
           </div>
         </div>
         <div className="card-body">
@@ -56,7 +58,7 @@ class CourseSummary extends Component {
             {/* Begin generating reviews from DB array */}
 
             {this.state.reviews.map(function(review) {
-              if (review.show_flag == true) {
+              if (review.show_flag === true) {
                 return <div key={ review.id }>
                   <div className="card-body">
                     <div className="card-title">

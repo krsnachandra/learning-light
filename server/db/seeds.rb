@@ -82,7 +82,10 @@ User.create!([
 ])
 Review.create!([
   {rating: 5, review: "I really enjoyed getting a taste of JavaScript. This course made it fun!", show_flag: true, course_id: 3, user_id: 1},
-  {rating: 5, review: "I was pleasantly surprised at how much I was able to learn in such a relatively short period of time. ", show_flag: true, course_id: 3, user_id: 2}
+  {rating: 5, review: "I was pleasantly surprised at how much I was able to learn in such a relatively short period of time. ", show_flag: true, course_id: 3, user_id: 2},
+  {rating: 5, review: "I really enjoyed getting a taste of HTML and CSS. This course made it fun!", show_flag: true, course_id: 1, user_id: 1},
+  {rating: 5, review: "I really enjoyed getting a taste of JavaScript. This course made it fun!", show_flag: true, course_id: 2, user_id: 2},
+  {rating: 5, review: "I really enjoyed getting a taste of IOS. This course made it fun!", show_flag: true, course_id: 4, user_id: 1}
 ])
 UserSection.create!([
   {section_id: 1, user_id: 1},

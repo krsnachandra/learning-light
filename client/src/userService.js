@@ -41,6 +41,7 @@ function makeService(token) {
   }
 
   function sectionCompleted(section_id) {
+    console.log('SectComp', token);
     return ajaxer.post('/user_sections', {
       user_section: { section_id },
     }).then(({ data }) => data);
