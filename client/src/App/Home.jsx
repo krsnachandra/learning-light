@@ -36,7 +36,7 @@ class Home extends Component {
 
     return (
       <div className="container">
-        <div className="banner banner-home justify-content-center">
+        <div className="banner home-banner justify-content-center">
           <h1>Learn web and iOS development with us!</h1>
         </div>
 
@@ -54,19 +54,19 @@ class Home extends Component {
     		            <div className="row">
     			            <div className="col-md-12">
     				            <div className="card-instructor">
-    					            {course.instructor.name}
+    					            <small className="text-muted">{course.instructor.name}</small>
     				            </div>
                       <div>
     				            <h4 className="card-title">{course.name}</h4>
   				              <p className="card-text">{course.blurb}</p>
                       </div>
     			          </div>
-    		          </div>                    
+    		          </div>
                   </div>
                   <div className="card-block">
                     <div>
-                      <h2>{rating}</h2>
                       <p align="center">
+                        <h4>Average rating:</h4>
                         <StarRatingComponent
                           name="rate2"
                           editing={false}

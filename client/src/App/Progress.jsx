@@ -35,11 +35,11 @@ class Progress extends Component {
   startOrResumeCourse = (coursename) => {
     if (this.state.current_user.user_sections.length === 0) {
       return <div className="col-md-12">
-        <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Start Course</button></Link>
+        <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Start course</button></Link>
       </div>
     }
     return <div className="col-md-12">
-      <Link to={`/${coursename}/callbacks`}><button className="btn btn-primary btn-block">Resume Course</button></Link>
+      <Link to={`/${coursename}/callbacks`}><button className="btn btn-primary btn-block">Resume course</button></Link>
     </div>
     };
 
@@ -47,15 +47,13 @@ class Progress extends Component {
     if (this.state.loading) {
       return (<Loading />);
     }
-    console.log("here STATE", this.state);
+
     return (
       <div className="container">
 
-        <div className="banner banner-progress justify-content-center">
+        <div className="banner progress-banner justify-content-center">
           <h1>My learning progress</h1>
         </div>
-
-        <div className="row">
           <div className="card-deck">
 
             {/* Generate card for each course */}
@@ -65,9 +63,7 @@ class Progress extends Component {
                 if (course.coursename === "js-essentials-2") {
                   return <CircularProgressbar percentage={this.progressStatus(course.id)} />
                 } else if (course.coursename === "ios-essentials") {
-                  return <p className="card-text">
-                    {course.blurb}
-                  </p>
+                  return <p className="progress-card-text">{course.blurb}</p>
                 } else {
                   return (
                     <div>
@@ -77,27 +73,28 @@ class Progress extends Component {
                 }}
 
               return (
-                <div key={ course.id } className="card h-100">
-  	              <div className="card-img-container">
-  		              <img src={`/card-${course.coursename}.png`} alt="" className="img-fluid card-img-top" />
-  	              </div>
+                <div key={ course.id } className="card">
+                  <div className="card-img-container">
+                    <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
+                  </div>
     	            <div className="card-body">
-    		            <div className="row">
-    			            <div className="col-md-12">
+  			            <div className="col-md-12">
+                      <div className="card-body">
   				              <div className="card-title">
   					              {course.name}
   				              </div>
-                        <div className="card-title">
+                      </div>
+                        <div className="card-body">
+                        <div className="card-instructor">
     					            <small className="text-muted">by {course.instructor.name}</small>
     				            </div>
-                          <div className="card-block">
-                            {showProgress()}
-                          </div>
-
                       </div>
-    			          </div>
-    		          </div>
-    	            <div className="row">
+                    </div>
+                  </div>
+                  <div className="progress-card-block">
+                    {showProgress()}
+                  </div>
+    	            <div className="card-footer">
                     {this.startOrResumeCourse(course.coursename)}
   	              </div>
                 </div>
@@ -107,7 +104,6 @@ class Progress extends Component {
             {/* End card generator */}
 
         </div>
-      </div>
     </div>
     )
   }

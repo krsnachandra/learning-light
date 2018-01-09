@@ -29,6 +29,10 @@ img {
   justify: center;
 }
 
+.progress-card-block {
+padding: 0 2em 2em 2em;
+}
+
 .chapter-name {
   margin-top: 0.75em;
 }
@@ -43,15 +47,17 @@ img {
   text-shadow: 2px 2px 4px black;
 }
 
-.banner-home {
+.home-banner {
   background-image: url("/banner-home.png");
 }
 
-.banner-progress {
+.progress-banner {
   background-image: url("/banner-progress.png");
 }
 
-
+.progress-text {
+  align-self: top;
+}
 
 .footer-blurb {
   color: #fff;
@@ -79,7 +85,7 @@ img {
 
 .card-title {
   font-weight: bold;
-  font-size-adjust: auto;
+  font-size: 115%;
 }
 
 .nav {
@@ -139,6 +145,10 @@ img {
 
 .dv-star-rating.review-star {
   font-size: 250%;
+}
+
+.dv-star-rating {
+  font-size: 150%;
 }
 
 .chapter-name {
