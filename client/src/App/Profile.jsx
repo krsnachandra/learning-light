@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Profile({ loggedIn, onLogin, updateUser, history }) {
+function Profile({ loggedIn, updateUser, history }) {
   const onSubmit = (e) => {
     e.preventDefault();
     const first_name = e.target.elements.first_name.value;
@@ -12,7 +12,6 @@ function Profile({ loggedIn, onLogin, updateUser, history }) {
     const passwordConfirm = e.target.elements.passwordConfirm.value;
     updateUser(first_name, last_name, email, location, motivation, password, passwordConfirm)
       .then((data) => {
-        onLogin(data.jwt);
         history.push('/progress');
       });
   };

@@ -15,6 +15,7 @@ import Register from './Register';
 import Profile from './Profile';
 import CourseContainer from './CourseContainer';
 import CourseCompleted from './CourseCompleted';
+import {makeCourseService} from '../course-service';
 
 class App extends Component {
   constructor(props) {
@@ -25,16 +26,19 @@ class App extends Component {
       loggedIn: !!token,
     };
     this.service = makeService(token);
+    this.courseService = makeCourseService(token);
     this.onLogin = this.onLogin.bind(this);
     this.onLogOut = this.onLogOut.bind(this);
   }
   onLogin(token) {
     this.service = makeService(token);
+    this.courseService = makeCourseService(token);
     localStorage.setItem('token', token);
     this.setState({ loggedIn: true });
   }
   onLogOut() {
     this.service = makeService();
+    this.courseService = makeCourseService();
     localStorage.removeItem('token');
     this.setState({ loggedIn: false });
   }
@@ -46,13 +50,12 @@ class App extends Component {
         <div className="App container">
           <Switch>
             <Route exact path='/' render={() => (
-              <Home  />
+              <Home getAllCourses={this.courseService.getAllCourses}/>
             )}/>
-           
-            <Route path="/progress" 
+
+            <Route path="/progress"
             render={({ history }) => (<Progress
-                onLogin={this.onLogin}
-                logIn={this.service.logIn}
+                getAllCourses={this.courseService.getAllCourses}
                 getUserSections={this.service.getUserSections}
                 history={history}
               />)}
@@ -69,7 +72,6 @@ class App extends Component {
               path="/profile"
               render={({ history }) => (<Profile
                 loggedIn={this.state.loggedIn}
-                onLogin={this.onLogin}
                 updateUser={this.service.updateUser}
                 history={history}
               />)}
@@ -91,19 +93,22 @@ class App extends Component {
              />
             <Route path="/:coursename/complete" render={
               ({match:{params:{coursename}}, history}) => (
-                <CourseCompleted 
+                <CourseCompleted
                   coursename={coursename}
                   saveReview={this.service.saveReview}
-                  onLogin={this.onLogin}
                   history={history}/>
               )} />
             <Route path="/:coursename" render={
-              ({match:{params:{coursename}}}) => (
-                <CourseContainer 
+              ({match:{params:{coursename}}, history}) => (
+                <CourseContainer
+                  getCourseContent={this.courseService.getCourseContent}
+                  getCourse={this.courseService.getCourse}
                   coursename={coursename}
-                  sectionCompleted={this.service.sectionCompleted}/>
+                  sectionCompleted={this.service.sectionCompleted}
+                  getUserSections={this.service.getUserSections}
+                  history={history}/>
               )} />
-            
+
           </Switch>
         </div>
         <Footer />

@@ -1,12 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 
-// function delay(by = 2000){
-//   return new Promise((resolve) => {
-//     setTimeout(resolve, by);
-//   });
-// }
-
 function Loading() {
   return (
     <div className="card-body">
@@ -15,34 +9,35 @@ function Loading() {
     </div>
   )
 }
+function makeCourseService(token){
+  const ajaxer = token ? axios.create({ headers: {
+    Authorization: `Bearer ${token}`,
+  } }) : axios;
 
-function getAllCourses(){
-  return axios.get(`/courses`)
-    .then( (response) => {
-      return response.data;
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-}
+  function getAllCourses(){
+    return ajaxer.get(`/courses`)
+      .then( ({data}) => data)
+  }
 
-function getCourse(coursename){
-  return axios.get(`/${coursename}`)
-    .then( (response) => {
-      return response.data;
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-}
+  function getCourse(coursename){
+    return ajaxer.get(`/${coursename}`)
+      .then( (response) => {
+        return response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
 
-function getCourseContent(coursename, sectionname){
-  return axios.get(`/${coursename}/${sectionname}`)
-    .then( (response) => {
-      return response.data;
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
+  function getCourseContent(coursename, sectionname){
+    return ajaxer.get(`/${coursename}/${sectionname}`)
+      .then( (response) => {
+        return response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
+  return {getCourse, getCourseContent, getAllCourses};
 }
-export {getCourse, getCourseContent, getAllCourses, Loading};
+export {makeCourseService, Loading};

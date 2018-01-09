@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {getCourse, Loading} from '../course-service';
+import Loading from '../Loading';
 import { Link } from 'react-router-dom';
 
 class CourseSummary extends Component {
@@ -11,7 +11,7 @@ class CourseSummary extends Component {
   }
 
   componentDidMount(){
-    getCourse(this.props.coursename)
+    this.props.getCourse(this.props.coursename)
     .then((course) => {
       this.setState({loading: undefined, ...course});
     })

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import {getAllCourses, Loading} from '../course-service';
+import Loading from '../Loading';
+import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
 
@@ -13,13 +14,17 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    getAllCourses()
+    this.props.getAllCourses()
     .then((courses) => {
       this.setState({
         loading: undefined,
         courses: courses
       });
     })
+  }
+
+  getSum(total, reviewObj) {
+    return total + reviewObj.rating
   }
 
   render() {
@@ -32,16 +37,16 @@ class Home extends Component {
   return (
     <div className="container">
 
-      <div className="banner banner-home justify-content-center">
+      <div id="banner" className="justify-content-center">
           <h1>Learn web and iOS development with us!</h1>
       </div>
 
       <div className="row">
         <div className="card-deck">
 
-        {/* Generate card for each course */}
+{/* Generate card for each course */}
 
-{this.state.courses.map(function(course) {
+{this.state.courses.map ((course) => {
               return (
                 <div key={ course.id } className="card">
   	              <div className="card-img-container">
@@ -60,27 +65,26 @@ class Home extends Component {
     				              <p className="card-text">
                             {course.blurb}
     				              </p>
-                        </div>
-                        <div>
-                          <h2>{rating}</h2>
-                          <StarRatingComponent
-                              name="rate2"
-                              editing={false}
-                              starCount={5}
-                              value={3}
-                          />
-                        </div>
-                        <div className="row">
-                          <div className="col-md-12 text-center">
-                            <Link to={`/${course.coursename}`}>
-                            <button className="btn btn-primary btn-block">View free course</button>
-                          </Link>
-                        </div>
+                          <div>
+                            <h2>{rating}</h2>
+                            <StarRatingComponent
+                                name="rate2"
+                                editing={false}
+                                starCount={5}
+                                value={course.reviews.reduce(this.getSum, 0)/course.reviews.length}
+                            />
+                          </div>
                       </div>
-                      </div>
-                    </div>
-  			          </div>
-  		          </div>
+    			          </div>
+    		          </div>
+    	            <div className="row">
+  		              <div className="col-md-12 text-center">
+  			              <Link to={`/${course.coursename}`}>
+                        <button className="btn btn-primary btn-block">View course</button>
+                      </Link>
+  		              </div>
+  	              </div>
+                </div>
               )
             })}
 

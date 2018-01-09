@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import {getAllCourses, Loading} from '../course-service';
+import Loading from '../Loading';
 import CircularProgressbar from 'react-circular-progressbar';
 
 class Progress extends Component {
@@ -10,16 +10,14 @@ class Progress extends Component {
       loading: true
     };
     this.startOrResumeCourse = this.startOrResumeCourse.bind(this);
+    this.progressStatus = this.progressStatus.bind(this);
   }
 
   componentDidMount(){
-    getAllCourses()
-    .then((courses) => {
-      return Promise.all([
-        courses,
-        this.props.getUserSections()
-      ])
-    })
+    Promise.all([
+      this.props.getAllCourses(),
+      this.props.getUserSections()
+    ])
     .then(([courses, current_user]) => {
       this.setState({
         loading: undefined,
@@ -29,16 +27,21 @@ class Progress extends Component {
     });
   }
 
+  progressStatus = (course_id) => {
+    const percentage = (this.state.current_user.user_sections.length/this.state.courses[course_id - 1].sections.length) * 100;
+    return parseInt(percentage);
+  }
+
   startOrResumeCourse = (coursename) => {
-    if (this.state.current_user.user_sections === []) {
+    if (this.state.current_user.user_sections.length === 0) {
       return <div className="col-md-12">
         <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Start Course</button></Link>
       </div>
-    } else {
-      return <div className="col-md-12">
-        <Link to={`/${coursename}/callbacks`}><button className="btn btn-primary btn-block">Resume Course</button></Link>
-      </div>
-    }};
+    }
+    return <div className="col-md-12">
+      <Link to={`/${coursename}/callbacks`}><button className="btn btn-primary btn-block">Resume Course</button></Link>
+    </div>
+    };
 
   render() {
     if (this.state.loading) {
@@ -58,16 +61,9 @@ class Progress extends Component {
             {/* Generate card for each course */}
 
             {this.state.courses.map((course) => {
-              const showProgress = function () {
+              const showProgress = () => {
                 if (course.coursename === "js-essentials-2") {
-
-                  // TODO: implement logic to check coursename against current_user's
-                  // user_sections
-                  // * "CircularProgressbar percentage" value should be a variable:
-                  //   percentageComplete = user_sections / course_sections * 100
-                  // * if percentageComplete = 100%, display badge
-
-                  return <CircularProgressbar percentage={60} />
+                  return <CircularProgressbar percentage={this.progressStatus(course.id)} />
                 } else if (course.coursename === "ios-essentials") {
                   return <p className="card-text">
                     {course.blurb}

@@ -140,3 +140,9 @@ footer {
 .dv-star-rating-star {
   font-size: 250%;
 }
+
+.chapter-name {
+  padding-top: 0.25em;
+  display: inline-block;
+  font-size: 115%;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
+
+
 class Review extends React.Component {
   constructor(props) {
     super(props);
@@ -22,7 +24,6 @@ class Review extends React.Component {
 
     this.props.saveReview(rating, review, show_flag, course_id)
       .then((data) => {
-        this.props.onLogin(data.jwt);
         this.props.history.push('/progress');
       });
   };
@@ -34,17 +35,21 @@ class Review extends React.Component {
         <h4>What did you think?</h4>
         <p>Your feedback will help us improve this course for future learners.</p>
         <form onSubmit={this.onSubmit.bind(this)} >
-          <div>
-            <StarRatingComponent
-                name="rate1"
-                starCount={5}
-                value={rating}
-                onStarClick={this.onStarClick.bind(this)}
-            />
-          </div>
-          <textarea type="text" name="review" cols="80" rows="6" /><br/>
-          <input className="btn btn-primary" type="submit" value="Submit review" name="submit" />
-        </form>
+
+              <div>
+                {/* <h2>{rating}</h2> */}
+                <StarRatingComponent
+                    name="rate1"
+                    starCount={5}
+                    value={rating}
+                    onStarClick={this.onStarClick.bind(this)}
+                />
+              </div>
+              <br/>
+              <br/>
+              Review<br/><textarea type="text" name="review" cols="80" rows="6"></textarea><br />
+            <input type="submit" value="Submit" name="submit" />
+          </form>
       </div>
       );
   };
