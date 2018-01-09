@@ -101,7 +101,7 @@ class App extends Component {
                   history={history}/>
               )} />
             <Route path="/:coursename" render={
-              ({match:{params:{coursename}}}) => (
+              ({match:{params:{coursename}}, history}) => (
                 <CourseContainer
                   getCourseContent={this.courseService.getCourseContent}
                   getCourse={this.courseService.getCourse}
