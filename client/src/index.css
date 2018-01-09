@@ -137,7 +137,7 @@ footer {
     background: #5A5ACD;
 }
 
-.dv-star-rating-star {
+.dv-star-rating-star.review-star {
   font-size: 250%;
 }
 
