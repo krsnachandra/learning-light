@@ -3,6 +3,7 @@
 
 body {
   font-family: 'PT Sans', sans-serif;
+  margin-bottom: 10em;
 }
 
 figure {
@@ -50,6 +51,8 @@ img {
   background-image: url("/banner-progress.png");
 }
 
+
+
 .footer-blurb {
   color: #fff;
   list-style: none;
@@ -58,19 +61,13 @@ img {
 
 .card {
   margin: 1em;
+  min-width: 10em;
+  max-width: 100%;
 }
 
-.card-home {
-  height: 468px;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  cursor: pointer;
-  border-radius: 3px;
-  box-shadow: 1px 1px 0 #e2e2e2;
-  position: relative;
-  background: #ffffff;
-  min-width: 14em;
-  max-width: 14em;
+.card-block {
+  border: 1px;
+  border-color: grey;
 }
 
 .card-img {
@@ -80,20 +77,9 @@ img {
   height: auto;
 }
 
-.card-deck {
-  width: 100%;
-  justify-content: space-around;
-  padding-bottom: 2em;
-}
-
 .card-title {
   font-weight: bold;
   font-size-adjust: auto;
-}
-
-.card-block {
-  border: 1px;
-  border-color: grey;
 }
 
 .nav {
