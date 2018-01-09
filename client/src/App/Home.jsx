@@ -62,18 +62,20 @@ class Home extends Component {
   				              <p className="card-text">{course.blurb}</p>
                         <div>
                           <h2>{rating}</h2>
+                          <p align="center">
                           <StarRatingComponent
                             name="rate2"
                             editing={false}
                             starCount={5}
                             value={course.reviews.reduce(this.getSum, 0)/course.reviews.length}
                           />
+                        </p>
                         </div>
                       </div>
     			          </div>
     		          </div>
     	            <div className="row">
-  		              <div className="col-md-12 text-center">
+  		              <div className="col-md-12">
   			              <Link to={`/${course.coursename}`}>
                         <button className="btn btn-primary btn-block">
                           View free course
