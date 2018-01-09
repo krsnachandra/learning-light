@@ -7,4 +7,20 @@ class Course < ApplicationRecord
   def reviews
     all_reviews.where({show_flag: true})
   end
+  
+  def for_user(user_id)
+    {
+      name: name, id: id, description: description, instructor: instructor, reviews: reviews, 
+      chapters: chapters_for_user(user_id), coursename: coursename, blurb: blurb,
+      sections: sections_for_user(user_id)
+    }
+  end
+
+  def sections_for_user(user_id)
+    sections.to_a.map { |s| s.for_user(user_id) }
+  end
+
+  def chapters_for_user(user_id)
+    chapters.to_a.map { |c| c.for_user(user_id) }
+  end
 end
