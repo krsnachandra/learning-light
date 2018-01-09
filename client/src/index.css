@@ -55,8 +55,8 @@ padding: 0 2em 2em 2em;
   background-image: url("/banner-progress.png");
 }
 
-.progress-text {
-  align-self: top;
+.progress-card-body {
+  padding-bottom: 0;
 }
 
 .footer-blurb {
@@ -105,6 +105,7 @@ padding: 0 2em 2em 2em;
 .CircularProgressbar {
   display: flex;
   justify-content: center;
+  margin: 0 2em 0 2em;
   }
 
 

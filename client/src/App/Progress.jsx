@@ -52,7 +52,7 @@ class Progress extends Component {
       <div className="container">
 
         <div className="banner progress-banner justify-content-center">
-          <h1>My learning progress</h1>
+          <h1>Course progress</h1>
         </div>
           <div className="card-deck">
 
@@ -63,7 +63,7 @@ class Progress extends Component {
                 if (course.coursename === "js-essentials-2") {
                   return <CircularProgressbar percentage={this.progressStatus(course.id)} />
                 } else if (course.coursename === "ios-essentials") {
-                  return <p className="progress-card-text">{course.blurb}</p>
+                  return <p className="text-muted">You haven't started this course yet! Click below to begin learning.</p>
                 } else {
                   return (
                     <div>
@@ -72,22 +72,27 @@ class Progress extends Component {
                   )
                 }}
 
+              const courseProgressBlurb = () => {
+                if (course.coursename === "ios-essentials") {
+                  return <p className="progress-card-text">{course.blurb}</p>
+                } else if (course.coursename === "js-essentials-2") {
+                  return <p className="progress-card-text">Great progress! Keep on working hard.</p>
+                } else {
+                  return <p className="progress-card-text">Course complete. Great job!</p>
+                }}
+
               return (
                 <div key={ course.id } className="card">
                   <div className="card-img-container">
                     <img src={`/card-${course.coursename}.png`} alt="" className="card-img-top" />
                   </div>
-    	            <div className="card-body">
+    	            <div className="card-body progress-card-body">
   			            <div className="col-md-12">
-                      <div className="card-body">
-  				              <div className="card-title">
-  					              {course.name}
-  				              </div>
-                      </div>
-                        <div className="card-body">
-                        <div className="card-instructor">
-    					            <small className="text-muted">by {course.instructor.name}</small>
-    				            </div>
+				              <div className="card-title">
+					              {course.name}
+				              </div>
+                      <div>
+                        {courseProgressBlurb()}
                       </div>
                     </div>
                   </div>

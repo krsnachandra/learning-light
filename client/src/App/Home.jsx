@@ -65,8 +65,8 @@ class Home extends Component {
                   </div>
                   <div className="card-block">
                     <div>
-                      <p align="center">
-                        <h4>Average rating:</h4>
+                      <p className="text-center text-muted">
+                        Average rating<br/>
                         <StarRatingComponent
                           name="rate2"
                           editing={false}
