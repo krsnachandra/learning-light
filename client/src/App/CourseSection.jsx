@@ -55,9 +55,11 @@ class CourseSection extends Component {
               {this.state.content}
             </Markdown>
               <div>
-                {/* <Link to={`/${this.props.coursename}/${nextSectionName}`}> */}
-                  <button className="btn btn-primary" onClick={this.submitSectionCompleted} name="Next section" value="Next">Next</button>
-                {/* </Link> */}
+                <Link to={`/${this.props.coursename}/${this.state.next_section}`}
+                  className="btn btn-primary"
+                  onClick={this.submitSectionCompleted}
+                  name="Next section"
+                  value="Next">Next section</Link>
               </div>
           </div>
         </div>
