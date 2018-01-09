@@ -1,17 +1,10 @@
 import React from 'react';
-// import { review } from '../reviewService';
-// import Rater from 'react-rater';
-// import 'react-rater/lib/react-rater.css';
-import axios from 'axios';
-import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
-
-
 
 class Review extends React.Component {
   constructor(props) {
     super(props);
-    this. state = {
+    this.state = {
       rating: 0
     };
   }
@@ -22,7 +15,6 @@ class Review extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    // const rating = e.target.elements.rating.value;
     const rating = 5;
     const review = e.target.elements.review.value;
     const show_flag = false;

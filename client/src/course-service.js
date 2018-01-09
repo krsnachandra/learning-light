@@ -1,17 +1,17 @@
 import axios from 'axios';
 import React from 'react';
 
-function delay(by = 2000){
-  return new Promise((resolve) => {
-    setTimeout(resolve, by);
-  });
-}
+// function delay(by = 2000){
+//   return new Promise((resolve) => {
+//     setTimeout(resolve, by);
+//   });
+// }
 
 function Loading() {
   return (
     <div className="card-body">
       <h1>Now loading...</h1>
-      <img src="/loading.gif"/>
+      <img src="/loading.gif" alt=""/>
     </div>
   )
 }

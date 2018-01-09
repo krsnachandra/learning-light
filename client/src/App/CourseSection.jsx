@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {getCourseContent, getCourse, Loading} from '../course-service';
+import {getCourseContent, Loading} from '../course-service';
 import Markdown from 'react-remarkable';
 import { Link } from 'react-router-dom';
 

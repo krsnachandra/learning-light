@@ -27,7 +27,7 @@ class CourseSummary extends Component {
         <h1>{this.state.name}</h1>
         <div className="card-body">
           <figure className="figure float-right">
-            <img className="figure-img img-fluid rounded" src={`/instructor-${this.state.instructor.id}.png`} />
+            <img className="figure-img img-fluid rounded" alt="" src={`/instructor-${this.state.instructor.id}.png`} />
             <figcaption className="figure-caption text-center">
               {this.state.instructor.name}<br />
               {this.state.instructor.position}
@@ -58,6 +58,7 @@ class CourseSummary extends Component {
             {/* Begin generating reviews from DB array */}
 
             {this.state.reviews.map(function(review) {
+
               if (review.show_flag === true) {
                 return <div key={ review.id }>
                   <div className="card-body">
