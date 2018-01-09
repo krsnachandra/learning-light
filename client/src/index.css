@@ -50,13 +50,11 @@ img {
   background-image: url("/banner-progress.png");
 }
 
-footer {
-  margin-left: auto;
-  margin-right: auto;
+.footer-blurb {
   color: #fff;
   list-style: none;
-  display: inline-block;
 }
+
 
 .card {
   margin: 1em;
@@ -149,6 +147,10 @@ footer {
     background: #5A5ACD;
 }
 
+.btn-link {
+  color: #fff;
+}
+
 .dv-star-rating.review-star {
   font-size: 250%;
 }
@@ -157,10 +159,6 @@ footer {
   padding-top: 0.25em;
   display: inline-block;
   font-size: 115%;
-}
-
-.btn-link {
-  color: #fff;
 }
 
 .review-star-title-container {
