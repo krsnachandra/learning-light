@@ -50,7 +50,7 @@ class CourseSection extends Component {
       <div className="container">
         <div className="row">
           <div className="card-body">
-            <Markdown>
+            <Markdown options={{html: true}}>
               {this.state.content}
             </Markdown>
             <div>
