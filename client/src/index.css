@@ -144,3 +144,9 @@ footer {
   font-size: 220%;
   font-color: #ffc107;
 }
+
+.chapter-name {
+  padding-top: 0.25em;
+  display: inline-block;
+  font-size: 115%;
+}
