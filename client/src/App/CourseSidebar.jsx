@@ -9,16 +9,10 @@ class CourseSidebar extends Component {
     this.state = {
       loading: true
     };
+    this.isSectionCompleted = this.isSectionCompleted.bind(this);
   }
 
   componentDidMount(){
-    console.log("THIS PARAMS", this.props.params);
-    console.log("THIS PROPS", this.props);
-    // this.props.getCourse("js-essentials-2")
-    // .then((course) => {
-    //   this.setState({loading: undefined, ...course});
-    // })
-
     Promise.all([
       this.props.getCourse("js-essentials-2"),
       this.props.getUserSections()
@@ -28,8 +22,23 @@ class CourseSidebar extends Component {
         loading: undefined,
         course: course,
         current_user: current_user
-      })
+      });
+      console.log("THIS PARAMS", this.props.params);
+      console.log("THIS PROPS", this.props);
+      console.log("THIS STATE", this.state);
     });
+    
+  }
+
+  isSectionCompleted = (section_id) => {
+    const userCompletedSection = this.state.current_user.user_sections.reduce(
+      (completed, userSectionObj) => {
+      return completed || userSectionObj.section_id === section_id;
+      } , false)
+    if (userCompletedSection) {
+      return <span className='text-success'> {'\u2714'}</span>
+    }
+    return <div></div>
   }
 
   render() {
@@ -44,7 +53,7 @@ class CourseSidebar extends Component {
           <h3>Outline</h3>
           <ul>
             {/* Begin creating headings from chapter names */}
-            {this.state.course.chapters.map(function(chapter) {
+            {this.state.course.chapters.map((chapter) => {
               return (
                 <div key={ chapter.id }>
                   <li>
@@ -52,11 +61,12 @@ class CourseSidebar extends Component {
                     <ul id="chapter-submenu">
 
                     {/* Begin creating linkable subheadings from section names */}
-                      {chapter.sections.map(function(section) {
+                      {chapter.sections.map((section) => {
                         return (
                           <div key={ section.id }>
                             <li>
                               <Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link>
+                              {this.isSectionCompleted(section.id)}
                             </li>
                           </div>
                         )
@@ -71,8 +81,7 @@ class CourseSidebar extends Component {
 
             {/* End headings creator */}
           </ul>
-        </nav>
-      <span className='text-success'>{'\u2714'}</span>
+        </nav>      
       </div>
     );
   }
