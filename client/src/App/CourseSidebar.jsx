@@ -57,7 +57,7 @@ class CourseSidebar extends Component {
                         return (
                           <div key={ section.id }>
                             <li>
-                              <Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link>
+                              <Link to={`/${this.props.coursename}/${section.sectionname}`}>{section.name}</Link>
                               {this.isSectionCompleted(section.id)}
                             </li>
                           </div>
