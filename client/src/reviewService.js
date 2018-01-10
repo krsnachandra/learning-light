@@ -16,5 +16,4 @@ function review(rating, review, show_flag, course_id, user_id) {
   }).then(({ data }) => data);
 };
 
-
 export {getUserId, review};
