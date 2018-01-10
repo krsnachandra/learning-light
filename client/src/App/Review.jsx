@@ -17,12 +17,10 @@ class Review extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const rating = 5;
+    const rating = this.state.rating;
     const review = e.target.elements.review.value;
-    const show_flag = false;
     const course_id = 3;
-
-    this.props.saveReview(rating, review, show_flag, course_id)
+    this.props.saveReview(rating, review, course_id)
       .then((data) => {
         this.props.history.push('/progress');
       });
@@ -31,11 +29,11 @@ class Review extends React.Component {
   render() {
     const { rating } = this.state;
     return (
+      <div className="card">
       <div className="card-body">
         <h4>What did you think?</h4>
         <p>Your feedback will help us improve this course for future learners.</p>
         <form onSubmit={this.onSubmit.bind(this)} >
-
               <div>
                 <StarRatingComponent
                     name="rate1"
@@ -45,12 +43,12 @@ class Review extends React.Component {
                     onStarClick={this.onStarClick.bind(this)}
                 />
               </div>
-              <br/>
-              <br/>
-              Review<br/><textarea type="text" name="review" cols="80" rows="6"></textarea><br />
-            <input type="submit" value="Submit" name="submit" />
+              Review<br/>
+            <textarea className="form-control" type="text" name="review" rows="6" /> <br />
+            <input className="btn btn-primary" type="submit" value="Submit review" name="submit" />
           </form>
       </div>
+    </div>
       );
   };
 }

@@ -13,33 +13,46 @@ class CourseSidebar extends Component {
   }
 
   componentDidMount(){
-    Promise.all([
-      this.props.getCourse("js-essentials-2"),
-      this.props.getUserSections()
-    ])
-    .then(([course, current_user]) => {
-      this.setState({
-        loading: undefined,
-        course: course,
-        current_user: current_user
-      });
-      console.log("THIS PARAMS", this.props.params);
-      console.log("THIS PROPS", this.props);
-      console.log("THIS STATE", this.state);
-    });
+    this.setState({
+      loading: undefined,
 
+    });
   }
 
   isSectionCompleted = (section_id) => {
-    const userCompletedSection = this.state.current_user.user_sections.reduce(
-      (completed, userSectionObj) => {
-      return completed || userSectionObj.section_id === section_id;
-      } , false)
-    if (userCompletedSection) {
-      return <span className='text-success'> {'\u2714'}</span>
+    if (this.props.loggedIn) {
+      const userCompletedSection = this.props.sections[section_id - 1].completed
+      if (this.props.loggedIn && userCompletedSection) {
+        return <span className='text-success'> {'\u2714'}</span>
+      }
     }
     return <div></div>
   }
+
+  // TODO: find a way to highlight the current section in the sidebar
+  // highlightCurrentSecton = (sectionname) => {
+  //   if (this.props.loggedIn) {
+  //
+  //     const currentSidebarSectionName =
+  //
+  //     if (this.props.loggedIn && userCompletedSection) {
+  //       return (
+  //         // this needs to be highlighted
+  //         <li>
+  //           <Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link>
+  //           {this.isSectionCompleted(section.id)}
+  //         </li>
+  //       )
+  //     }
+  //     return (
+  //       <li>
+  //         <Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link>
+  //         {this.isSectionCompleted(section.id)}
+  //       </li>
+  //     )
+  //   }
+  // }
+  //
 
   render() {
 
@@ -48,24 +61,27 @@ class CourseSidebar extends Component {
     }
 
     return (
-      <div className="sidebar-wrapper card-body">
+      <div className="sidebar-wrapper card">
+        <div className="sidebar-wrapper card-body">
         <nav id="sidebar">
-        <div className="sidebar-header">
-          <h3>Outline</h3>
-        </div>
-          <ul className="list-unstyled components">
+          <div className="sidebar-header">
+            <h3>Course outline</h3>
+          </div>
+
+          <ul>
 
             {/* Begin creating headings from chapter names */}
-            {this.state.course.chapters.map((chapter) => {
+            {this.props.chapters.map((chapter) => {
               return (
-                <li key={chapter.id} className="active">
-                  <a href="#chapter-submenu" className="chapter-name">{chapter.name}</a>
-                  <ul className="collapse list-unstyled" id="chapter-submenu">
+                <div key={ chapter.id }>
+                  <li><strong className="chapter-name">{chapter.name}</strong>
 
+                    <ul>
                     {/* Begin creating linkable subheadings from section names */}
                       {chapter.sections.map((section) => {
                         return (
                           <div key={ section.id }>
+
                             <li>
                               <Link to={`/js-essentials-2/${section.sectionname}`}>{section.name}</Link>
                               {this.isSectionCompleted(section.id)}
@@ -75,16 +91,17 @@ class CourseSidebar extends Component {
                       })}
                     {/* End subheadings creator */}
 
-                  {/* End subheadings creator */}
-                  </ul>
-                </li>
+                    </ul>
+                  </li>
+
+                </div>
               );
             })}
 
             {/* End headings creator */}
-
           </ul>
         </nav>
+      </div>
       </div>
     );
   }

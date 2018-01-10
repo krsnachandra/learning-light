@@ -3,6 +3,7 @@
 
 body {
   font-family: 'PT Sans', sans-serif;
+  margin-bottom: 10em;
 }
 
 figure {
@@ -28,26 +29,10 @@ a:hover {
   padding-top: 10em;
 }
 
-<<<<<<< HEAD
-
-.card {
-  height: 468px;
-  margin-bottom: 30px;
-  cursor: pointer;
-  border-radius: 3px;
-  box-shadow: 1px 1px 0 #e2e2e2;
-  position: relative;
-  background: #ffffff;
+.progress-card-block {
+padding: 0 2em 2em 2em;
 }
 
-.card-img {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    width: 100%;
-    height: auto;
-}
-=======
->>>>>>> enhancement-styling
 .chapter-name {
   margin-top: 0.75em;
 }
@@ -62,37 +47,32 @@ a:hover {
   text-shadow: 2px 2px 4px black;
 }
 
-.banner-home {
+.home-banner {
   background-image: url("/banner-home.png");
 }
 
-.banner-progress {
+.progress-banner {
   background-image: url("/banner-progress.png");
 }
 
-footer {
-  margin-left: auto;
-  margin-right: auto;
+.progress-card-body {
+  padding-bottom: 0;
+}
+
+.footer-blurb {
   color: #fff;
   list-style: none;
-  display: inline-block;
 }
 
 .card {
   margin: 1em;
+  min-width: 10em;
+  max-width: 100%;
 }
 
-.card-home {
-  height: 468px;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  cursor: pointer;
-  border-radius: 3px;
-  box-shadow: 1px 1px 0 #e2e2e2;
-  position: relative;
-  background: #ffffff;
-  min-width: 14em;
-  max-width: 14em;
+.card-block {
+  border: 1px;
+  border-color: grey;
 }
 
 .card-img {
@@ -102,20 +82,9 @@ footer {
   height: auto;
 }
 
-.card-deck {
-  width: 100%;
-  justify-content: space-around;
-  padding-bottom: 2em;
-}
-
 .card-title {
   font-weight: bold;
-  font-size-adjust: auto;
-}
-
-.card-block {
-  border: 1px;
-  border-color: grey;
+  font-size: 115%;
 }
 
 .nav {
@@ -135,6 +104,7 @@ footer {
 .CircularProgressbar {
   display: flex;
   justify-content: center;
+  margin: 0 2em 0 2em;
   }
 
 
@@ -169,8 +139,16 @@ footer {
     background: #5A5ACD;
 }
 
+.btn-link {
+  color: #fff;
+}
+
 .dv-star-rating.review-star {
   font-size: 250%;
+}
+
+.dv-star-rating {
+  font-size: 150%;
 }
 
 .chapter-name {
@@ -179,8 +157,9 @@ footer {
   font-size: 115%;
 }
 
-.btn-link {
-  color: #fff;
+.reviews-header {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .review-star-title-container {

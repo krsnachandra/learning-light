@@ -31,10 +31,9 @@ class CourseSection extends Component {
   }
 
   submitSectionCompleted = (e) => {
-    console.log("This is submitSectionCompleted");
-    console.log("My Props", this.props);
     this.props.sectionCompleted(this.state.id)
     .then((data) => {
+      this.props.loadCourse(this.props.coursename);
       this.props.history.push(`/${this.props.coursename}/${this.state.next_section}`);
     });
   };
@@ -49,9 +48,9 @@ class CourseSection extends Component {
 
     return (
       <div className="container">
-        <div className="row">
+        <div className="row card">
           <div className="card-body">
-            <Markdown>
+            <Markdown options={{html: true}}>
               {this.state.content}
             </Markdown>
             <div>
