@@ -77,13 +77,15 @@ class Progress extends Component {
               }
 
               const courseProgressBlurb = () => {
-                if (course.coursename === "ios-essentials") {
+                if (this.state.courses[course.id -1].completion === 0) {
                   return <p className="progress-card-text">{course.blurb}</p>
-                } else if (course.coursename === "js-essentials-2") {
-                  return <p className="progress-card-text">Great progress! Keep on working hard.</p>
-                } else {
-                  return <p className="progress-card-text">Course complete. Great job!</p>
-                }}
+                } else if (this.state.courses[course.id -1].completion === 1) {
+                  return (
+                    <p className="progress-card-text">Course complete. Great job!</p>
+                  )
+                }
+                return <p className="progress-card-text">Great progress! Keep on working hard.</p>
+              }
 
               return (
                 <div key={ course.id } className="card">
