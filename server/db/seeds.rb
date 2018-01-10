@@ -23,11 +23,12 @@ Chapter.create!([
   {name: "Welcome!", chapter_number: 1, course_id: 2},
   {name: "Styling With HTML & CSS", chapter_number: 2, course_id: 2},
   {name: "Functionality With JavaScript", chapter_number: 3, course_id: 2},
-  {name: "Continue Your Learning", chapter_number: 4, course_id: 2}
+  {name: "Continue Your Learning", chapter_number: 4, course_id: 2},
+  {name: "Welcome", chapter_number: 1, course_id: 4}
 ])
 Section.create!([
   {name: "Introduction", sectionname: "intro", section_number: 1, content: "### Welcome to Part II of our JavaScript Essentials course!\n\nThis curriculum was created by the Lighthouse Labs education team for our free JavaScript Essentials Workshops. Our goal is to show you how modern web applications are built by bringing together software components that may be located elsewhere but that can be combined to create more complex behaviour. To do so, we'll learn how Javascript provides all the essential tools to GET data from other sources and manipulate that data to fit our needs.\n\n### You will have needed to completed JavaScript Essentials Part I in order to continue with this course.\n\n### Who are we?\n\nWe're Lighthouse Labs (👋 ), a Canadian software development school aiming to change the way tech education is being delivered. Our goal is to find the best ways to train the next generation of developers and to empower everyone to take ownership over their digital literacy.\n\n### How do we do that?\n\nWe offer in-person courses in web or iOS development in seven Canadian cities, with a ton of hands-on experience and access to mentorship from seasoned Developers in your community. Our courses provide people with data-driven curriculum covering modern languages and frameworks that are essential for those working in the technology industry.\n\n### Web or iOS Development Bootcamp - 8 weeks, full-time immersive (500+ hours)\n\nThe goal of our Bootcamps is to transform you into a professional Developer. You’ll come to understand coding logic using popular languages and frameworks, while learning how to think like a programmer by building software from the ground up. Bootcamp will provide you with mentorship, data-driven curriculum, and a top notch learning environment that will launch you into your first Junior Developer role with an over 96% employment rate for job seeking graduates.\n\n### Intro to Web or iOS Development - 6 weeks, part-time twice a week (36+ hours)\n\nThis course is focused on equipping you with tools that apply directly to professional web or iOS development. You'll learn what goes in to creating and deploying apps and will gain a solid understanding of the fundamentals of programming. This course is an excellent option for anyone looking to discover if they want to become a Developer, to learn to communicate with a dev team or to gain valuable coding experience for a hybrid technical role.\n\n🚀 In addition to our courses, we often host free workshops and events geared towards new coders. Click here to find the next event near you! You can also get in touch to book a tour of our campus or take a virtual tour below.\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jpV63pXI5d0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\n", chapter_id: 1},
-  {name: "Building A Chat Bot", sectionname: "building-a-chat-bot", section_number: 2, content: "### PRE-REQ\n\nIf you are thinking about taking this course, you've probably attended Part I where we built a simple chat application using modern web tools such as Node.js, Websockets and JQuery.  If you didn't, please note that we'll start exactly where we left off. It would be wise to at the very least go through the Part I notes (insert link) to warm up.\n\n### GOAL\n\nToday' session goal is to show you how modern web application are built by bringing together software components that may be located elsewhere but that can be combined to create more complex behaviour.  To do so, we'll learn how Javascript provides all the essential tools to GET data from other sources and manipulate that data to fit our needs.\n\n### PRODUCT\n\nIf you recall, by the end of the previous session we had managed to create a Chat Application, (show running version).  Our focus today will be to make this Chat Application much smarter by adding some super powers, very much the way that Messenger or Slack or many other conversational interfaces are becoming smarter:  with a BOT.\n\n### APPROACH\n\nNot an easy goal, particularly for a single session like the one we have planned today.  To make it possible we'll follow the Lighthouse Labs approach:\n\n- Lots of coding!  I'll be coding things on screen.  Try to make sense of things I'm doing.  \n\n- When you are ready to code, follow the very same code snippets found in these notes. Don't worry if you fall behind, the notes are very thorough.  I rather you understand now and code at your own pace later on.\n\n- Ask questions! we have a number of mentors helping out.  If you have any question or something is not working as planned, don't be afraid to raise your hand.\n\nLet's start by reviewing the very final version of the product we built during our last sesion.", chapter_id: 1},
+  {name: "Building A Chat Bot", sectionname: "building-a-chat-bot", section_number: 2, content: "### PRE-REQ\n\nIf you are thinking about taking this course, you've probably attended Part I where we built a simple chat application using modern web tools such as Node.js, Websockets and JQuery.  If you didn't, please note that we'll start exactly where we left off. It would be wise to at the very least go through the Part I notes (insert link) to warm up.\n\n### GOAL\n\nToday' session goal is to show you how modern web application are built by bringing together software components that may be located elsewhere but that can be combined to create more complex behaviour.  To do so, we'll learn how Javascript provides all the essential tools to GET data from other sources and manipulate that data to fit our needs.\n\n### PRODUCT\n\nIf you recall, by the end of the previous session we had managed to create a Chat Application, (show running version).  Our focus today will be to make this Chat Application much smarter by adding some super powers, very much the way that Messenger or Slack or many other conversational interfaces are becoming smarter:  with a BOT.\n\n### APPROACH\n\nNot an easy goal, particularly for a single session like the one we have planned today.  To make it possible we'll follow the Lighthouse Labs approach:\n\n- Lots of coding!  I'll be coding things on screen.  Try to make sense of things I'm doing.  \n\n- When you are ready to code, follow the very same code snippets found in these notes. Don't worry if you fall behind, the notes are very thorough.  I rather you understand now and code at your own pace later on.\n\n- Ask questions! we have a number of mentors helping out.  If you have any question or something is not working as planned, don't be afraid to raise your hand.\n\nLet's start by reviewing the very final version of the product we built during our last session.", chapter_id: 1},
   {name: "Getting Started", sectionname: "getting-started", section_number: 3, content: "### CLONE \n\nI'll share a lot of code, just in case you don't have it.  As many professional software developers do these days, I'll share it by simply giving you access to the Github project (link to github).  You can either download the project and `clone` it.\n\nThe following sequence of commands will download the code into a new folder and prepare your computer to run the software.  This is necessary because you may not have all the tools and libraries that the software needs to run.\n```\ngit clone https://github.com/lighthouse-labs/js-essentials-2\ncd js-essentials-2\nnpm install\nnpm start\n```\n\nIf everything worked out well, you should see the message\n```\nChat Application running...\n```\n\nAnd if you use your browser to open the URL:  http://localhost:8080 you should see the chat application.  Go ahead, give it a try.\n\n![Screenshot](https://github.com/jugonzal/gitbook-node-chat-tutorial/blob/master/assets/example-cropped.png)", chapter_id: 1},
   {name: "Code Review", sectionname: "code-review", section_number: 1, content: "### CODE REVIEW\n\nThere is much code to get acquainted with as we will be upgrading it with super powers.  How about we try to follow the fundamental sequence of events that makes our chat room possible:\n\n1. The index.html page contains a form:\n```\n<form>\n  <input id=\"initials\">\n  <input id=\"message\">\n  <button>Send!</button>\n</form>\n```\n\n2. The app.js creates an event handler that \"listens\" to clicks on the `<button>Send!</button>` and uses websockets to emit (send) a message using websockets:\n```\n$(\"button\").on('click', function() {\n  var text = $(\"#message\").val();\n  var who = $(\"#initials\").val();\n  \n  socket.emit('message', who + \": \" + text);\n  $('#message').val('');\n  \n  return false;\n});\n```\n\n3. The server.js is listening for messages coming from any client connected and will simply \"echo\" the same message back to ALL clients:\n```\nsocket.on('message', function (msg) {\n  console.log('Received Message: ', msg);\n  io.emit('message', msg);\n});\n```\n\n4. The app.js is listening for messages from the server and upon receiving one, it will simply use JQuery to add a new entry to the HTML.\n```\nsocket.on('message', function (msg) {\n  $('<li>').text(msg).appendTo('#history');\n});\n```\n\nA good way to confirm that you understand the code now in your hands is to hack away.  Follow a quick, iterative approach when coding:  think of a feature you want to add, write as little code as possible, test and confirm your assumptions, repeat.\n\nHere are a few ideas to try:\n\n- Change the formatting of the message\n- Add a timestamp to each message\n- Display past messages when joining the chat room\n- Reply to simple questions such as \"What time is it?\"", chapter_id: 2},
   {name: "Conversational Bots", sectionname: "conversational-bots", section_number: 2, content: "### CONVERSATIONAL BOTS\n\nDid you try to make your chat room answer simple questions? How would we go about implementing such a feature?   \n\n1. First we need to realize that a message is meant as a question.  How would we do that?\n\nWe'll use the power of [Regular Expressions](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions), an old technique that is very useful when searching for certain patterns within strings of characters.  For example the expression ` /\\?$/ ` means: _\"look for a question mark at the end of the message\"_\n\nTo keep things tidy, we will create a function that is ONLY responsible for figuring out if a message has a question mark at the end, using the regular expression above.\n\n```\nfunction isQuestion(msg) {\n  return msg.match(/\\?$/)\n}\n```\n\n2. Then we should figure out what is being asked and calculate an answer.  A very simplistic approach would be to have a list of questions we understand.\n\nAs the only thing we care about at this time is the word \"time\" we can use a very similar approach.  Have you noticed how I try to write simple functions that do ONE very simple thing at a time?  And test.  If you master this simple cycle, you will make much more progress.  The *Single Responsibility Principle* is an important tenet of Software Development.\n\n```\nfunction askingTime(msg) {\n  return msg.match(/time/i)\n}\n```\n\n3. Then, instead of simply \"echoing\" the message, we should respond with our calculated answer.  The one place where it makes sense to do this is that time when a message arrives at the server.  Let's put it all together\n\n```\nif (!isQuestion(msg)) {\n  io.emit('message', msg);\n} else if (askingTime(msg)) {\n  io.emit('message', new Date);\n} \n```\n\nI'm happy that our bot is capable of answering the simple question: \"what time is it?\".  However, I'm starting to realize the complexity of building a bot that would truly be able to understand this and many other questions.  Which regular expressions would be useful if we want to expand our \"smartness\"?  Time is an easy thing to \"calculate\", but how about more complicated things?", chapter_id: 2},
@@ -74,11 +75,14 @@ Section.create!([
   {name: "Socket.io", sectionname: "socket-io", section_number: 4, content: "", chapter_id: 12},
   {name: "Enhancements (Stretch Goals!)", sectionname: "enhancements", section_number: 5, content: "", chapter_id: 12},
   {name: "Lighthouse Labs Prep Course", sectionname: "lighthouse-labs-prep-course", section_number: 1, content: "", chapter_id: 13},
-  {name: "Additional Resources", sectionname: "additional-resources", section_number: 2, content: "", chapter_id: 13}
+  {name: "Additional Resources", sectionname: "additional-resources", section_number: 2, content: "", chapter_id: 13},
+  {name: "Intro", sectionname: "intro", section_number: 1, content: "", chapter_id: 14}
 ])
 User.create!([
   {first_name: "Jack", last_name: "Black", location: "Vancouver", motivation: "coding sounded fun", email: "jack@black.com", password: "longunreadablestring", password_confirmation: "longunreadablestring"},
-  {first_name: "Rosalind", last_name: "Lake", location: "Toronto", motivation: "I'd like to build my own webpage", email: "rosy@lake.com", password: "yepyepyep", password_confirmation: "yepyepyep"}
+  {first_name: "Rosalind", last_name: "Lake", location: "Toronto", motivation: "I'd like to build my own webpage", email: "rosy@lake.com", password: "yepyepyep", password_confirmation: "yepyepyep"},
+  {first_name: "Larry", last_name: "Duck", location: "Vancouver", motivation: "I'd like to build my own webpage", email: "larry@larry.com", password: "larrylarry", password_confirmation: "larrylarry"}
+
 ])
 Review.create!([
   {rating: 5, review: "I really enjoyed getting a taste of JavaScript. This course made it fun!", show_flag: true, course_id: 3, user_id: 1},
@@ -104,5 +108,47 @@ UserSection.create!([
   {section_id: 2, user_id: 2},
   {section_id: 3, user_id: 2},
   {section_id: 4, user_id: 2},
-  {section_id: 5, user_id: 2}
+  {section_id: 5, user_id: 2},
+  {section_id: 1, user_id: 3},
+  {section_id: 2, user_id: 3},
+  {section_id: 3, user_id: 3},
+  {section_id: 4, user_id: 3},
+  {section_id: 13, user_id: 3},
+  {section_id: 14, user_id: 3},
+  {section_id: 15, user_id: 3},
+  {section_id: 16, user_id: 3},
+  {section_id: 17, user_id: 3},
+  {section_id: 18, user_id: 3},
+  {section_id: 19, user_id: 3},
+  {section_id: 20, user_id: 3},
+  {section_id: 21, user_id: 3},
+  {section_id: 22, user_id: 3},
+  {section_id: 23, user_id: 3},
+  {section_id: 24, user_id: 3},
+  {section_id: 25, user_id: 3},
+  {section_id: 26, user_id: 3},
+  {section_id: 27, user_id: 3},
+  {section_id: 28, user_id: 3},
+  {section_id: 29, user_id: 3},
+  {section_id: 30, user_id: 3},
+  {section_id: 31, user_id: 3},
+  {section_id: 32, user_id: 3},
+  {section_id: 33, user_id: 3},
+  {section_id: 34, user_id: 3},
+  {section_id: 35, user_id: 3},
+  {section_id: 36, user_id: 3},
+  {section_id: 37, user_id: 3},
+  {section_id: 38, user_id: 3},
+  {section_id: 39, user_id: 3},
+  {section_id: 40, user_id: 3},
+  {section_id: 41, user_id: 3},
+  {section_id: 42, user_id: 3},
+  {section_id: 43, user_id: 3},
+  {section_id: 44, user_id: 3},
+  {section_id: 45, user_id: 3},
+  {section_id: 46, user_id: 3},
+  {section_id: 47, user_id: 3},
+  {section_id: 48, user_id: 3},
+  {section_id: 49, user_id: 3},
+  {section_id: 50, user_id: 3}
 ])
