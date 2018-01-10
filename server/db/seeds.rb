@@ -149,6 +149,5 @@ UserSection.create!([
   {section_id: 46, user_id: 3},
   {section_id: 47, user_id: 3},
   {section_id: 48, user_id: 3},
-  {section_id: 49, user_id: 3},
-  {section_id: 50, user_id: 3}
+  {section_id: 49, user_id: 3}
 ])
