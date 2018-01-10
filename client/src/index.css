@@ -23,6 +23,17 @@ a:hover {
   color: #5A5ACD;
 }
 
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-animation: pulsate 0.5s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0.75;
+}
+
 .chapter-name {
   font-weight: bold;
   font-size: 125%;

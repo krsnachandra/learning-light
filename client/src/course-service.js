@@ -4,8 +4,8 @@ import React from 'react';
 function Loading() {
   return (
     <div className="card-body">
-      <h1>Now loading...</h1>
-      <img src="/loading.gif" alt=""/>
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      <span class="sr-only">Loading...</span>
     </div>
   )
 }

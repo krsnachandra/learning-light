@@ -23,7 +23,8 @@ class CourseSidebar extends Component {
     if (this.props.loggedIn) {
       const userCompletedSection = this.props.sections[section_id - 1].completed
       if (this.props.loggedIn && userCompletedSection) {
-        return <span className='text-success'> {'\u2714'}</span>
+        return <span className='text-success'> <i class="fa fa-check-square-o" aria-hidden="true"></i>
+</span>
       }
     }
     return <div></div>
