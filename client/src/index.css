@@ -3,7 +3,6 @@
 
 body {
   font-family: 'PT Sans', sans-serif;
-  margin-bottom: 10em;
 }
 
 figure {
@@ -19,14 +18,39 @@ a {
   color: #383D8B;
 }
 
+.reviews-header {
+  padding-top: 1em;
+}
+
 a:hover {
   color: #5A5ACD;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  justify: center;
+.App {
+  min-height: 80vh;
+}
+
+.course-complete-img {
+  opacity: 50%;
+}
+
+.card-deck {
+  margin-bottom: 1em;
+}
+
+.loading {
+  position: fixed;
+  top: 50vh;
+  left: 50vh;
+  opacity: 0.75;
+  transform: translate(70%,-70%);
+
+}
+
+.chapter-name {
+  font-weight: bold;
+  font-size: 125%;
+  padding-top: 10em;
 }
 
 .progress-card-block {
@@ -59,9 +83,27 @@ padding: 0 2em 2em 2em;
   padding-bottom: 0;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .footer-blurb {
   color: #fff;
   list-style: none;
+}
+
+.icon-portrait {
+  width: 3em !important;
+  height: 3em !important;
+}
+
+.fa-heart {
+  color: #a00;
+}
+
+.credits {
+  justify-content: space-around;
 }
 
 .card {
@@ -87,6 +129,7 @@ padding: 0 2em 2em 2em;
   font-size: 115%;
 }
 
+
 .nav {
   display: flex;
   justify-content: center;
@@ -98,7 +141,7 @@ padding: 0 2em 2em 2em;
 }
 
 .nav-item a {
-  color: #ffc107;
+  color: #fff;
 }
 
 .CircularProgressbar {
@@ -144,7 +187,7 @@ padding: 0 2em 2em 2em;
 }
 
 .dv-star-rating.review-star {
-  font-size: 250%;
+  font-size: 200%;
 }
 
 .dv-star-rating {
@@ -155,6 +198,11 @@ padding: 0 2em 2em 2em;
   padding-top: 0.25em;
   display: inline-block;
   font-size: 115%;
+}
+
+.reviews-header {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .review-star-title-container {

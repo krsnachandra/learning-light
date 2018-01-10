@@ -46,7 +46,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar loggedIn={this.state.loggedIn} />
+        <div>
+          <Navbar loggedIn={this.state.loggedIn} />
+        </div>
         <div className="App container">
           <Switch>
             <Route exact path='/' render={() => (
@@ -110,7 +112,9 @@ class App extends Component {
 
           </Switch>
         </div>
-        <Footer />
+        <div>
+          <Footer />
+        </div>
     </div>);
 
   };

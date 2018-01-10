@@ -29,6 +29,7 @@ class Review extends React.Component {
   render() {
     const { rating } = this.state;
     return (
+      <div className="card">
       <div className="card-body">
         <h4>What did you think?</h4>
         <p>Your feedback will help us improve this course for future learners.</p>
@@ -42,12 +43,11 @@ class Review extends React.Component {
                     onStarClick={this.onStarClick.bind(this)}
                 />
               </div>
-              <br/>
-              <br/>
-              Review<br/><textarea type="text" name="review" cols="80" rows="6"></textarea><br />
-            <input type="submit" value="Submit" name="submit" />
+            <textarea className="form-control" type="text" name="review" rows="6" placeholder="Write your review here" /> <br />
+            <input className="btn btn-primary" type="submit" value="Submit review" name="submit" />
           </form>
       </div>
+    </div>
       );
   };
 }

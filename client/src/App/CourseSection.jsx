@@ -48,15 +48,19 @@ class CourseSection extends Component {
 
     return (
       <div className="container">
-        <div className="row">
+        <div className="row card">
+          <div className="card-header text-muted">
+            <h5>{this.props.name} <i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;
+{this.state.name}</h5>
+          </div>
           <div className="card-body">
             <Markdown options={{html: true}}>
               {this.state.content}
             </Markdown>
-            <div>
+          </div>
+            <div className="card-footer">
               <button className="btn btn-primary" onClick={this.submitSectionCompleted} name="Next section" value="Next">Next</button>
             </div>
-          </div>
         </div>
       </div>
     )

@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import Loading from '../Loading';
 
 function Section({section, coursename}){
-  const completedCheck = section.completed && <span className='text-success'> {'\u2714'}</span>;
+  const completedCheck = section.completed && <span className='text-success'> <i className="fa fa-check-square-o" aria-hidden="true"></i></span>;
   return (
     <div key={ section.id }>
       <li>
@@ -41,7 +41,7 @@ class CourseSidebar extends Component {
     this.setState({
       loading: undefined,
 
-    });    
+    });
   }
 
   render() {
@@ -51,7 +51,8 @@ class CourseSidebar extends Component {
     }
 
     return (
-      <div className="sidebar-wrapper card-body">
+      <div className="sidebar-wrapper card">
+        <div className="sidebar-wrapper card-body">
         <nav id="sidebar">
           <div className="sidebar-header">
             <h3>Course outline</h3>
@@ -62,6 +63,7 @@ class CourseSidebar extends Component {
             })}
           </ul>
         </nav>
+      </div>
       </div>
     );
   }
