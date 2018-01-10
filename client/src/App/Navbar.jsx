@@ -11,7 +11,7 @@ function Navbar({ loggedIn }) {
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <a className="navbar-brand" href="/">Lighthouse Labs</a>
+        <a className="navbar-brand" href="/"><img className="nav-logo" src="/logo-white.png" /></a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
