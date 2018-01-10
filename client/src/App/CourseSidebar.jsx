@@ -2,6 +2,32 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Loading from '../Loading';
 
+function Section({section, coursename}){
+  const completedCheck = section.completed && <span className='text-success'> <i className="fa fa-check-square-o" aria-hidden="true"></i></span>;
+  return (
+    <div key={ section.id }>
+      <li>
+        <Link to={`/${coursename}/${section.sectionname}`}>{section.name}</Link>
+        {completedCheck}
+      </li>
+    </div>
+  )
+
+}
+
+function Chapter({chapter, coursename}){
+  return (
+    <div>
+      <li><strong className="chapter-name">{chapter.name}</strong>
+        <ul>
+          {chapter.sections.map((section) => {
+            return <Section key={section.id} section={section} coursename={coursename}/>
+          })}
+        </ul>
+      </li>
+    </div>
+  );
+}
 
 class CourseSidebar extends Component {
   constructor(props) {
@@ -9,7 +35,6 @@ class CourseSidebar extends Component {
     this.state = {
       loading: true
     };
-    this.isSectionCompleted = this.isSectionCompleted.bind(this);
   }
 
   componentDidMount(){
@@ -18,14 +43,6 @@ class CourseSidebar extends Component {
 
     });
   }
-
-  isSectionCompleted = (section_completed) => {
-    if (this.props.loggedIn && section_completed) {
-        return <span> <i className="fa fa-check-square-o sidebar-checkmark" aria-hidden="true"></i></span>
-      }
-      return <div></div>
-    }
-  
 
   render() {
 
@@ -40,38 +57,10 @@ class CourseSidebar extends Component {
           <div className="sidebar-header">
             <h3>Course outline</h3>
           </div>
-
           <ul>
-
-            {/* Begin creating headings from chapter names */}
             {this.props.chapters.map((chapter) => {
-              return (
-                <div key={ chapter.id }>
-                  <li><strong className="chapter-name">{chapter.name}</strong>
-
-                    <ul>
-                    {/* Begin creating linkable subheadings from section names */}
-                      {chapter.sections.map((section) => {
-                        return (
-                          <div key={ section.id }>
-
-                            <li>
-                              <Link to={`/${this.props.coursename}/${section.sectionname}`}>{section.name}</Link>
-                              {this.isSectionCompleted(section.completed)}
-                            </li>
-                          </div>
-                        )
-                      })}
-                    {/* End subheadings creator */}
-
-                    </ul>
-                  </li>
-
-                </div>
-              );
+              return <Chapter key={chapter.id} chapter={chapter} coursename={this.props.coursename}/>
             })}
-
-            {/* End headings creator */}
           </ul>
         </nav>
       </div>

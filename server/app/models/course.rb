@@ -21,10 +21,10 @@ class Course < ApplicationRecord
   end
 
   def sections_for_user(user_id)
-    sections.to_a.map { |s| s.for_user(user_id) }
+    sections.order(:section_number).to_a.map { |s| s.for_user(user_id) }
   end
 
   def chapters_for_user(user_id)
-    chapters.to_a.map { |c| c.for_user(user_id) }
+    chapters.order(:chapter_number).to_a.map { |c| c.for_user(user_id) }
   end
 end
