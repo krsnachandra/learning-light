@@ -23,7 +23,7 @@ class CourseSidebar extends Component {
     if (this.props.loggedIn && this.props.coursename == "js-essentials-2") {
       const userCompletedSection = this.props.sections[section_id - 1].completed
       if (this.props.loggedIn && userCompletedSection) {
-        return <span className='text-success'> <i class="fa fa-check-square-o" aria-hidden="true"></i>
+        return <span> <i className="fa fa-check-square-o sidebar-checkmark" aria-hidden="true"></i>
 </span>
       }
     }
