@@ -28,14 +28,18 @@ class Progress extends Component {
   }
 
   progressStatus = (course_id) => {
-    const percentage = (this.state.current_user.user_sections.length/this.state.courses[course_id - 1].sections.length) * 100;
+    const percentage = (this.state.courses[course_id - 1].completion) * 100;
     return parseInt(percentage);
   }
 
-  startOrResumeCourse = (coursename) => {
-    if (this.state.current_user.user_sections.length === 0) {
+  startOrResumeCourse = (coursename, id) => {
+    if (this.state.courses[id -1].completion === 0) {
       return <div className="col-md-12">
         <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Start course</button></Link>
+      </div>
+    } else if (this.state.courses[id -1].completion === 1) {
+      return <div className="col-md-12">
+        <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Restart course</button></Link>
       </div>
     }
     return <div className="col-md-12">
@@ -60,26 +64,28 @@ class Progress extends Component {
 
             {this.state.courses.map((course) => {
               const showProgress = () => {
-                if (course.coursename === "js-essentials-2") {
-                  return <CircularProgressbar percentage={this.progressStatus(course.id)} />
-                } else if (course.coursename === "ios-essentials") {
+                if (this.state.courses[course.id -1].completion === 0) {
                   return <p className="text-muted">You haven't started this course yet! Click below to begin learning.</p>
-                } else {
+                } else if (this.state.courses[course.id -1].completion === 1) {
                   return (
                     <div>
                       <img src={`/badge-${course.coursename}.png`} className="mx-auto d-block" alt="Course Complete!" />
                     </div>
                   )
-                }}
+                }
+                return <CircularProgressbar percentage={this.progressStatus(course.id)} />
+              }
 
               const courseProgressBlurb = () => {
-                if (course.coursename === "ios-essentials") {
+                if (this.state.courses[course.id -1].completion === 0) {
                   return <p className="progress-card-text">{course.blurb}</p>
-                } else if (course.coursename === "js-essentials-2") {
-                  return <p className="progress-card-text">Great progress! Keep on working hard.</p>
-                } else {
-                  return <p className="progress-card-text">Course complete. Great job!</p>
-                }}
+                } else if (this.state.courses[course.id -1].completion === 1) {
+                  return (
+                    <p className="progress-card-text">Course complete. Great job!</p>
+                  )
+                }
+                return <p className="progress-card-text">Great progress! Keep on working hard.</p>
+              }
 
               return (
                 <div key={ course.id } className="card">
@@ -100,7 +106,7 @@ class Progress extends Component {
                     {showProgress()}
                   </div>
     	            <div className="card-footer">
-                    {this.startOrResumeCourse(course.coursename)}
+                    {this.startOrResumeCourse(course.coursename, course.id)}
   	              </div>
                 </div>
               )
