@@ -14,4 +14,10 @@ class Section < ApplicationRecord
     end
   end
 
+  def for_user(user_id)
+    {
+      id: id, name: name, next_section: next_section, sectionname: sectionname, content: content, section_number: section_number, 
+      completed: user_sections.exists?({user_id: user_id})
+    }
+  end
 end

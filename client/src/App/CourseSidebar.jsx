@@ -13,30 +13,18 @@ class CourseSidebar extends Component {
   }
 
   componentDidMount(){
-    Promise.all([
-      this.props.getCourse("js-essentials-2"),
-      this.props.getUserSections()
-    ])
-    .then(([course, current_user]) => {
-      this.setState({
-        loading: undefined,
-        course: course,
-        current_user: current_user
-      });
-      console.log("THIS PARAMS", this.props.params);
-      console.log("THIS PROPS", this.props);
-      console.log("THIS STATE", this.state);
-    });
+    this.setState({
+      loading: undefined,
 
+    });    
   }
 
   isSectionCompleted = (section_id) => {
-    const userCompletedSection = this.state.current_user.user_sections.reduce(
-      (completed, userSectionObj) => {
-      return completed || userSectionObj.section_id === section_id;
-      } , false)
-    if (userCompletedSection) {
-      return <span className='text-success'> {'\u2714'}</span>
+    if (this.props.loggedIn) {
+      const userCompletedSection = this.props.sections[section_id - 1].completed
+      if (this.props.loggedIn && userCompletedSection) {
+        return <span className='text-success'> {'\u2714'}</span>
+      }
     }
     return <div></div>
   }
@@ -57,7 +45,7 @@ class CourseSidebar extends Component {
           <ul>
 
             {/* Begin creating headings from chapter names */}
-            {this.state.course.chapters.map((chapter) => {
+            {this.props.chapters.map((chapter) => {
               return (
                 <div key={ chapter.id }>
                   <li><strong className="chapter-name">{chapter.name}</strong>

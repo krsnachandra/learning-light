@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user, only: [:index, :update]
 
   def index
-    render json: current_user.to_json(include: :user_sections)
+    render json: current_user.dto
   end
 
   def show

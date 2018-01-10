@@ -8,12 +8,17 @@ class CourseContainer extends Component {
     this.state = {
       loading: true
     };
+    this.loadCourse=this.loadCourse.bind(this);
   }
 
   componentDidMount(){
-    this.props.getCourse(this.props.coursename)
-    .then((course) => {
-      this.setState({loading: undefined, ...course});
+    this.loadCourse(this.props.coursename)
+  }
+
+  loadCourse(coursename) {
+    this.props.getCourse(coursename)
+      .then((course) => {
+        this.setState({loading: undefined, ...course});
     });
   }
 
@@ -21,7 +26,7 @@ class CourseContainer extends Component {
     if (this.state.loading) {
       return (<Loading />);
     }
-    return (<CourseContent {...this.state} {...this.props} />);
+    return (<CourseContent {...this.state} {...this.props} loadCourse={this.loadCourse} />);
   }
 }
 
