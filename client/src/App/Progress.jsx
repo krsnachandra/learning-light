@@ -10,7 +10,7 @@ class Progress extends Component {
       loading: true
     };
     this.startOrResumeCourse = this.startOrResumeCourse.bind(this);
-    this.progressStatus = this.progressStatus.bind(this);
+    // this.progressStatus = this.progressStatus.bind(this);
   }
 
   componentDidMount(){
@@ -27,17 +27,17 @@ class Progress extends Component {
     });
   }
 
-  progressStatus = (course_id) => {
-    const percentage = (this.state.courses[course_id - 1].completion) * 100;
-    return parseInt(percentage);
-  }
+  // progressStatus = (course_id) => {
+  //   const percentage = (this.state.courses[course_id - 1].completion) * 100;
+  //   return parseInt(percentage);
+  // }
 
-  startOrResumeCourse = (coursename, id) => {
-    if (this.state.courses[id -1].completion === 0) {
+  startOrResumeCourse = (coursename, completion) => {
+    if (completion === 0) {
       return <div className="col-md-12">
         <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Start course</button></Link>
       </div>
-    } else if (this.state.courses[id -1].completion === 1) {
+    } else if (completion === 1) {
       return <div className="col-md-12">
         <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Restart course</button></Link>
       </div>
@@ -64,22 +64,22 @@ class Progress extends Component {
 
             {this.state.courses.map((course) => {
               const showProgress = () => {
-                if (this.state.courses[course.id -1].completion === 0) {
+                if (course.completion === 0) {
                   return <p className="text-muted">You haven't started this course yet! Click below to begin learning.</p>
-                } else if (this.state.courses[course.id -1].completion === 1) {
+                } else if (course.completion === 1) {
                   return (
                     <div>
                       <img src={`/badge-${course.coursename}.png`} className="mx-auto d-block" alt="Course Complete!" />
                     </div>
                   )
                 }
-                return <CircularProgressbar percentage={this.progressStatus(course.id)} />
+                return <CircularProgressbar percentage={parseInt(course.completion * 100)} />
               }
 
               const courseProgressBlurb = () => {
-                if (this.state.courses[course.id -1].completion === 0) {
+                if (course.completion === 0) {
                   return <p className="progress-card-text">{course.blurb}</p>
-                } else if (this.state.courses[course.id -1].completion === 1) {
+                } else if (course.completion === 1) {
                   return (
                     <p className="progress-card-text">Course complete. Great job!</p>
                   )
@@ -106,7 +106,7 @@ class Progress extends Component {
                     {showProgress()}
                   </div>
     	            <div className="card-footer">
-                    {this.startOrResumeCourse(course.coursename, course.id)}
+                    {this.startOrResumeCourse(course.coursename, course.completion)}
   	              </div>
                 </div>
               )
