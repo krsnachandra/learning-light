@@ -10,8 +10,8 @@ figure {
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 a {
@@ -44,7 +44,6 @@ a:hover {
   left: 50vh;
   opacity: 0.75;
   transform: translate(70%,-70%);
-
 }
 
 .chapter-name {
@@ -54,7 +53,7 @@ a:hover {
 }
 
 .progress-card-block {
-padding: 0 2em 2em 2em;
+  padding: 0 2em 2em 2em;
 }
 
 .chapter-name {
