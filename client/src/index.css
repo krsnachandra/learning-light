@@ -3,7 +3,6 @@
 
 body {
   font-family: 'PT Sans', sans-serif;
-  margin-bottom: 10em;
 }
 
 figure {
@@ -23,18 +22,25 @@ a:hover {
   color: #5A5ACD;
 }
 
+.App {
+  min-height: 80vh;
+}
+
 .course-complete-img {
   opacity: 50%;
 }
 
+.card-deck {
+  margin-bottom: 1em;
+}
+
 .loading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-animation: pulsate 0.5s ease-out;
-  -webkit-animation-iteration-count: infinite;
+  position: fixed;
+  top: 50vh;
+  left: 50vh;
   opacity: 0.75;
+  transform: translate(70%,-70%);
+
 }
 
 .chapter-name {

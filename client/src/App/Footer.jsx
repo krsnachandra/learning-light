@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <div className="fixed-bottom navbar navbar-dark bg-dark justify-content-center">
+    <div className="navbar bg-dark justify-content-center">
       <div className="column">
         <div className="row footer-social-media justify-content-center">
           <ul className="nav">
