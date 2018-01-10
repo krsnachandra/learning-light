@@ -20,7 +20,7 @@ class CourseSidebar extends Component {
   }
 
   isSectionCompleted = (section_id) => {
-    if (this.props.loggedIn) {
+    if (this.props.loggedIn && this.props.coursename == "js-essentials-2") {
       const userCompletedSection = this.props.sections[section_id - 1].completed
       if (this.props.loggedIn && userCompletedSection) {
         return <span className='text-success'> {'\u2714'}</span>
