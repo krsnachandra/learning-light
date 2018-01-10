@@ -53,13 +53,14 @@ class CourseSummary extends Component {
         </div>
       </div>
 
-        <div className="card-deck">
-          <div className="card-body reviews-header">
-          <h3 className="text-center">
-            Reviews for {this.state.name}
-          </h3>
-          </div>
-          <div className="card-body">
+        <div className="card-deck reviews-container">
+          <div className="card-body reviews-header-container">
+            <div className="card reviews-header">
+              <h3 className="text-center">
+                Reviews for {this.state.name}
+              </h3>
+
+            <div className="card-body">
 
             {/* Begin generating reviews from DB array */}
 
@@ -89,11 +90,12 @@ class CourseSummary extends Component {
               }
             })}
           </div>
+          </div>
 
           {/* End reviews generation */}
-
         </div>
-      </div>);
+      </div>
+    </div>);
 
     }
   }

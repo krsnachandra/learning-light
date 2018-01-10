@@ -4,7 +4,7 @@ import CourseSummary from './CourseSummary';
 import CourseSection from './CourseSection';
 import CourseSidebar from './CourseSidebar';
 import CourseCompleted from './CourseCompleted';
-
+import Loading from '../Loading';
 
 export default function CourseContent(props) {
   return (

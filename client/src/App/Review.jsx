@@ -43,8 +43,7 @@ class Review extends React.Component {
                     onStarClick={this.onStarClick.bind(this)}
                 />
               </div>
-              Review<br/>
-            <textarea className="form-control" type="text" name="review" rows="6" /> <br />
+            <textarea className="form-control" type="text" name="review" rows="6" placeholder="Write your review here" /> <br />
             <input className="btn btn-primary" type="submit" value="Submit review" name="submit" />
           </form>
       </div>
