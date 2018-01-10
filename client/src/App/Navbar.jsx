@@ -17,12 +17,7 @@ function Navbar({ loggedIn }) {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <Link className='nav-link' to='/'>Home
-              <span className="sr-only">(current)</span>
-              </Link>
-            </li>
+          <ul className="navbar-nav mr-auto">            
             <div className="nav">
               {links}
             </div>
