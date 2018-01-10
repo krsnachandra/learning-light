@@ -48,7 +48,7 @@ class CourseSection extends Component {
 
     return (
       <div className="container">
-        <div className="row">
+        <div className="row card">
           <div className="card-body">
             <Markdown options={{html: true}}>
               {this.state.content}

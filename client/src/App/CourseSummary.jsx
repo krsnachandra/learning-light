@@ -54,9 +54,11 @@ class CourseSummary extends Component {
       </div>
 
         <div className="card-deck">
-          <h3>
+          <div className="card-body reviews-header">
+          <h3 className="text-center">
             Reviews for {this.state.name}
           </h3>
+          </div>
           <div className="card-body">
 
             {/* Begin generating reviews from DB array */}

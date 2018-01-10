@@ -157,6 +157,11 @@ padding: 0 2em 2em 2em;
   font-size: 115%;
 }
 
+.reviews-header {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 .review-star-title-container {
   vertical-align: middle;
 }

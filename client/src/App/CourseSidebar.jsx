@@ -16,7 +16,7 @@ class CourseSidebar extends Component {
     this.setState({
       loading: undefined,
 
-    });    
+    });
   }
 
   isSectionCompleted = (section_id) => {
@@ -36,7 +36,8 @@ class CourseSidebar extends Component {
     }
 
     return (
-      <div className="sidebar-wrapper card-body">
+      <div className="sidebar-wrapper card">
+        <div className="sidebar-wrapper card-body">
         <nav id="sidebar">
           <div className="sidebar-header">
             <h3>Course outline</h3>
@@ -75,6 +76,7 @@ class CourseSidebar extends Component {
             {/* End headings creator */}
           </ul>
         </nav>
+      </div>
       </div>
     );
   }
