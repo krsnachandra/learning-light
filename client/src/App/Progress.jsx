@@ -10,7 +10,6 @@ class Progress extends Component {
       loading: true
     };
     this.startOrResumeCourse = this.startOrResumeCourse.bind(this);
-    // this.progressStatus = this.progressStatus.bind(this);
   }
 
   componentDidMount(){
@@ -26,11 +25,6 @@ class Progress extends Component {
       })
     });
   }
-
-  // progressStatus = (course_id) => {
-  //   const percentage = (this.state.courses[course_id - 1].completion) * 100;
-  //   return parseInt(percentage);
-  // }
 
   startOrResumeCourse = (coursename, completion) => {
     if (completion === 0) {
