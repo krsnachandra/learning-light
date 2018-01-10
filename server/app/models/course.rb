@@ -10,15 +10,13 @@ class Course < ApplicationRecord
   
   def for_user(user_id)
     sections = sections_for_user(user_id)
-    p sections
     section_count = sections.count
-    completion = section_count == 0 ? 0 : ((sections.count { |s| s[:completed] == true }) / section_count)
+    completion = ((sections.count { |s| s[:completed] == true }).to_f / section_count)
     {
-      name: name, id: id, description: description, instructor: instructor, 
+      completion: completion, name: name, id: id, description: description, instructor: instructor, 
       reviews: reviews.to_a.map { |r| r.with_user(user_id) }, 
       chapters: chapters_for_user(user_id), coursename: coursename, blurb: blurb,
-      sections: sections,
-      completion: completion
+      sections: sections,      
     }
   end
 
