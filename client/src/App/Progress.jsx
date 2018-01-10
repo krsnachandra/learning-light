@@ -13,15 +13,11 @@ class Progress extends Component {
   }
 
   componentDidMount(){
-    Promise.all([
-      this.props.getAllCourses(),
-      this.props.getUserSections()
-    ])
-    .then(([courses, current_user]) => {
+    this.props.getAllCourses()
+    .then((courses) => {
       this.setState({
         loading: undefined,
         courses: courses,
-        current_user: current_user
       })
     });
   }

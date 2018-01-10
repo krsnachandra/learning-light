@@ -58,7 +58,6 @@ class App extends Component {
             <Route path="/progress"
             render={({ history }) => (<Progress
                 getAllCourses={this.courseService.getAllCourses}
-                getUserSections={this.service.getUserSections}
                 history={history}
               />)}
              />
@@ -107,7 +106,6 @@ class App extends Component {
                   getCourse={this.courseService.getCourse}
                   coursename={coursename}
                   sectionCompleted={this.service.sectionCompleted}
-                  getUserSections={this.service.getUserSections}
                   history={history}
                   loggedIn={this.state.loggedIn}/>
               )} />
