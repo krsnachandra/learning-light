@@ -22,13 +22,10 @@ class Review extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    // const rating = e.target.elements.rating.value;
-    const rating = 5;
+    const rating = this.state.rating;
     const review = e.target.elements.review.value;
-    const show_flag = false;
     const course_id = 3;
-    
-    this.props.saveReview(rating, review, show_flag, course_id)
+    this.props.saveReview(rating, review, course_id)
       .then((data) => {
         this.props.history.push('/progress');
       });
@@ -40,9 +37,7 @@ class Review extends React.Component {
       <div>
         <h1>Rate and review this course</h1>
         <form onSubmit={this.onSubmit.bind(this)} >
-
               <div>
-                {/* <h2>{rating}</h2> */}
                 <StarRatingComponent
                     name="rate1"
                     starCount={5}

@@ -30,9 +30,9 @@ function makeService(token) {
     return token;
   }
 
-  function saveReview(rating, review, show_flag, course_id) {
+  function saveReview(rating, review, course_id) {
     return ajaxer.post('/reviews', {
-      review: { rating, review, show_flag, course_id},
+      review: { rating, review, course_id},
     }).then(({ data }) => data);
   };
 
