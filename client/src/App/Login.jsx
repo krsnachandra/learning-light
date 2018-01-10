@@ -9,7 +9,7 @@ function Login({ onLogin, logIn, history }) {
     logIn(email, password)
     .then((data) => {
       onLogin(data.jwt);
-      history.push('/');
+      history.push('/progress');
     });
   };
   return (
