@@ -1,14 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 
-function Loading() {
-  return (
-    <div className="card-body">
-      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-      <span class="sr-only">Loading...</span>
-    </div>
-  )
-}
 function makeCourseService(token){
   const ajaxer = token ? axios.create({ headers: {
     Authorization: `Bearer ${token}`,
@@ -40,4 +32,4 @@ function makeCourseService(token){
   }
   return {getCourse, getCourseContent, getAllCourses};
 }
-export {makeCourseService, Loading};
+export {makeCourseService};
