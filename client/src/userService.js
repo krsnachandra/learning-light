@@ -36,10 +36,6 @@ function makeService(token) {
     }).then(({ data }) => data);
   };
 
-  function getUserSections() {
-    return ajaxer.get('/users').then(({ data }) => data);
-  }
-
   function sectionCompleted(section_id) {
     console.log('SectComp', token);
     return ajaxer.post('/user_sections', {
@@ -48,7 +44,7 @@ function makeService(token) {
   }
 
   return {
-    logIn, isLoggedIn, register, updateUser, saveReview, getUserSections, sectionCompleted
+    logIn, isLoggedIn, register, updateUser, saveReview, sectionCompleted
   };
 }
 
