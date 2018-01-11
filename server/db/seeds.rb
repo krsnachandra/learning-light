@@ -82,7 +82,7 @@ Section.create!([
 User.create!([
   {first_name: "Jack", last_name: "Black", location: "Vancouver", motivation: "coding sounded fun", email: "jack@black.com", password: "longunreadablestring", password_confirmation: "longunreadablestring"},
   {first_name: "Rosalind", last_name: "Lake", location: "Toronto", motivation: "I'd like to build my own webpage", email: "rosy@lake.com", password: "yepyepyep", password_confirmation: "yepyepyep"},
-  {first_name: "Larry", last_name: "Duck", location: "Vancouver", motivation: "I'd like to build my own webpage", email: "larry@larry.com", password: "larrylarry", password_confirmation: "larrylarry"}
+  {first_name: "Connie", last_name: "Choi", location: "Vancouver", motivation: "I'd like to build my own webpage", email: "connie@connie.com", password: "connieconnie", password_confirmation: "connieconnie"}
 
 ])
 Review.create!([
