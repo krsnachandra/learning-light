@@ -20,6 +20,7 @@ class CourseSection extends Component {
     if (this.props.params.section !== section) {
       this.setState({ loading: true });
       this.loadSection(section)
+      window.scrollTo(0, 0);
     }
   }
 
