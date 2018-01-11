@@ -14,6 +14,7 @@ class CourseSection extends Component {
 
   componentDidMount(){
     this.loadSection(this.props.params.section);
+    window.scrollTo(0, 0);
   }
 
   componentWillReceiveProps({ params: { section }  }) {
