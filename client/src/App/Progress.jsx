@@ -20,6 +20,7 @@ class Progress extends Component {
         courses: courses,
       })
     });
+    window.scrollTo(0, 0);
   }
 
   startOrResumeCourse = (coursename, completion) => {

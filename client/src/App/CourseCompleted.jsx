@@ -4,6 +4,7 @@ import Review from './Review';
 
 
 function CourseCompleted ({ coursename, history, saveReview }) {
+  window.scrollTo(0, 0);
   return (
     <div className="col-lg-8 offset-lg-2">
       <div className="card-body text-center">
