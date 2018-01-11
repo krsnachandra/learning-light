@@ -8,9 +8,7 @@ function CourseCompleted ({ coursename, history, saveReview }) {
   return (
     <div className="col-lg-8 offset-lg-2">
       <div className="card-body text-center">
-        <img className="course-complete-img" src="/parrot-left.gif" />
         <span className="display-4 align-middle">Congratulations!</span>
-        <img className="course-complete-img" src="/parrot-right.gif" />
       </div>
       <div className="card-body text-center">
 
