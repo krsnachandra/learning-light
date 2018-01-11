@@ -18,7 +18,6 @@ function CourseCompleted ({ coursename, history, saveReview }) {
           coursename={coursename}
           history={history}
           saveReview={saveReview} />
-        <Link to='/progress' className="btn btn-primary">View progress</Link>
       </div>
   </div>
   )
