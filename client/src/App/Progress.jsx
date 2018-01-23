@@ -22,19 +22,31 @@ class Progress extends Component {
     });
     window.scrollTo(0, 0);
   }
+  
+  resumeSection(course){
+    let resumeSectionname = "";
+    let resumeSectionID = Infinity;
+    for (let section of course.sections){      
+      if (section.completed === false && section.id < resumeSectionID){
+        resumeSectionID = section.id;
+        resumeSectionname = section.sectionname;
+      }
+    }
+    return resumeSectionname;
+  }
 
-  startOrResumeCourse = (coursename, completion) => {
-    if (completion === 0) {
+  startOrResumeCourse = (course) => {
+    if (course.completion === 0) {
       return <div className="col-md-12">
-        <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Start course</button></Link>
+        <Link to={`/${course.coursename}/intro`}><button className="btn btn-primary btn-block">Start course</button></Link>
       </div>
-    } else if (completion === 1) {
+    } else if (course.completion === 1) {
       return <div className="col-md-12">
-        <Link to={`/${coursename}/intro`}><button className="btn btn-primary btn-block">Restart course</button></Link>
+        <Link to={`/${course.coursename}/intro`}><button className="btn btn-primary btn-block">Restart course</button></Link>
       </div>
     }
     return <div className="col-md-12">
-      <Link to={`/${coursename}/callbacks`}><button className="btn btn-primary btn-block">Resume course</button></Link>
+      <Link to={`/${course.coursename}/${this.resumeSection(course)}`}><button className="btn btn-primary btn-block">Resume course</button></Link>
     </div>
     };
 
@@ -97,7 +109,7 @@ class Progress extends Component {
                     {showProgress()}
                   </div>
     	            <div className="card-footer">
-                    {this.startOrResumeCourse(course.coursename, course.completion)}
+                    {this.startOrResumeCourse(course)}
   	              </div>
                 </div>
               )
